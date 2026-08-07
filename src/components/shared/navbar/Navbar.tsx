@@ -11,19 +11,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 import MobileMenu from '../mobile-menu/MobileMenu';
 import MobileMenuButton from '../mobile-menu/MobileMenuButton';
-import CompanyMenu from './CompanyMenu';
-import PartnershipMenu from './PartnershipMenu';
-import PeopleAndCultureMenu from './PeopleAndCultureMenu';
-import ResourcesMenu from './ResourcesMenu';
-
 import ProductsMenu from './ProductsMenu';
 
 const dropdownNavItems = [
-  { label: 'Company', dataMenu: 'company-mega-menu', MenuComponent: CompanyMenu },
   { label: 'Products', dataMenu: 'products-mega-menu', MenuComponent: ProductsMenu },
-  { label: 'Collaborate', dataMenu: 'partnership-dropdown-menu', MenuComponent: PartnershipMenu },
-  { label: 'Resources', dataMenu: 'resources-mega-menu', MenuComponent: ResourcesMenu },
-  { label: 'People & Culture', dataMenu: 'people-dropdown-menu', MenuComponent: PeopleAndCultureMenu },
+];
+
+const plainNavItemsBefore = [
+  { label: 'About Us', href: '/about' },
+];
+
+const plainNavItemsAfter = [
+  { label: 'Services', href: '/services' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Contact Us', href: '/contact-us' },
 ];
 
 const Navbar = () => {
@@ -61,6 +62,15 @@ const Navbar = () => {
             </div>
             <nav className="hidden items-center xl:flex">
               <ul className="flex items-center">
+                {plainNavItemsBefore.map(({ label, href }) => (
+                  <li key={label} className="py-2.5">
+                    <Link
+                      href={href}
+                      className="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent flex cursor-pointer items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200">
+                      <span>{label}</span>
+                    </Link>
+                  </li>
+                ))}
                 {dropdownNavItems.map(({ label, dataMenu, MenuComponent }) => (
                   <li
                     key={label}
@@ -84,6 +94,15 @@ const Navbar = () => {
                       </span>
                     </button>
                     <MenuComponent menuDropdownId={menuDropdownId} setMenuDropdownId={setMenuDropdownId} />
+                  </li>
+                ))}
+                {plainNavItemsAfter.map(({ label, href }) => (
+                  <li key={label} className="py-2.5">
+                    <Link
+                      href={href}
+                      className="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent flex cursor-pointer items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200">
+                      <span>{label}</span>
+                    </Link>
                   </li>
                 ))}
               </ul>

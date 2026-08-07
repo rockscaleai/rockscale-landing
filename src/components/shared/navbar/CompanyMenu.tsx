@@ -1,5 +1,5 @@
 'use client';
-import { AboutIcon, BlogIcon, FeatureIcon, ServiceIcon } from '@/icons/menu-icon';
+import { AboutIcon } from '@/icons/menu-icon';
 import { cn } from '@/utils/cn';
 import nsImg419 from '@public/images/ns-img-419.jpg';
 import Image from 'next/image';
@@ -20,24 +20,6 @@ const companyLinks: CompanyLink[] = [
     description: 'Learn about our mission, values, and dedicated team',
     href: '/about',
     icon: AboutIcon,
-  },
-  {
-    title: 'Our Services',
-    description: 'Explore our comprehensive hosting solutions',
-    href: '/services',
-    icon: ServiceIcon,
-  },
-  {
-    title: 'Product Features',
-    description: 'Discover powerful tools and capabilities',
-    href: '/features',
-    icon: FeatureIcon,
-  },
-  {
-    title: 'Blog & News',
-    description: 'Stay updated with latest articles and insights',
-    href: '/blog',
-    icon: BlogIcon,
   },
 ];
 

@@ -14,7 +14,7 @@ export const mobileMenuData: MobileMenuGroup[] = [
       { id: 'why-choose-us', label: 'Why Choose Us', href: './why-choose-us' },
       { id: 'customers', label: 'Customers', href: './customer' },
       { id: 'use-cases', label: 'Use Cases', href: './use-case' },
-      { id: 'case-studies', label: 'Case Studies', href: './case-study' },
+      { id: 'case-studies', label: 'Case Studies', href: './case-studies' },
       { id: 'testimonials', label: 'Testimonials', href: './testimonial' },
     ],
   },
@@ -71,7 +71,7 @@ export const footerData: FooterOneData[] = [
     links: [
       { label: 'About Us', href: '/about' },
       { label: 'Career', href: '/career' },
-      { label: 'Case Studies', href: '/case-study' },
+      { label: 'Case Studies', href: '/case-studies' },
       { label: 'Contact Us', href: '/contact-us' },
     ],
   },
