@@ -1,32 +1,41 @@
-import Features from '@/components/services/Features';
-import Pricing from '@/components/services/Pricing';
-import Services from '@/components/services/Services';
-import Solutions from '@/components/services/Solutions';
-import CTA from '@/components/shared/cta/CTA';
+import TechStack from '@/components/about/TechStack';
+import WhyChooseUs from '@/components/about/WhyChooseUs';
+import IndustrySolutions from '@/components/home/IndustrySolutions';
+import Projects from '@/components/home/Projects';
+import CoreServices from '@/components/services/CoreServices';
+import DeliveryProcess from '@/components/services/DeliveryProcess';
+import EngagementModels from '@/components/services/EngagementModels';
+import ServiceCTA from '@/components/services/ServiceCTA';
+import ServiceFaq from '@/components/services/ServiceFaq';
+import ServiceHero from '@/components/services/ServiceHero';
+import { ICaseStudy } from '@/interface';
 import { defaultMetadata } from '@/utils/generateMetaData';
+import getMarkDownData from '@/utils/getMarkDownData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Services - AI Agency || NextSaaS',
+  title: 'Services | RockScale - AI Solutions & Engineering',
+  description: 'Automate operations, modernize infrastructure, and build AI-powered products with RockScale.',
 };
 
 const page = () => {
+  const featuredProjects = getMarkDownData<ICaseStudy & { [key: string]: unknown }>(
+    'src/data/case-study',
+  ).slice(0, 4);
+
   return (
-    <main className="bg-background-1 dark:bg-background-6">
-      <Services />
-      <Features />
-      <Solutions />
-      <Pricing />
-      <CTA
-        className="dark:bg-background-6 bg-white"
-        badgeClass="hidden"
-        ctaHeading="Build a complete website using the"
-        spanText="assistance"
-        description="Start your free trial today and see your ideas come to life easily and creatively."
-        btnClass="hover:btn-secondary dark:hover:btn-accent"
-        ctaBtnText="Get started"
-      />
+    <main className="bg-background-3 dark:bg-background-7">
+      <ServiceHero />
+      <CoreServices />
+      <IndustrySolutions />
+      <WhyChooseUs />
+      <DeliveryProcess />
+      <TechStack />
+      <Projects featuredProjects={featuredProjects} />
+      <EngagementModels />
+      <ServiceFaq />
+      <ServiceCTA />
     </main>
   );
 };

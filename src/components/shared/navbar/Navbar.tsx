@@ -16,8 +16,11 @@ import PartnershipMenu from './PartnershipMenu';
 import PeopleAndCultureMenu from './PeopleAndCultureMenu';
 import ResourcesMenu from './ResourcesMenu';
 
+import ProductsMenu from './ProductsMenu';
+
 const dropdownNavItems = [
   { label: 'Company', dataMenu: 'company-mega-menu', MenuComponent: CompanyMenu },
+  { label: 'Products', dataMenu: 'products-mega-menu', MenuComponent: ProductsMenu },
   { label: 'Collaborate', dataMenu: 'partnership-dropdown-menu', MenuComponent: PartnershipMenu },
   { label: 'Resources', dataMenu: 'resources-mega-menu', MenuComponent: ResourcesMenu },
   { label: 'People & Culture', dataMenu: 'people-dropdown-menu', MenuComponent: PeopleAndCultureMenu },

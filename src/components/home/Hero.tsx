@@ -1,6 +1,7 @@
 'use client';
 
 import gradient12 from '@public/images/ns-img-504.png';
+import scaleOpsImg from '@public/images/scale-operations-ai.jpg';
 import Image from 'next/image';
 import { CheckIcon } from '@/icons';
 import RevealAnimation from '../animation/RevealAnimation';
@@ -125,8 +126,19 @@ const Hero = () => {
                 </div>
               </RevealAnimation>
             </div>
-            <div className="lg:flex-1/2 lg:pe-[42px] flex items-center justify-center">
-              {/* "How ai assist your file" graphic removed */}
+            <div className="lg:flex-1/2 lg:pe-[42px] flex items-center justify-center py-8 max-lg:px-5">
+              <RevealAnimation delay={0.5} direction="left">
+                <figure className="relative w-full max-w-[540px] overflow-hidden rounded-[20px] shadow-[0_20px_60px_-10px_rgba(6,18,37,0.18)]">
+                  <Image
+                    src={scaleOpsImg}
+                    alt="Scale your operations with AI — enterprise dashboard"
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                  {/* Subtle overlay to blend with the white card background */}
+                  <div className="pointer-events-none absolute inset-0 rounded-[20px] ring-1 ring-inset ring-secondary/10" />
+                </figure>
+              </RevealAnimation>
             </div>
           </div>
         </div>

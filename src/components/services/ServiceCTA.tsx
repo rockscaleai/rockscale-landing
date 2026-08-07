@@ -1,9 +1,10 @@
+'use client';
 import gradient5 from '@public/images/ns-img-497.png';
 import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 import CTA from '../shared/cta/CTA';
 
-const AboutCTA = () => {
+const ServiceCTA = () => {
   return (
     <section className="py-[50px] md:py-20 lg:py-[100px]" aria-label="cta section wrapper">
       <div className="mx-auto px-5 lg:max-w-[980px] xl:max-w-[1260px] xl:px-0 2xl:max-w-[1440px]">
@@ -19,15 +20,15 @@ const AboutCTA = () => {
 
             <CTA
               className="py-[50px] md:py-20 lg:py-[100px]"
-              description="Partner with RockScale to automate complex workflows and scale your business with intelligent technology."
+              description="Whether you're looking to automate a single workflow or modernize your entire data infrastructure, our engineers are ready to help you execute."
               headingClass="text-accent"
               descriptionClass="text-accent/60"
-              ctaHeading="Ready to Transform Your Business?"
-              ctaBtnText="Book a Discovery Session"
-              badgeText="Let's Build Your AI Strategy"
+              ctaHeading="Ready to Build AI That Creates Real Business Value?"
+              ctaBtnText="Book a Discovery Call"
+              badgeText="Get Started"
               badgeClass="badge badge-blur text-ns-green"
               btnClass="hover:btn-white"
-              inputFieldClass="sm:w-auto flex-1 bg-accent/5 border-0 px-5 py-3 shadow-1 rounded-full min-h-[48px] h-12 placeholder:text-accent/40 placeholder:text-tagline-1 placeholder:font-normal focus:outline-none focus:border focus:border-primary-600 dark:focus:border-primary-400 text-accent font-normal w-[85%]"
+              inputFieldClass="hidden"
               listTextClass="text-accent font-normal text-tagline-3 sm:text-tagline-2"
               checkListVariant="gray"
             />
@@ -38,5 +39,5 @@ const AboutCTA = () => {
   );
 };
 
-AboutCTA.displayName = 'AboutCTA';
-export default AboutCTA;
+ServiceCTA.displayName = 'ServiceCTA';
+export default ServiceCTA;

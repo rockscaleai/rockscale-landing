@@ -1,74 +1,74 @@
 [
   {
     "id": 1,
-    "quote": "The platform's intuitive interface and powerful features have revolutionized our workflow. Customer support has been exceptional every step of the way.",
+    "quote": "RockScale built us a document intelligence pipeline that reduced our contract review time by 70%. Their understanding of LLMs in a compliance context was unlike any vendor we had worked with before.",
     "avatar": "/images/ns-avatar-1.png",
-    "name": "Sarah Johnson",
-    "position": "Marketing Director",
-    "rating": "4.9"
+    "name": "Sarah Okonkwo",
+    "position": "Chief Legal Officer, FinServe Capital",
+    "rating": "5.0"
   },
   {
     "id": 2,
-    "quote": "As a small business owner, your service has been a lifesaver in managing cash flow and optimizing financial strategies. It has truly exceeded my expectations. your service has been a lifesaver in managing cash flow and optimizing financial strategies. It has truly exceeded my expectations.",
+    "quote": "We came to RockScale with disconnected data across six systems. Within 12 weeks they had built us a unified data warehouse and a predictive churn model that now runs in production daily.",
     "avatar": "/images/ns-avatar-2.png",
     "name": "Michael Chen",
-    "position": "Tech Lead",
+    "position": "VP of Engineering, Veritas Health",
     "rating": "5.0"
   },
   {
     "id": 3,
-    "quote": "As a small business owner, your service has been a lifesaver in managing cash flow and optimizing financial strategies. It has truly exceeded my expectations. your service has been a lifesaver in managing cash flow and optimizing financial strategies. It has truly exceeded my expectations.  ",
+    "quote": "The team is genuinely rare — they think like engineers and communicate like consultants. Our AI strategy is now board-level material thanks to the work RockScale did in our discovery phase.",
     "avatar": "/images/ns-avatar-3.png",
-    "name": "Emma Rodriguez",
-    "position": "Operations Manager",
-    "rating": "4.8"
+    "name": "Emma Fitzgerald",
+    "position": "Chief Data Officer, NovaTrade Logistics",
+    "rating": "4.9"
   },
   {
     "id": 4,
-    "quote": "As a small business owner, your service has been a lifesaver in managing cash flow and optimizing financial strategies. It has truly exceeded my expectations. your service has been a lifesaver in managing cash flow and optimizing financial strategies. It has truly exceeded my expectations.",
+    "quote": "RockScale delivered our demand forecasting model on time and on budget — rare in AI projects. The model reduced inventory overstock by 18% in the first quarter of production use.",
     "avatar": "/images/ns-avatar-4.png",
-    "name": "Jaks Rodriguez",
-    "position": "Software Manager",
-    "rating": "3.8"
+    "name": "James Adeyemi",
+    "position": "Head of Supply Chain, RetailScale Group",
+    "rating": "5.0"
   },
   {
     "id": 5,
-    "quote": "I appreciate the real-time analytics and customizable dashboards. It has made tracking our KPIs so much easier and more insightful.",
+    "quote": "What I appreciate most is that RockScale never oversold what AI could do. They helped us set realistic expectations, then exceeded them every time.",
     "avatar": "/images/ns-avatar-5.png",
-    "name": "Priya Patel",
-    "position": "Data Analyst",
-    "rating": "4.7"
+    "name": "Priya Anand",
+    "position": "COO, Meridian Insurance Partners",
+    "rating": "4.9"
   },
   {
     "id": 6,
-    "quote": "From onboarding to daily use, the experience has been smooth and intuitive. Our team collaboration has improved significantly.",
+    "quote": "Their MLOps setup has transformed how we ship AI. We went from 6-week deployment cycles to rolling updates in under 48 hours. The difference in our team velocity is remarkable.",
     "avatar": "/images/ns-avatar-6.png",
-    "name": "Lucas Meyer",
-    "position": "Project Coordinator",
-    "rating": "4.6"
+    "name": "Lucas Bauer",
+    "position": "Director of AI, Apex Manufacturing",
+    "rating": "5.0"
   },
   {
     "id": 7,
-    "quote": "As a small business owner, your service has been a lifesaver in managing cash flow and optimizing financial strategies. It has truly exceeded my expectations. your service has been a lifesaver in managing cash flow and optimizing financial strategies. It has truly exceeded my expectations.",
+    "quote": "RockScale helped us build an AI copilot for our customer support agents that handles 40% of ticket volume autonomously. Customer satisfaction scores have gone up, not down.",
     "avatar": "/images/ns-avatar-7.png",
-    "name": "Lucas Meyer",
-    "position": "Project Coordinator",
-    "rating": "4.6"
+    "name": "Aisha Mensah",
+    "position": "VP Customer Experience, CloudServe SaaS",
+    "rating": "5.0"
   },
   {
     "id": 8,
-    "quote": "From onboarding to daily use, the experience has been smooth and intuitive. Our team collaboration has improved significantly.",
+    "quote": "We engaged RockScale for an AI readiness assessment and came out with a 12-month transformation roadmap that our board approved immediately. Clear thinking, excellent delivery.",
     "avatar": "/images/ns-avatar-8.png",
-    "name": "Lucas Meyer",
-    "position": "Project Coordinator",
-    "rating": "4.6"
+    "name": "Daniel Park",
+    "position": "CEO, Pinnacle Financial Technologies",
+    "rating": "4.8"
   },
   {
     "id": 9,
-    "quote": "From onboarding to daily use, the experience has been smooth and intuitive. Our team collaboration has improved significantly.",
+    "quote": "The data engineering work RockScale completed gave our analysts access to clean, real-time data for the first time. The time our team saves each week on data wrangling is now spent on actual analysis.",
     "avatar": "/images/ns-avatar-9.png",
-    "name": "Lucas Meyer",
-    "position": "Project Coordinator",
-    "rating": "4.6"
+    "name": "Chloe Martin",
+    "position": "Head of Analytics, Global Retail Co.",
+    "rating": "4.9"
   }
 ]

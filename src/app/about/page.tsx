@@ -1,27 +1,40 @@
+import AboutHero from '@/components/about/AboutHero';
+import Approach from '@/components/about/Approach';
+import Capabilities from '@/components/about/Capabilities';
 import AboutCTA from '@/components/about/CTA';
-import OurMission from '@/components/about/OurMission';
-import OurSuccess from '@/components/about/OurSuccess';
+import Differentiators from '@/components/about/Differentiators';
+import MissionVision from '@/components/about/MissionVision';
+import OurStory from '@/components/about/OurStory';
 import Team from '@/components/about/Team';
-import VisionStatement from '@/components/about/VisionStatement';
+import TechStack from '@/components/about/TechStack';
+import Values from '@/components/about/Values';
 import WhyChooseUs from '@/components/about/WhyChooseUs';
-import ReviewsV2 from '@/components/shared/reviews/ReviewsV2';
+import Faq from '@/components/home/Faq';
+import IndustrySolutions from '@/components/home/IndustrySolutions';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'About Us - AI Agency || NextSaaS',
+  title: 'About Us | RockScale - AI Solutions & Engineering',
+  description: 'Learn about RockScale, an AI Solutions, Data Engineering and Cloud Infrastructure consulting company.',
 };
 
 const page = () => {
   return (
     <main className="bg-background-3 dark:bg-background-7">
-      <VisionStatement />
-      <OurMission />
-      <OurSuccess />
+      <AboutHero />
+      <OurStory />
+      <MissionVision />
+      <Values />
+      <Differentiators />
+      <Capabilities />
+      <Approach />
       <WhyChooseUs />
       <Team />
-      <ReviewsV2 />
+      <TechStack />
+      <IndustrySolutions />
+      <Faq />
       <AboutCTA />
     </main>
   );

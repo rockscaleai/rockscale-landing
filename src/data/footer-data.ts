@@ -7,6 +7,7 @@ export const footerLinks: FooterData[] = [
       { label: 'About Us', href: '/about' },
       { label: 'Our Process', href: '/process' },
       { label: 'Case Studies', href: '/case-study' },
+      { label: 'Careers', href: '/career' },
       { label: 'Contact Us', href: '/contact-us' },
     ],
   },
@@ -14,18 +15,32 @@ export const footerLinks: FooterData[] = [
     title: 'Services',
     links: [
       { label: 'Custom AI Solutions', href: '/services' },
-      { label: 'Business Intelligence', href: '/services' },
+      { label: 'AI Copilots & LLM', href: '/services' },
       { label: 'Data Engineering', href: '/services' },
-      { label: 'MLOps Consulting', href: '/services' },
+      { label: 'Business Intelligence', href: '/services' },
+      { label: 'Cloud Infrastructure', href: '/services' },
+      { label: 'AI Strategy', href: '/services' },
     ],
   },
   {
-    title: 'Legal Policies',
+    title: 'Industries',
     links: [
-      { label: 'Terms & Conditions', href: '/terms-conditions' },
+      { label: 'Financial Services', href: '/services' },
+      { label: 'Healthcare', href: '/services' },
+      { label: 'Retail & E-Commerce', href: '/services' },
+      { label: 'Logistics & Supply Chain', href: '/services' },
+      { label: 'Legal & Compliance', href: '/services' },
+      { label: 'Manufacturing', href: '/services' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { label: 'Blog & Insights', href: '/blog' },
+      { label: 'Case Studies', href: '/case-study' },
+      { label: 'FAQ', href: '/faq' },
       { label: 'Privacy Policy', href: '/privacy-policy' },
-      { label: 'GDPR Compliance', href: '/gdpr' },
+      { label: 'Terms & Conditions', href: '/terms-conditions' },
     ],
   },
 ];
-

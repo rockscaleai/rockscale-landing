@@ -1,75 +1,68 @@
-import profitChartImg from '@public/images/ns-img-240.png';
-import circleImg from '@public/images/ns-img-352.png';
-import aboutDecentralization2Img from '@public/images/ns-img-7.svg';
-import profitDarkChartImg from '@public/images/ns-img-dark-161.png';
-import aboutDecentralizationDark2Img from '@public/images/ns-img-dark-5.svg';
+'use client';
+import featureImgTwo from '@public/images/ns-img-81.png';
+import featureImgTwoDark from '@public/images/ns-img-dark-55.png';
 import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 
-const featureList = [
-  { id: 1, icon: 'ns-shape-8', label: 'Analyze your data' },
-  { id: 2, icon: 'ns-shape-9', label: 'Collaborate securely' },
-  { id: 3, icon: 'ns-shape-12', label: 'Embedded analytics' },
-  { id: 4, icon: 'ns-shape-21', label: 'Easy & intuitive' },
+const reasons = [
+  { id: 1, icon: 'ns-shape-21', label: 'Business-first mindset' },
+  { id: 2, icon: 'ns-shape-10', label: 'Experienced engineering team' },
+  { id: 3, icon: 'ns-shape-19', label: 'Scalable cloud architecture' },
+  { id: 4, icon: 'ns-shape-8', label: 'Modern AI technology stack' },
+  { id: 5, icon: 'ns-shape-16', label: 'Enterprise-grade security' },
+  { id: 6, icon: 'ns-shape-23', label: 'Long-term strategic partnerships' },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="overflow-hidden pt-14 pb-14 md:pt-16 md:pb-16 lg:pt-[88px] lg:pb-[88px] xl:pt-[100px] xl:pb-[100px]">
+    <section className="bg-white py-16 md:py-20 lg:py-[100px] dark:bg-[#0d0d1a]" aria-labelledby="why-clients-choose-heading">
       <div className="main-container">
-        <div className="flex flex-col items-center justify-between gap-x-12 gap-y-10 md:flex-row">
-          <div>
+        <div className="grid grid-cols-12 items-center gap-y-12 lg:gap-16 xl:gap-[80px]">
+          {/* Left copy */}
+          <div className="col-span-12 lg:col-span-6">
             <RevealAnimation delay={0.1}>
-              <span className="badge badge-cyan mb-5">Reasons to select us</span>
+              <span className="badge badge-green mb-5">Why Clients Choose Us</span>
             </RevealAnimation>
-            <RevealAnimation delay={0.3}>
-              <h2 className="mb-3">
-                A highly effective
-                <br className="hidden lg:block" />
-                unified platform
+            <RevealAnimation delay={0.2}>
+              <h2 id="why-clients-choose-heading" className="mb-6">
+                Built for mission-critical enterprise systems
               </h2>
             </RevealAnimation>
-            <RevealAnimation delay={0.4}>
-              <p className="lg:max-w-[536px]">
-                Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text nothing Before &amp;
-                After magazine.
+            <RevealAnimation delay={0.3}>
+              <p className="mb-10 text-secondary/70 dark:text-accent/70">
+                Organizations trust us with their most sensitive data and core operations because
+                we prioritize security, scalability, and measurable outcomes over hype. We are
+                engineers, not just consultants.
               </p>
             </RevealAnimation>
-            <ul className="mt-10 sm:space-y-2 md:mt-14">
-              {featureList.map((item, idx) => (
-                <RevealAnimation key={item.id} delay={0.5 + idx * 0.1}>
-                  <li className="flex list-none items-center gap-4 py-2">
-                    <span className={`${item.icon} text-secondary dark:text-accent text-[36px]`} />
-                    <strong className="text-tagline-1 text-secondary dark:text-accent font-medium">{item.label}</strong>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {reasons.map((item, idx) => (
+                <RevealAnimation key={item.id} delay={0.4 + idx * 0.1}>
+                  <li className="flex items-center gap-3">
+                    <span className={`${item.icon} text-secondary dark:text-accent text-[32px]`} />
+                    <strong className="text-tagline-1 font-medium text-secondary dark:text-accent">
+                      {item.label}
+                    </strong>
                   </li>
                 </RevealAnimation>
               ))}
             </ul>
           </div>
-          <div className="relative h-full max-h-[598px] min-h-[400px] w-full max-w-[460px] rounded-[20px] bg-linear-[156deg,_#FFF_32.92%,_#83E7EE_91%] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[558px] dark:bg-linear-[156deg,_#070B10_32.92%,_#C6F56F_91%]">
-            <RevealAnimation delay={0.3}>
-              <figure className="absolute bottom-[6%] -left-[12%] w-[85%] rounded-2xl md:-left-[19%] md:w-[120%]">
-                <Image src={circleImg} alt="transaction-statistics" className="size-full" />
-              </figure>
-            </RevealAnimation>
-            <RevealAnimation delay={0.4} duration={1} direction="right">
-              <figure className="shadow-3 absolute top-[5%] -right-2.5 w-full max-w-[244px] overflow-hidden rounded-2xl max-xl:w-[180px] md:-right-[4%] lg:-right-[2%] 2xl:-right-[19%]">
+          
+          {/* Right visual */}
+          <div className="col-span-12 lg:col-span-6">
+            <RevealAnimation delay={0.4} direction="up" offset={80}>
+              <figure className="mx-auto w-full max-w-[500px] overflow-hidden rounded-[20px] lg:mx-0 lg:max-w-[600px]">
                 <Image
-                  src={aboutDecentralization2Img}
-                  alt="transaction-statistics"
-                  className="block size-full dark:hidden"
+                  src={featureImgTwo}
+                  alt="Enterprise AI infrastructure"
+                  className="h-full w-full object-cover dark:hidden"
                 />
                 <Image
-                  src={aboutDecentralizationDark2Img}
-                  alt="transaction-statistics"
-                  className="hidden size-full dark:block"
+                  src={featureImgTwoDark}
+                  alt="Enterprise AI infrastructure"
+                  className="hidden h-full w-full object-cover dark:block"
                 />
-              </figure>
-            </RevealAnimation>
-            <RevealAnimation delay={0.6} duration={1} direction="right" offset={100}>
-              <figure className="shadow-3 absolute -right-2.5 bottom-[5%] w-full max-w-[270px] overflow-hidden rounded-[20px] md:-right-[4%] lg:-right-[2%] lg:max-w-[330px] xl:max-w-[395px] 2xl:-right-[20%]">
-                <Image src={profitChartImg} alt="transaction-statistics" className="block size-full dark:hidden" />
-                <Image src={profitDarkChartImg} alt="transaction-statistics" className="hidden size-full dark:block" />
               </figure>
             </RevealAnimation>
           </div>
