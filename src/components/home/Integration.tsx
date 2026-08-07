@@ -1,3 +1,4 @@
+'use client';
 import integrationImage1 from '@public/images/ns-img-179.png';
 import integrationImage2 from '@public/images/ns-img-180.png';
 import integrationImage3 from '@public/images/ns-img-181.png';

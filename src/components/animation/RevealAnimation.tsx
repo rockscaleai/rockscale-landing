@@ -139,9 +139,20 @@ const RevealAnimation = ({
     }
   }, [duration, delay, offset, instant, start, end, direction, useSpring, rotation, animationType]);
 
-  // Early return if children is not valid (after all hooks)
-  if (!children || !React.isValidElement(children)) {
-    return null;
+  // Check if children is a valid React element, supporting cross-boundary RSC serialization
+  const isValid = React.isValidElement(children) || (
+    children &&
+    typeof children === 'object' &&
+    !Array.isArray(children) &&
+    'props' in children &&
+    (typeof (children as any).type === 'string' || 
+     typeof (children as any).type === 'function' || 
+     typeof (children as any).type === 'object')
+  );
+
+  // Early return if children is not valid
+  if (!children || !isValid) {
+    return children as any;
   }
 
   // Clone the child element and add the ref, className, and data-ns-animate attribute

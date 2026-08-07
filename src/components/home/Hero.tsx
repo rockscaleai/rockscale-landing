@@ -1,6 +1,5 @@
 'use client';
-import heroImage from '@public/images/ns-img-173.png';
-import heroBottomImage from '@public/images/ns-img-171.png';
+
 import gradient12 from '@public/images/ns-img-504.png';
 import Image from 'next/image';
 import { CheckIcon } from '@/icons';
@@ -78,11 +77,7 @@ const Hero = () => {
               </LinkButton>
             </div>
           </RevealAnimation>
-          <RevealAnimation delay={0.8} instant duration={0.9}>
-            <figure className="mx-auto mt-20 flex max-w-[408px] items-center justify-center overflow-hidden rounded-[20px] md:mt-[124px]">
-              <Image src={heroImage} alt="hero" className="inline-block h-full w-full object-cover" />
-            </figure>
-          </RevealAnimation>
+          {/* Hero image removed */}
         </div>
       </div>
 
@@ -131,14 +126,7 @@ const Hero = () => {
               </RevealAnimation>
             </div>
             <div className="lg:flex-1/2 lg:pe-[42px] flex items-center justify-center">
-              <RevealAnimation delay={0.5} direction="right">
-                <div className="relative h-full max-lg:mx-auto max-lg:max-w-[525px]">
-                  {/* "How ai assist your file" floating graphic removed here */}
-                  <figure className="max-w-[525px] max-lg:mx-auto lg:absolute lg:right-0 lg:bottom-0">
-                    <Image src={heroBottomImage} alt="Scale operations visualization" className="h-full w-full" />
-                  </figure>
-                </div>
-              </RevealAnimation>
+              {/* "How ai assist your file" graphic removed */}
             </div>
           </div>
         </div>

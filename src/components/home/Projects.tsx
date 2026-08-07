@@ -1,13 +1,10 @@
+'use client';
 import { ICaseStudy } from '@/interface';
-import getMarkDownData from '@/utils/getMarkDownData';
 import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
-const featuredProjects: ICaseStudy[] = getMarkDownData<ICaseStudy & { [key: string]: unknown }>(
-  'src/data/case-study',
-).slice(0, 4);
 
-const Projects = () => {
+const Projects = ({ featuredProjects }: { featuredProjects: ICaseStudy[] }) => {
   return (
     <section className="bg-white pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-[90px] lg:pb-[90px] xl:pt-[160px] xl:pb-[160px] dark:bg-black">
       <div className="main-container">

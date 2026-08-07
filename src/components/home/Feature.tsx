@@ -1,3 +1,4 @@
+'use client';
 import feature1 from '@public/images/ns-img-175.png';
 import feature2 from '@public/images/ns-img-176.png';
 import feature3 from '@public/images/ns-img-177.png';
