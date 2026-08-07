@@ -3,64 +3,41 @@ import { FooterOneData } from '@/interface';
 
 export const mobileMenuData: MobileMenuGroup[] = [
   {
-    id: 'company',
-    title: 'Company',
+    id: 'about',
+    title: 'About Us',
     submenu: [
-      { id: 'about-us', label: 'About Us', href: './about' },
-      { id: 'services', label: 'Services', href: './services' },
-      { id: 'team', label: 'Our Team', href: './team' },
-      { id: 'career', label: 'Career', href: './career' },
-      { id: 'our-manifesto', label: 'Our Manifesto', href: './our-manifesto' },
-      { id: 'why-choose-us', label: 'Why Choose Us', href: './why-choose-us' },
-      { id: 'customers', label: 'Customers', href: './customer' },
-      { id: 'use-cases', label: 'Use Cases', href: './use-case' },
-      { id: 'case-studies', label: 'Case Studies', href: './case-studies' },
-      { id: 'testimonials', label: 'Testimonials', href: './testimonial' },
+      { id: 'about-us', label: 'About Us', href: '/about' },
     ],
   },
-
   {
-    id: 'platform',
-    title: 'Platform',
+    id: 'products',
+    title: 'Products',
     submenu: [
-      { id: 'features', label: 'Features', href: './features' },
-      { id: 'integrations', label: 'Integrations', href: './integration' },
-      { id: 'process', label: 'Process', href: './process' },
-      { id: 'analytics', label: 'Analytics', href: './analytics' },
-      { id: 'security', label: 'Security', href: './security' },
-      { id: 'whitepaper', label: 'Whitepaper', href: './whitepaper' },
-      { id: 'build-overview', label: 'Build overview', href: './signup' },
-      { id: 'brandkit', label: 'Brandkit', href: './brandkit' },
-      { id: 'download', label: 'Download', href: './download' },
+      { id: 'products-overview', label: 'Products Overview', href: '/products' },
+      { id: 'qorebit-ai', label: 'Qorebit AI', href: '/products/qorebit-ai' },
+      { id: 'enterprise-solutions', label: 'Enterprise Solutions', href: '/services' },
     ],
   },
-
   {
-    id: 'resources',
-    title: 'Resources',
+    id: 'services',
+    title: 'Services',
     submenu: [
-      { id: 'blog', label: 'Blog', href: './blog' },
-      { id: 'tutorial', label: 'Tutorial', href: './tutorial' },
-      { id: 'faq', label: 'FAQ', href: './faq' },
-      { id: 'glossary', label: 'Glossary', href: './glossary' },
+      { id: 'services-main', label: 'Our Services', href: '/services' },
     ],
   },
-
   {
-    id: 'plans-support',
-    title: 'Plans & Support',
+    id: 'case-studies',
+    title: 'Case Studies',
     submenu: [
-      { id: 'pricing', label: 'Pricing', href: './pricing' },
-      { id: 'login', label: 'Login', href: './login' },
-      { id: 'create-account', label: 'Create Account', href: './signup' },
-      { id: 'referral-program', label: 'Referral Program', href: './referral-program' },
-      { id: 'affiliate', label: 'Affiliate', href: './affiliates' },
-      { id: 'affiliate-policy', label: 'Affiliate Policy', href: './affiliate-policy' },
-      { id: 'terms-conditions', label: 'Terms & Conditions', href: './terms-conditions' },
-      { id: 'privacy-policy', label: 'Privacy Policy', href: './privacy-policy' },
-      { id: 'refund-policy', label: 'Refund Policy', href: './refund-policy' },
-      { id: 'gdpr', label: 'GDPR', href: './gdpr' },
-      { id: 'legal', label: 'Legal', href: './legal' },
+      { id: 'case-studies-main', label: 'Case Studies & Success Stories', href: '/case-studies' },
+    ],
+  },
+  {
+    id: 'contact',
+    title: 'Contact Us',
+    submenu: [
+      { id: 'contact-us', label: 'Get in Touch', href: '/contact-us' },
+      { id: 'book-call', label: 'Book a Discovery Call', href: '/contact-us' },
     ],
   },
 ];
