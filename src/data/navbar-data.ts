@@ -10,6 +10,22 @@ export const mobileMenuData: MobileMenuGroup[] = [
     ],
   },
   {
+    id: 'what-we-do',
+    title: 'What We Do',
+    submenu: [
+      { id: 'wwd-strategy', label: 'AI Strategy & Roadmap', href: '/services#strategy' },
+      { id: 'wwd-dev', label: 'AI-Powered Software Development', href: '/services#development' },
+      { id: 'wwd-data', label: 'Data Engineering & Analytics', href: '/services#data' },
+      { id: 'wwd-fde', label: 'Forward Deployed Engineer', href: '/services#fde' },
+      { id: 'wwd-gendd', label: 'Generative Driven Development™', href: '/services#gendd' },
+      { id: 'wwd-assessment', label: 'AI Data Readiness & Governance', href: '/services#assessment' },
+      { id: 'wwd-accelerator', label: 'AI Solution Accelerator', href: '/services#accelerator' },
+      { id: 'wwd-training', label: 'AI Training for Teams', href: '/services#training' },
+      { id: 'wwd-executive', label: 'Executive AI Training', href: '/services#executive' },
+      { id: 'wwd-roi', label: 'AI Roadmap & ROI Workshop', href: '/services#roi-workshop' },
+    ],
+  },
+  {
     id: 'products',
     title: 'Products',
     submenu: [

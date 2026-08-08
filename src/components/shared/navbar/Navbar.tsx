@@ -12,8 +12,10 @@ import { useState } from 'react';
 import MobileMenu from '../mobile-menu/MobileMenu';
 import MobileMenuButton from '../mobile-menu/MobileMenuButton';
 import ProductsMenu from './ProductsMenu';
+import WhatWeDoMenu from './WhatWeDoMenu';
 
 const dropdownNavItems = [
+  { label: 'What We Do', dataMenu: 'whatwedo-mega-menu', MenuComponent: WhatWeDoMenu },
   { label: 'Products', dataMenu: 'products-mega-menu', MenuComponent: ProductsMenu },
 ];
 

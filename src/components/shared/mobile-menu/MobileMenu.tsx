@@ -48,23 +48,43 @@ const MobileMenu = ({ menuData }: { menuData: MobileMenuGroup[] }) => {
             Menu
           </p>
           <ul className="space-y-2">
-            {menuData.map((item) => (
-              <MobileMenuItem key={item.id} id={item.id} title={item.title} hasSubmenu={item.submenu.length > 0}>
-                {/* submenu items list  */}
-                <ul>
-                  {item?.submenu?.map((subItem) => (
-                    <li key={subItem.id}>
-                      <Link
-                        href={subItem.href}
-                        onClick={closeMenu}
-                        className="text-tagline-1 text-secondary dark:text-accent ml-4 block py-2.5 text-left font-normal transition-all duration-200">
-                        {subItem.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </MobileMenuItem>
-            ))}
+            {menuData.map((item) => {
+              const isSingleLink = item.submenu.length === 1;
+
+              // Plain link — no accordion needed
+              if (isSingleLink) {
+                return (
+                  <li key={item.id} className="space-y-2">
+                    <Link
+                      href={item.submenu[0].href}
+                      onClick={closeMenu}
+                      className="text-tagline-1 text-secondary/60 dark:text-accent/60 hover:text-secondary dark:hover:text-accent flex w-full items-center p-2.5 font-normal transition-colors duration-200"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                );
+              }
+
+              // Accordion — multiple submenu items
+              return (
+                <MobileMenuItem key={item.id} id={item.id} title={item.title} hasSubmenu>
+                  <ul>
+                    {item.submenu.map((subItem) => (
+                      <li key={subItem.id}>
+                        <Link
+                          href={subItem.href}
+                          onClick={closeMenu}
+                          className="text-tagline-1 text-secondary dark:text-accent ml-4 block py-2.5 text-left font-normal transition-all duration-200"
+                        >
+                          {subItem.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </MobileMenuItem>
+              );
+            })}
           </ul>
         </div>
       </div>

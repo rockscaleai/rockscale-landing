@@ -1,6 +1,4 @@
 'use client';
-import gradient12 from '@public/images/ns-img-504.png';
-import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
 
@@ -17,16 +15,16 @@ const ServiceHero = () => {
       <div className="main-container relative z-10">
         <div className="mx-auto max-w-[860px] text-center">
           <RevealAnimation delay={0.1}>
-            <span className="badge badge-green mb-6 inline-block">Our Services</span>
+            <span className="badge badge-green mb-6 inline-block">Strategy → Software → Data → Engineering</span>
           </RevealAnimation>
           <RevealAnimation delay={0.2}>
             <h1 id="service-hero-heading" className="mb-6">
-              AI Solutions That Deliver Real Business Results
+              The Complete AI Implementation Partner
             </h1>
           </RevealAnimation>
           <RevealAnimation delay={0.3}>
             <p className="text-secondary/70 dark:text-accent/70 mx-auto mb-10 max-w-[680px] text-lg leading-relaxed">
-              We automate complex workflows, improve operational efficiency, and help ambitious organizations scale using intelligent systems.
+              RockScale helps ambitious organizations move from AI strategy to production — building intelligent software, modernizing data infrastructure, and embedding experienced engineers directly into their teams.
             </p>
           </RevealAnimation>
           <RevealAnimation delay={0.4}>
@@ -41,6 +39,23 @@ const ServiceHero = () => {
                 className="btn btn-secondary btn-md hover:btn-primary w-[85%] sm:w-auto">
                 Explore Our Services
               </LinkButton>
+            </div>
+          </RevealAnimation>
+
+          {/* Four service pills */}
+          <RevealAnimation delay={0.5}>
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+              {[
+                { label: 'AI Strategy & Roadmap', phase: 'THINK', color: 'bg-[#7E57FD]/10 text-[#7E57FD] border-[#7E57FD]/20' },
+                { label: 'AI-Powered Software', phase: 'BUILD', color: 'bg-ns-green/10 text-ns-green border-ns-green/20' },
+                { label: 'Data Engineering', phase: 'POWER', color: 'bg-blue-500/10 text-blue-600 border-blue-500/20' },
+                { label: 'Forward Deployed Engineer', phase: 'DEPLOY', color: 'bg-orange-500/10 text-orange-600 border-orange-500/20' },
+              ].map((pill) => (
+                <div key={pill.phase} className={`flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium ${pill.color}`}>
+                  <span className="text-[9px] font-bold tracking-widest opacity-60">{pill.phase}</span>
+                  <span>{pill.label}</span>
+                </div>
+              ))}
             </div>
           </RevealAnimation>
         </div>

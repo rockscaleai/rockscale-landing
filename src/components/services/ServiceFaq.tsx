@@ -4,40 +4,40 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '..
 
 const faqItems = [
   {
-    id: '1',
-    question: 'How long does a project take?',
+    id: "1",
+    question: "Where do we start if we're new to AI?",
     answer:
-      'Timelines depend on complexity. An initial AI Strategy Workshop takes 2-4 weeks. A proof of concept (POC) can be delivered in 4-8 weeks. Full production deployments, including data pipelines and infrastructure, typically take 3-6 months. We work in agile sprints to ensure continuous delivery of value.',
+      "The best starting point is our AI Strategy & Roadmap service. We run a structured AI readiness assessment to understand your business objectives, technology landscape and data maturity. From there, we identify the highest-value AI opportunities and design a phased roadmap — so you know exactly what to build, what to prioritize, and how much it will cost before writing a single line of code.",
   },
   {
-    id: '2',
-    question: 'Do you work with existing systems?',
+    id: "2",
+    question: "What kinds of AI software do you build?",
     answer:
-      'Yes. A core part of our engineering practice is enterprise integration. We build AI and data solutions that securely interface with your legacy systems, existing databases, and third-party APIs (Salesforce, SAP, Snowflake, etc.) to prevent data silos.',
+      "We build production-ready AI applications, agents, copilots, LLM applications, RAG systems, document intelligence tools, AI-powered SaaS products, internal AI tools, conversational interfaces and workflow automation systems. Our focus is always on solving real business problems — not building technology for its own sake.",
   },
   {
-    id: '3',
-    question: 'Can you build custom AI solutions?',
+    id: "3",
+    question: "Do you work with our existing data and systems?",
     answer:
-      'Absolutely. While we leverage powerful foundational models (like GPT-4 or Claude 3) and accelerators where appropriate, our primary focus is building bespoke AI applications, agents, and data pipelines uniquely tailored to your business operations and proprietary data.',
+      "Yes. A core part of our Data Engineering practice is integrating with your existing systems — whether that is a legacy database, Salesforce, SAP, a data warehouse or a third-party API. We build pipelines that connect, structure and transform your existing data into reliable, analytics-ready platforms without disrupting your operations.",
   },
   {
-    id: '4',
-    question: 'Do you offer ongoing support?',
+    id: "4",
+    question: "What is a Forward Deployed Engineer and how is it different from standard consulting?",
     answer:
-      'Yes. Deploying a model is only the beginning. Through our Managed AI Services and Dedicated Team models, we provide ongoing MLOps, model fine-tuning, infrastructure scaling, and continuous performance monitoring to ensure your systems remain accurate and reliable.',
+      "A Forward Deployed Engineer is not an external consultant who delivers a report. They work directly alongside your product, engineering and operations teams — inside your environment — to understand the business problem, build the solution and take it into production. They act as an extension of your team, not a vendor. This model is designed for organizations that need deep AI and engineering expertise without building an entire internal team.",
   },
   {
-    id: '5',
-    question: 'How do you ensure security?',
+    id: "5",
+    question: "How long does a typical project take?",
     answer:
-      'Enterprise security is non-negotiable. We deploy solutions within your secure cloud environments (VPCs), ensuring your data never leaves your infrastructure and is not used to train public models. We implement strict RBAC, data encryption (at rest and in transit), and follow compliance standards like SOC 2 and GDPR.',
+      "An AI Strategy Workshop takes 2–4 weeks. A proof of concept typically takes 4–8 weeks. A full production deployment — including data pipelines, AI systems and infrastructure — typically takes 3–6 months. Forward Deployed Engineers can be engaged on a rolling monthly basis. We work in agile sprints to ensure continuous value delivery throughout.",
   },
   {
-    id: '6',
-    question: 'Can you help with AI strategy?',
+    id: "6",
+    question: "How do you ensure our data stays secure?",
     answer:
-      'Yes. Many organizations know they need AI but aren’t sure where to start. Our consulting engagements often begin with an AI Readiness Assessment, helping leadership identify high-ROI use cases, assess data maturity, and build a phased technical roadmap before writing any code.',
+      "Enterprise security is non-negotiable. We deploy all solutions within your secure cloud environment so your data never leaves your infrastructure and is never used to train public models. We implement strict RBAC, data encryption at rest and in transit, and follow compliance standards including SOC 2 and GDPR. Every engagement includes a security architecture review.",
   },
 ];
 
@@ -54,12 +54,11 @@ const ServiceFaq = () => {
           </RevealAnimation>
           <div className="space-y-3">
             <RevealAnimation delay={0.2}>
-              <h2 id="faq-heading">Common questions</h2>
+              <h2 id="faq-heading">Questions we hear from technical and executive teams</h2>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
               <p className="mx-auto max-w-[600px] text-secondary/70 dark:text-accent/70">
-                Straightforward answers to the questions we hear most from technical and executive
-                stakeholders evaluating AI partners.
+                Straightforward answers about how RockScale works, what we build, and how we engage with clients across the AI implementation journey.
               </p>
             </RevealAnimation>
           </div>

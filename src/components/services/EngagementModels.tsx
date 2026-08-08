@@ -30,38 +30,40 @@ const EngagementModels = () => {
             <span className="badge badge-green">Engagement Models</span>
           </RevealAnimation>
           <RevealAnimation delay={0.2}>
-            <h2 id="engagement-models-heading">Flexible partnership models</h2>
+            <h2 id="engagement-models-heading">Flexible ways to work with RockScale</h2>
           </RevealAnimation>
           <RevealAnimation delay={0.3}>
             <p className="mx-auto max-w-[600px] text-secondary/70 dark:text-accent/70">
-              We offer multiple ways to engage with our engineering and consulting teams based on your project scope and maturity.
+              Whether you need strategic clarity, a complete software build, data infrastructure, or an embedded engineer — we have a model that fits.
             </p>
           </RevealAnimation>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Model 1 */}
+          {/* Model 1: Strategy Workshop */}
           <RevealAnimation delay={0.3}>
             <div className="bg-background-3 dark:bg-background-6 flex h-full flex-col rounded-[20px] p-8 xl:p-10 border border-stroke-1/10 dark:border-white/5">
               <div className="mb-8">
-                <p className="text-tagline-1 mb-2 font-medium text-secondary/60 dark:text-accent/60">Discovery phase</p>
+                <p className="text-tagline-1 mb-2 font-medium text-secondary/60 dark:text-accent/60">Starting point</p>
                 <h3 className="text-heading-5 mb-3 font-normal">AI Strategy Workshop</h3>
-                <p className="text-secondary/70 dark:text-accent/70 text-sm">Perfect for organizations starting their AI journey or seeking technical validation.</p>
+                <p className="text-secondary/70 dark:text-accent/70 text-sm">
+                  For organizations beginning their AI journey or seeking a clear direction before committing to a build.
+                </p>
               </div>
               <ul className="mb-10 flex-grow space-y-5">
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">2-4 week technical discovery</span></li>
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Feasibility assessment</span></li>
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Architecture blueprint</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">2–4 week AI readiness assessment</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">High-value use-case identification</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">AI architecture blueprint</span></li>
                 <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">ROI & cost modeling</span></li>
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Implementation roadmap</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Phased implementation roadmap</span></li>
               </ul>
               <Link href="/contact-us" className="btn btn-white dark:btn-transparent border border-stroke-1/20 dark:border-white/20 hover:btn-primary w-full first-letter:uppercase before:content-none">
-                Book Workshop
+                Build Your Roadmap
               </Link>
             </div>
           </RevealAnimation>
 
-          {/* Model 2 */}
+          {/* Model 2: Fixed Scope (Featured) */}
           <RevealAnimation delay={0.4}>
             <div className="bg-secondary relative flex h-full flex-col overflow-hidden rounded-[20px] p-8 xl:p-10 border border-secondary dark:border-background-5">
               <div className="absolute -top-28 -right-20 z-0 h-full w-full opacity-60">
@@ -70,38 +72,42 @@ const EngagementModels = () => {
               <div className="relative z-10 mb-8">
                 <p className="text-tagline-1 mb-2 font-medium text-ns-green">Most Popular</p>
                 <h3 className="text-heading-5 mb-3 font-normal text-white">Fixed Scope Project</h3>
-                <p className="text-white/70 text-sm">End-to-end delivery of a specific AI application, data pipeline, or infrastructure setup.</p>
+                <p className="text-white/70 text-sm">
+                  End-to-end delivery of a specific AI application, data pipeline, or analytics solution with clear milestones.
+                </p>
               </div>
               <ul className="relative z-10 mb-10 flex-grow space-y-5">
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm text-white">Dedicated delivery team</span></li>
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm text-white">Clear milestones & timelines</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm text-white">Dedicated AI engineering team</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm text-white">Clear milestones & delivery dates</span></li>
                 <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm text-white">Production-ready deployment</span></li>
                 <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm text-white">Post-launch optimization</span></li>
                 <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm text-white">Comprehensive documentation</span></li>
               </ul>
               <Link href="/contact-us" className="btn btn-primary w-full relative z-10 first-letter:uppercase before:content-none hover:bg-white hover:text-secondary">
-                Discuss Project
+                Discuss Your Project
               </Link>
             </div>
           </RevealAnimation>
 
-          {/* Model 3 */}
+          {/* Model 3: Forward Deployed */}
           <RevealAnimation delay={0.5}>
             <div className="bg-background-3 dark:bg-background-6 flex h-full flex-col rounded-[20px] p-8 xl:p-10 border border-stroke-1/10 dark:border-white/5">
               <div className="mb-8">
-                <p className="text-tagline-1 mb-2 font-medium text-secondary/60 dark:text-accent/60">Long-term partnership</p>
-                <h3 className="text-heading-5 mb-3 font-normal">Dedicated Team</h3>
-                <p className="text-secondary/70 dark:text-accent/70 text-sm">A retained engineering pod that integrates directly with your business for ongoing transformation.</p>
+                <p className="text-tagline-1 mb-2 font-medium text-secondary/60 dark:text-accent/60">Embedded partnership</p>
+                <h3 className="text-heading-5 mb-3 font-normal">Forward Deployed Engineer</h3>
+                <p className="text-secondary/70 dark:text-accent/70 text-sm">
+                  An experienced AI engineer embedded directly within your team — working inside your environment to solve hard problems and accelerate delivery.
+                </p>
               </div>
               <ul className="mb-10 flex-grow space-y-5">
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Full engineering pod (Data + AI + Cloud)</span></li>
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Agile continuous delivery</span></li>
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Seamless team integration</span></li>
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Flexible resource scaling</span></li>
-                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Managed MLOps & support</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Works directly with your CTO, product & engineering teams</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Turns PoCs into production systems</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Solves complex technical problems fast</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Builds internal AI capabilities</span></li>
+                <li className="flex items-start gap-3"><CheckIcon /><span className="text-sm">Flexible engagement duration</span></li>
               </ul>
               <Link href="/contact-us" className="btn btn-white dark:btn-transparent border border-stroke-1/20 dark:border-white/20 hover:btn-primary w-full first-letter:uppercase before:content-none">
-                Partner with us
+                Deploy an Engineer
               </Link>
             </div>
           </RevealAnimation>
