@@ -44,7 +44,8 @@ const Footer = ({ className }: { className?: string }) => {
                     action="#"
                     method="post"
                     className="flex gap-2"
-                    aria-label="newsletter-form">
+                    aria-label="newsletter-form"
+                    suppressHydrationWarning>
                     <input
                       type="email"
                       name="email"

@@ -49,14 +49,15 @@ const MobileMenu = ({ menuData }: { menuData: MobileMenuGroup[] }) => {
           </p>
           <ul className="space-y-2">
             {menuData.map((item) => {
-              const isSingleLink = item.submenu.length === 1;
+              const submenu = item.submenu || [];
+              const isSingleLink = submenu.length === 1;
 
               // Plain link — no accordion needed
-              if (isSingleLink) {
+              if (isSingleLink && submenu[0]) {
                 return (
                   <li key={item.id} className="space-y-2">
                     <Link
-                      href={item.submenu[0].href}
+                      href={submenu[0].href}
                       onClick={closeMenu}
                       className="text-tagline-1 text-secondary/60 dark:text-accent/60 hover:text-secondary dark:hover:text-accent flex w-full items-center p-2.5 font-normal transition-colors duration-200"
                     >
@@ -68,9 +69,9 @@ const MobileMenu = ({ menuData }: { menuData: MobileMenuGroup[] }) => {
 
               // Accordion — multiple submenu items
               return (
-                <MobileMenuItem key={item.id} id={item.id} title={item.title} hasSubmenu>
+                <MobileMenuItem key={item.id} id={item.id} title={item.title} hasSubmenu={submenu.length > 0}>
                   <ul>
-                    {item.submenu.map((subItem) => (
+                    {submenu.map((subItem) => (
                       <li key={subItem.id}>
                         <Link
                           href={subItem.href}

@@ -10,10 +10,9 @@ interface TabContentProps {
   children: React.ReactNode;
   index: number;
   className?: string;
-  display?: 'flex' | 'block' | 'grid' | 'inline-block';
 }
 
-const TabContent: React.FC<TabContentProps> = ({ children, index, className = '', display = 'flex' }) => {
+const TabContent: React.FC<TabContentProps> = ({ children, index, className = '' }) => {
   const { currentIndex, registerTabContent, config } = useTab();
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -74,8 +73,8 @@ const TabContent: React.FC<TabContentProps> = ({ children, index, className = ''
       role="tabpanel"
       aria-labelledby={`tab-${index}`}
       aria-hidden={!isActive}
-      className={cn('tab-content', className, !isActive && 'hidden')}
-      style={{ display: isActive ? display : 'none' }}>
+      className={cn('tab-content', className)}
+      style={{ display: 'none' }}>
       {children}
     </div>
   );

@@ -25,7 +25,7 @@ const menuData = [
   {
     title: 'AI TRAINING & WORKSHOPS',
     links: [
-      { label: 'AI Training for Teams', href: '/services#training' },
+      { label: 'AI Training for Teams', href: '/services/ai-training' },
       { label: 'Executive AI Training', href: '/services#executive' },
       { label: 'AI Roadmap & ROI Workshop', href: '/services#roi-workshop' },
       { label: 'GenDD Training Workshop', href: '/services#gendd-workshop' },

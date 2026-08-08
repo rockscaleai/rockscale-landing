@@ -33,12 +33,12 @@ const GlobalPresence = () => {
       baseColor: [0.8, 0.8, 0.8], // Silver/Grey globe so it doesn't blend perfectly into white
       markerColor: [126 / 255, 87 / 255, 253 / 255],
       glowColor: [0.9, 0.9, 0.9],
-      markers: locations.map((loc) => ({ location: [loc.lat, loc.lng], size: 0.08 })),
-      onRender: (state) => {
+      markers: locations.map((loc) => ({ location: [loc.lat, loc.lng] as [number, number], size: 0.08 })),
+      onRender: (state: any) => {
         state.phi = phi;
         phi += 0.003;
       },
-    });
+    } as any);
 
     const interval = setInterval(() => {
       setActiveLocation((prev) => (prev + 1) % locations.length);

@@ -9,10 +9,10 @@ import Team from '@/components/about/Team';
 import TechStack from '@/components/about/TechStack';
 import Values from '@/components/about/Values';
 import WhyChooseUs from '@/components/about/WhyChooseUs';
-import GlobalPresence from '@/components/about/GlobalPresence';
 import Faq from '@/components/home/Faq';
 import IndustrySolutions from '@/components/home/IndustrySolutions';
 import { defaultMetadata } from '@/utils/generateMetaData';
+import GlobalPresenceClient from '@/components/about/GlobalPresenceClient';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ const page = () => {
       <Team />
       <TechStack />
       <IndustrySolutions />
-      <GlobalPresence />
+      <GlobalPresenceClient />
       <Faq />
       <AboutCTA />
     </main>

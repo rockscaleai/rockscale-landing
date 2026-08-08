@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "Who is this training for?",
+    "answer": "Our training is designed for a wide range of professionals, including executives, managers, engineers, data scientists, and product managers. We have role-specific tracks to ensure the content is relevant to your team's needs."
+  },
+  {
+    "id": 2,
+    "question": "Do you offer custom training programs?",
+    "answer": "Yes, we specialize in creating custom training programs tailored to your company's specific goals, data, and technology stack. Contact us to discuss your needs."
+  },
+  {
+    "id": 3,
+    "question": "What are the prerequisites for the training?",
+    "answer": "Prerequisites vary depending on the track. Our executive and management courses have no technical prerequisites, while our engineering and data science tracks require some programming experience. We can help you assess your team's readiness."
+  },
+  {
+    "id": 4,
+    "question": "What is the format of the training?",
+    "answer": "We offer flexible training formats, including on-site workshops, live virtual classrooms, and self-paced online courses to fit your team's schedule and learning preferences."
+  },
+  {
+    "id": 5,
+    "question": "How do you measure the success of the training?",
+    "answer": "We focus on measurable outcomes, such as increased productivity, faster project delivery, and improved decision-making. We work with you to define success metrics and track progress against your goals."
+  },
+  {
+    "id": 6,
+    "question": "Can we use our own data and projects in the training?",
+    "answer": "Absolutely. We encourage the use of your own data and real-world projects to ensure the training is as relevant and impactful as possible."
+  }
+]

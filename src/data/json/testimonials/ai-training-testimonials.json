@@ -1,0 +1,31 @@
+
+[
+  {
+    "id": 1,
+    "quote": "The hands-on projects were incredibly valuable. We were able to apply what we learned to our own data and see the potential immediately.",
+    "name": "Marcus Chen",
+    "position": "Head of Analytics, Innovate Corp",
+    "avatar": "/images/ns-avatar-1.png"
+  },
+  {
+    "id": 2,
+    "quote": "RockScale's instructors are true experts. They broke down complex topics into understandable, actionable insights that our team could immediately use.",
+    "name": "Samantha Davies",
+    "position": "Director of Engineering, DataDriven Inc.",
+    "avatar": "/images/ns-avatar-2.png"
+  },
+  {
+    "id": 3,
+    "quote": "The customized curriculum was a game-changer. It felt like the training was built just for us, addressing our specific challenges and goals.",
+    "name": "David Kim",
+    "position": "Product Manager, TechForward",
+    "avatar": "/images/ns-avatar-3.png"
+  },
+  {
+    "id": 4,
+    "quote": "Our team's confidence in using AI has skyrocketed. We're now tackling projects we wouldn't have dreamed of before this training.",
+    "name": "Priya Sharma",
+    "position": "CEO, FutureWorks",
+    "avatar": "/images/ns-avatar-4.png"
+  }
+]

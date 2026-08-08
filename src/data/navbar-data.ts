@@ -20,7 +20,7 @@ export const mobileMenuData: MobileMenuGroup[] = [
       { id: 'wwd-gendd', label: 'Generative Driven Development™', href: '/services#gendd' },
       { id: 'wwd-assessment', label: 'AI Data Readiness & Governance', href: '/services#assessment' },
       { id: 'wwd-accelerator', label: 'AI Solution Accelerator', href: '/services#accelerator' },
-      { id: 'wwd-training', label: 'AI Training for Teams', href: '/services#training' },
+      { id: 'wwd-training', label: 'AI Training for Teams', href: '/services/ai-training' },
       { id: 'wwd-executive', label: 'Executive AI Training', href: '/services#executive' },
       { id: 'wwd-roi', label: 'AI Roadmap & ROI Workshop', href: '/services#roi-workshop' },
     ],
