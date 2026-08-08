@@ -420,3 +420,12 @@ Common Styles all over the sites
 .slider-handle.no-transition .handle-circle {
   transition: none !important;
 }
+
+/* ========== GLASSMORPHISM ========== */
+.glass-card {
+  @apply bg-white/20 dark:bg-background-8/30 backdrop-blur-2xl border border-white/30 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+}
+
+.glass-panel {
+  @apply bg-white/10 dark:bg-background-8/20 backdrop-blur-xl border border-white/20 dark:border-white/5;
+}

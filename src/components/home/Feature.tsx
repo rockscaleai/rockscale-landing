@@ -1,6 +1,6 @@
 'use client';
 import feature1 from '@public/images/ns-img-175.png';
-import feature2 from '@public/images/ns-img-176.png';
+import feature2 from '@public/images/scale-operations-ai.jpg';
 import feature3 from '@public/images/ns-img-177.png';
 import feature4 from '@public/images/ns-img-178.png';
 import Image from 'next/image';
@@ -47,14 +47,14 @@ const Feature = () => {
           <RevealAnimation delay={0.6}>
             <div className="bg-background-3 col-span-12 space-y-6 rounded-[20px] p-8 md:col-span-6 lg:col-span-4">
               <div className="space-y-2">
-                <h5 className="max-sm:text-heading-6">Disconnected Systems.</h5>
-                <p className="max-w-[220px]">Operational systems are disconnected and work in isolation, limiting efficiency.</p>
+                <h5 className="max-sm:text-heading-6">AI Strategy Deficit.</h5>
+                <p className="max-w-[280px]">Organizations struggle to move AI from pilot to production without clear roadmaps or technical expertise.</p>
               </div>
-              <figure className="w-full">
+              <figure className="w-full h-[220px] overflow-hidden rounded-2xl">
                 <Image
                   src={feature2}
-                  alt="Disconnected operational systems problem"
-                  className="w-full rounded-2xl object-cover"
+                  alt="AI Strategy Deficit problem"
+                  className="h-full w-full object-cover"
                 />
               </figure>
             </div>

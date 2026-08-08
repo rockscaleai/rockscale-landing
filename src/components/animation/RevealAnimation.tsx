@@ -155,12 +155,21 @@ const RevealAnimation = ({
     return children as any;
   }
 
-  // Clone the child element and add the ref, className, and data-ns-animate attribute
-  return cloneElement(children, {
+  // Combine classNames safely
+  const mergedClassName = cn(children?.props?.className, className);
+
+  // Build props object, omitting className if it's empty to prevent hydration mismatch
+  const cloneProps: any = {
     ref: elementRef,
-    className: cn(children?.props?.className, className),
-    'data-ns-animate': true,
-  });
+    suppressHydrationWarning: true,
+  };
+
+  if (mergedClassName) {
+    cloneProps.className = mergedClassName;
+  }
+
+  // Clone the child element and add the ref and conditionally className
+  return cloneElement(children, cloneProps);
 };
 
 export default RevealAnimation;

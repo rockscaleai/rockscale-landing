@@ -53,9 +53,9 @@ const Navbar = () => {
               <Link href="/" className="inline-flex items-center">
                 <span className="sr-only">Home</span>
                 <figure className="hidden lg:block">
-                  <Image src={rockscaleLogo} alt="RockScale" className="h-auto w-[110px]" priority />
+                  <Image src={rockscaleLogo} alt="RockScale" className="h-auto w-[72px]" priority />
                 </figure>
-                <figure className="block max-w-[28px] lg:hidden">
+                <figure className="block max-w-[22px] lg:hidden">
                   <Image src={rockscaleLogo} alt="RockScale" className="h-auto w-full" priority />
                 </figure>
               </Link>

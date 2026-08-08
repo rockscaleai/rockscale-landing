@@ -9,11 +9,9 @@ const AboutHero = () => {
     <section
       className="relative z-0 overflow-hidden bg-[url('/images/ns-img-169.png')] bg-cover bg-top bg-no-repeat pt-36 pb-20 md:pt-44 md:pb-24 lg:pt-52 lg:pb-[120px] xl:pt-[220px] xl:pb-[140px]"
       aria-labelledby="about-hero-heading">
-      {/* Gradient orb */}
+      {/* Brand Color Orb */}
       <RevealAnimation delay={0.1} direction="right" offset={200}>
-        <figure className="pointer-events-none absolute top-[-10%] right-[-15%] -z-10 h-[700px] w-[700px] select-none opacity-60">
-          <Image src={gradient12} alt="" aria-hidden="true" className="size-full object-cover" />
-        </figure>
+        <div className="pointer-events-none absolute top-[-10%] right-[-15%] -z-10 h-[600px] w-[600px] select-none rounded-full bg-[#7E57FD]/20 blur-[120px]" />
       </RevealAnimation>
 
       <div className="main-container relative z-10">
