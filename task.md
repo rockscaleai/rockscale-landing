@@ -1,47 +1,49 @@
-Task: Build Forward Deployed Engineer Service Page
+Task: Build AI Strategy & Roadmap Page
 
-You are a Senior UX Designer, Product Designer, Brand Strategist and Frontend Engineer.
+Build a complete AI Strategy & Roadmap service page for RockScale.
 
-Build a complete Forward Deployed Engineer service page for RockScale.
+RockScale is an AI solutions, data engineering and cloud infrastructure consulting company helping startups, SMEs and mid-market companies identify, build and deploy practical AI solutions.
 
-add the route to Forward Deployed Engineer in the dropdown menu under 'what we do'
+This page should position RockScale as a practical AI strategy and implementation partner, helping organizations move from AI uncertainty and experimentation to a clear, prioritized and executable AI roadmap.
 
-The page should position RockScale’s Forward Deployed Engineer offering as a premium engineering engagement model for companies that need experienced AI, software, data and cloud engineers working directly alongside their internal teams.
+The page should NOT feel like a traditional management consulting page filled with abstract strategy frameworks and presentation decks.
 
-This should NOT feel like a generic developer outsourcing or staff augmentation page.
+The core idea is:
 
-The core message is:
-
-Put experienced engineers directly inside your team and move from problem to production faster.
+Know where AI creates value. Know what to build. Know how to get it into production.
 
 ⸻
 
-CRITICAL DESIGN REQUIREMENT
+IMPORTANT DESIGN REQUIREMENT
 
-The existing RockScale website is built using a Next.js template containing 40+ pre-built pages and reusable components.
+The RockScale website is built using an existing Next.js template containing 40+ pre-built pages and reusable components.
 
 Before implementing this page:
 
 * Explore the entire template.
 * Review all existing pages.
 * Review all reusable components.
-* Identify components suitable for:
+* Identify components that can be reused for:
     * Services
-    * Case studies
-    * Process/timeline
+    * Strategy
     * Features
+    * Process/timeline
+    * Case studies
     * Statistics
     * Testimonials
     * FAQs
     * CTAs
-    * Technology showcases
-* Reuse existing components wherever possible.
-* Combine existing components when appropriate.
-* Modify existing components only when necessary.
+    * Technology sections
+    * Cards
+    * Diagrams
 
-DO NOT introduce a completely new design language.
+Reuse existing components wherever possible.
 
-Maintain the existing RockScale visual identity:
+DO NOT create a completely new visual design.
+
+The page must feel like a natural part of the existing RockScale website.
+
+Maintain the existing:
 
 * Typography
 * Colors
@@ -50,779 +52,961 @@ Maintain the existing RockScale visual identity:
 * Cards
 * Icons
 * Animations
-* Border radius
+* Borders
+* Grid system
 * Responsive behavior
 
-The page must feel like a natural part of the existing RockScale website.
+If an existing component needs improvement, modify it while maintaining the existing RockScale design language.
 
 ⸻
 
-ABOUT ROCKSCALE
+COMPONENT NAMING
 
-RockScale is an AI Solutions, Data Engineering and Cloud Infrastructure consulting company.
+Keep all newly created component names short and clean.
 
-Our core services are:
+DO NOT create long names such as:
+
+AITransformationStrategyAndImplementationRoadmapSection
+
+Use concise names such as:
+
+* StrategyHero
+* StrategyIntro
+* StrategyGrid
+* StrategyFlow
+* StrategyProcess
+* StrategyMap
+* StrategyCases
+* StrategyFAQ
+* StrategyCTA
+
+Keep component names around 1–3 words.
+
+Reuse existing components rather than creating unnecessary new ones.
+
+⸻
+
+PAGE ROUTE
+
+Create the page at:
+
+/services/ai-strategy-roadmap
+
+⸻
+
+NAVIGATION UPDATE
+
+Add AI Strategy & Roadmap to the existing “What We Do” dropdown menu.
+
+The “What We Do” dropdown should contain RockScale’s core services using the existing navigation architecture.
+
+Add:
+
+AI Strategy & Roadmap
+
+with the route:
+
+/services/ai-strategy-roadmap
+
+Ensure:
+
+* The item is clickable.
+* The route works.
+* The active state works if supported.
+* Desktop navigation works.
+* Mobile navigation works.
+* Existing navigation items remain intact.
+* Do not create a new dropdown design.
+
+⸻
+
+ROCKSCALE CORE SERVICES
+
+The page should understand the relationship between RockScale’s services:
 
 1. AI Strategy & Roadmap
 2. AI-Powered Software Development
 3. Data Engineering & Analytics
 4. Forward Deployed Engineer
 
-The Forward Deployed Engineer offering allows RockScale engineers to work directly inside a client’s organization to solve complex technical problems, build production systems and accelerate AI adoption.
+AI Strategy & Roadmap is the starting point that can lead into RockScale’s implementation capabilities.
 
-⸻
+The strategic journey should communicate:
 
-PRIMARY POSITIONING
-
-Do NOT position FDE as:
-
-* Freelancer hiring
-* Developer outsourcing
-* Generic staff augmentation
-* Cheap engineering capacity
-* Temporary contractors
-
-Instead position it as:
-
-Embedded engineering expertise.
-
-The RockScale engineer becomes an extension of the client’s team.
-
-They work directly with:
-
-* CTOs
-* Engineering leaders
-* Product teams
-* Data teams
-* AI teams
-* Operations teams
-
-They understand the business problem, work within the client’s technical environment, build the solution and help move it into production.
+Discover → Prioritize → Plan → Build → Deploy → Scale
 
 ⸻
 
 PAGE OBJECTIVES
 
-The page should clearly answer:
+The visitor should understand:
 
-What is a Forward Deployed Engineer?
-
-Why would a company need one?
-
-What can a RockScale FDE actually do?
-
-How is this different from hiring developers?
-
-How does the engagement work?
-
-When should a company use an FDE?
-
-What outcomes can clients expect?
-
-How can a company get started?
+* Why an AI strategy is necessary.
+* Where AI can realistically create business value.
+* Which AI opportunities should be prioritized.
+* What data and infrastructure are required.
+* Which solutions should be built internally or bought.
+* How AI initiatives should be sequenced.
+* How to move from strategy to production.
+* How RockScale can continue into implementation.
 
 ⸻
 
-PAGE STRUCTURE
-
 1. HERO
 
-Create a premium hero section using an existing template Hero component.
+Use the existing Hero component.
 
-Headline direction:
+Headline:
 
-Engineering Expertise, Embedded in Your Team
-
-Alternative:
-
-Put AI Engineering Directly Where the Problem Is
+Turn AI Opportunities Into a Clear Roadmap
 
 Supporting copy:
 
-RockScale’s Forward Deployed Engineers work alongside your product, engineering and operations teams to solve complex technical problems, build AI-powered systems and accelerate the path from idea to production.
+RockScale helps businesses identify high-value AI opportunities, prioritize what matters and create a practical roadmap for turning AI ideas into production systems.
 
 Primary CTA:
 
-Deploy an Engineer
+Build Your AI Roadmap
 
 Secondary CTA:
 
 Talk to Our Team
 
-Include a strong existing visual or animation.
+The visual should communicate strategy, prioritization and execution.
 
-Avoid cliché AI imagery.
+Avoid generic AI brain/robot imagery.
+
+Use existing template visuals, cards, diagrams or animations.
 
 ⸻
 
-2. WHAT IS A FORWARD DEPLOYED ENGINEER?
+2. THE PROBLEM
 
-This section is extremely important.
-
-Explain the concept in simple business language.
+Create an introductory section.
 
 Headline:
 
-What Is a Forward Deployed Engineer?
+AI Is Easy to Experiment With. Knowing What to Build Is Hard.
 
-Explain that a Forward Deployed Engineer is an experienced technical specialist who works directly within a client’s environment to solve real problems.
+Explain the challenges organizations face:
 
-They don’t simply receive tickets.
+* Too many AI tools
+* Too many possible use cases
+* Unclear ROI
+* Teams experimenting without direction
+* AI projects disconnected from business goals
+* Poor-quality or inaccessible data
+* Security and governance concerns
+* Difficulty moving from PoC to production
+* Lack of internal AI expertise
 
-They:
+Explain that RockScale helps turn this uncertainty into a structured plan.
 
-Understand the problem
-
-Work with stakeholders
-
-Explore the existing systems
-
-Design the solution
-
-Build the software
-
-Integrate with existing infrastructure
-
-Deploy to production
-
-Measure the outcome
-
-Iterate
-
-Use an existing split-content or storytelling component.
+Use an existing split-content component.
 
 ⸻
 
-3. FDE VS TRADITIONAL STAFF AUGMENTATION
+3. WHAT AI STRATEGY MEANS TO ROCKSCALE
 
-Create a comparison section.
+Create a strong positioning section.
 
 Headline:
 
-More Than Extra Engineering Capacity
+Strategy That Leads Somewhere
 
-Compare:
+Explain that RockScale’s strategy work is designed to produce practical decisions and an executable roadmap.
 
-Traditional Staff Augmentation
+Not just:
 
-Receives predefined tasks
+Reports
 
-Works within a narrow technical scope
+Workshops
 
-Focuses primarily on implementation
+Presentations
 
-Usually operates at arm’s length
+Instead, the outcome should be:
 
-Success is measured by output
+Prioritized use cases
 
-RockScale Forward Deployed Engineer
+Technical direction
 
-Works directly with stakeholders
+Architecture recommendations
 
-Understands the underlying business problem
+Data requirements
 
-Owns technical outcomes
+Implementation plan
 
-Works across product, data and infrastructure
+Investment priorities
 
-Helps move solutions into production
+Execution roadmap
 
-Success is measured by business impact
-
-Use an existing comparison/table component from the template.
-
-Make the distinction visually obvious.
+Use an existing feature or comparison component.
 
 ⸻
 
-4. THE ROCKSCALE FDE MODEL
+4. AI READINESS ASSESSMENT
 
-Create a strong visual section showing:
-
-Client Problem
-
-↓
-
-RockScale Engineer Embedded
-
-↓
-
-Understand
-
-↓
-
-Design
-
-↓
-
-Build
-
-↓
-
-Deploy
-
-↓
-
-Measure
-
-↓
-
-Scale
-
-Use an existing timeline/process component.
-
-⸻
-
-5. WHAT OUR ENGINEERS CAN DO
-
-Create a capability grid.
-
-Include:
-
-AI Engineering
-
-Build production AI applications, LLM systems, AI agents and intelligent workflows.
-
-Software Engineering
-
-Build and integrate production-grade web applications, APIs and internal platforms.
-
-Data Engineering
-
-Build data pipelines, data platforms, analytics infrastructure and AI-ready data systems.
-
-Cloud & Infrastructure
-
-Design and implement scalable cloud infrastructure, deployment pipelines and platform architecture.
-
-AI Integration
-
-Connect AI systems to existing enterprise applications, databases, APIs and workflows.
-
-Technical Architecture
-
-Evaluate systems, design architecture and make implementation decisions.
-
-Rapid Prototyping
-
-Turn ideas into working prototypes quickly and validate technical approaches.
-
-Productionization
-
-Move AI prototypes and proof-of-concepts into reliable production systems.
-
-⸻
-
-6. WHEN YOU NEED AN FDE
-
-Create a section around common situations.
+Create a dedicated section.
 
 Headline:
 
-When Should You Bring in a Forward Deployed Engineer?
+Understand Where You Stand Before You Build
 
-Use cards for scenarios such as:
+Assess the organization’s readiness across:
 
-You Have an AI Prototype But Can’t Get It Into Production
+Business
 
-RockScale engineers help turn promising prototypes into reliable production systems.
+Goals
 
-Your Engineering Team Is Stretched
+AI opportunities
 
-Add specialized AI, data or cloud expertise without waiting months to hire internally.
+Expected ROI
 
-You Need to Integrate AI Into Existing Systems
+Data
 
-We work within your existing architecture and connect AI to the systems your business already depends on.
+Availability
 
-You Have a Complex Technical Problem
+Quality
 
-Bring in experienced engineers to investigate, design and implement the solution.
+Accessibility
 
-You Need to Move Faster
+Governance
 
-Embed an engineer directly with your team to remove technical bottlenecks.
+Technology
 
-You’re Building an AI Product
+Architecture
 
-Add experienced AI engineering capability during critical stages of development.
+Infrastructure
+
+Existing software
+
+Integration capability
+
+People
+
+Technical skills
+
+AI literacy
+
+Team capacity
+
+Governance
+
+Security
+
+Privacy
+
+Risk
+
+Responsible AI
+
+Use an existing grid or assessment-style component.
 
 ⸻
 
-7. EMBEDDED, NOT OUTSOURCED
+5. AI OPPORTUNITY DISCOVERY
+
+Create a section focused on identifying valuable use cases.
+
+Headline:
+
+Find the AI Opportunities Worth Pursuing
+
+Explain that RockScale helps identify opportunities across:
+
+* Customer experience
+* Operations
+* Sales
+* Marketing
+* Finance
+* HR
+* Product
+* Data
+* Internal knowledge
+* Software development
+
+Each opportunity should be evaluated based on factors such as:
+
+Business value
+
+Technical feasibility
+
+Data availability
+
+Implementation complexity
+
+Risk
+
+Time to value
+
+Use an existing card/grid component.
+
+⸻
+
+6. PRIORITIZATION FRAMEWORK
 
 Create a visually strong section.
 
 Headline:
 
-Your Team. Your Systems. Our Engineering Expertise.
+Not Every AI Idea Deserves to Be Built
 
-Explain how RockScale engineers operate inside the client’s existing environment.
+Create a simple prioritization matrix.
 
-They collaborate through the client’s:
+Axes:
 
-* Git repositories
-* Project management tools
-* Communication channels
-* Cloud environments
-* Development workflows
-* Engineering processes
+Business Value
 
-The goal is seamless collaboration.
+Low → High
 
-The engineer should feel like an extension of the client’s team.
+Implementation Complexity
 
-Use an existing visual/feature component.
+Low → High
 
-⸻
+Create quadrants such as:
 
-8. OUR ENGINEERING CAPABILITIES
+Quick Wins
 
-Create a technology/capability section.
+High value / Low complexity
 
-Group capabilities into:
+Build first.
 
-AI
+Strategic Bets
 
-LLMs
+High value / High complexity
 
-RAG
+Plan carefully.
 
-AI Agents
+Experiments
 
-Model Integration
+Low value / Low complexity
 
-AI Evaluation
+Test selectively.
 
-AI Workflows
+Avoid
 
-Software
+Low value / High complexity
 
-TypeScript
+Do not prioritize.
 
-Python
+Use existing visual components to create the matrix.
 
-Next.js
-
-React
-
-FastAPI
-
-APIs
-
-Microservices
-
-Data
-
-PostgreSQL
-
-Data Pipelines
-
-ETL / ELT
-
-Data Warehouses
-
-Analytics
-
-Data Platforms
-
-Cloud
-
-AWS
-
-Azure
-
-Google Cloud
-
-Docker
-
-Kubernetes
-
-CI/CD
-
-Infrastructure Automation
-
-Use the existing technology logo components where appropriate.
-
-Do not let the technology list dominate the page.
-
-The service is about outcomes, not a list of tools.
+Do not make the visual overly complicated.
 
 ⸻
 
-9. EXAMPLES OF FDE ENGAGEMENTS
+7. AI USE CASE EXAMPLES
 
-Create a project/use-case section.
+Create a use-case section.
 
 Examples:
 
-AI Product Development
+Customer Support Copilot
 
-Work alongside a product team to design and build a new AI-powered product.
+Assist support teams with knowledge retrieval and response generation.
 
-AI Platform Integration
+Document Intelligence
 
-Integrate LLMs and AI capabilities into an existing enterprise platform.
+Extract and analyze information from contracts, invoices and business documents.
 
-Data Platform Modernization
+AI Sales Assistant
 
-Modernize fragmented data infrastructure and create an AI-ready data foundation.
+Automate research, summarize customer information and support sales workflows.
 
-AI Agent Deployment
+Knowledge Assistant
 
-Build and deploy agents capable of executing multi-step business workflows.
+Give employees natural-language access to internal company knowledge.
 
-Legacy System Modernization
+AI Workflow Agent
 
-Connect modern AI and software capabilities to existing enterprise systems.
+Automate multi-step operational processes.
 
-Internal AI Platform
+Predictive Analytics
 
-Build internal infrastructure that enables an organization to safely adopt AI at scale.
+Use business data to forecast trends and identify opportunities.
 
-Clearly communicate that these are examples of engagement types and do not represent client projects unless supported by actual case studies.
-
-⸻
-
-10. ENGAGEMENT MODELS
-
-Create a section showing different ways clients can engage RockScale.
-
-Short-Term Technical Sprint
-
-For a specific technical challenge or proof-of-concept.
-
-Product Build
-
-Embed an engineer or engineering team during a critical product development phase.
-
-AI Productionization
-
-Help move an existing AI prototype into production.
-
-Long-Term Embedded Engineer
-
-Provide ongoing engineering capability integrated into the client’s team.
-
-Specialized Technical Engagement
-
-Bring in focused expertise for AI, data, cloud or architecture challenges.
-
-Do not show fixed pricing unless actual pricing has been defined.
+Make clear that these are examples, not guaranteed solutions for every business.
 
 ⸻
 
-11. HOW WE WORK WITH YOUR TEAM
+8. AI ARCHITECTURE STRATEGY
 
-Create a collaboration section.
+Create a technical but accessible section.
 
-Show the relationship between:
+Headline:
 
-Client Leadership
+Design the Architecture Before You Build
+
+Explain that RockScale evaluates:
+
+Models
+
+Data
+
+Applications
+
+APIs
+
+Agents
+
+Cloud infrastructure
+
+Security
+
+Observability
+
+Integrations
+
+Evaluation
+
+Show a simplified architecture:
+
+Business Problem
 
 ↓
 
-Client Product / Engineering Team
+AI Application
 
 ↓
 
-RockScale Forward Deployed Engineer
+AI Orchestration
 
 ↓
 
-RockScale Specialist Network
+Models
 
-Explain that the FDE can draw on RockScale’s wider AI, data and cloud engineering capabilities when required.
+↓
 
-This should communicate that the client is not simply getting one isolated developer.
+Business Data
 
-⸻
+↓
 
-12. DELIVERY PROCESS
+Enterprise Systems
 
-Create a detailed process section.
+↓
 
-01 — Understand
+Cloud Infrastructure
 
-Understand the business objective and technical environment.
-
-02 — Diagnose
-
-Identify constraints, bottlenecks and opportunities.
-
-03 — Design
-
-Define the architecture and implementation strategy.
-
-04 — Build
-
-Develop the solution collaboratively with the client’s team.
-
-05 — Deploy
-
-Move the solution into the client’s production environment.
-
-06 — Optimize
-
-Monitor, improve and scale the system.
-
-Reuse an existing process/timeline component.
+Use existing diagram/visual components.
 
 ⸻
 
-13. OUTCOMES
+9. DATA READINESS
 
-Create a large outcome-focused section.
+Create a section connecting strategy to RockScale’s Data Engineering service.
 
-Focus on:
+Headline:
 
-Faster AI implementation
+Your AI Strategy Is Only as Strong as Your Data
 
-Shorter path from PoC to production
+Explain that RockScale assesses:
 
-Reduced engineering bottlenecks
+Data availability
 
-Access to specialized expertise
+Data quality
 
-Better technical architecture
+Data accessibility
 
-Production-ready systems
+Data architecture
 
-Faster product development
+Data governance
 
-Stronger internal engineering capability
+Data pipelines
 
-Do not fabricate percentages, revenue figures or performance claims.
+Knowledge sources
+
+Integration requirements
+
+If gaps exist, the roadmap should include the necessary data engineering work.
+
+Link to:
+
+Data Engineering & Analytics
+
+Route:
+
+/services/data-engineering-analytics
 
 ⸻
 
-14. WHY ROCKSCALE
+10. BUILD VS BUY
+
+Create a strategy decision section.
+
+Headline:
+
+Build, Buy or Integrate?
+
+Explain how RockScale helps organizations determine when to:
+
+Build
+
+Create custom software when the problem requires differentiated capabilities.
+
+Buy
+
+Use an existing AI product when it already solves the problem effectively.
+
+Integrate
+
+Connect existing AI tools with the organization’s systems and workflows.
+
+Customize
+
+Extend an existing solution when some customization is required.
+
+The goal is to avoid building AI simply because it is technically possible.
+
+⸻
+
+11. MODEL & TECHNOLOGY STRATEGY
+
+Create a section explaining technology selection.
+
+Headline:
+
+Choose Technology Based on the Problem
+
+Evaluate:
+
+* Model capability
+* Cost
+* Latency
+* Reliability
+* Privacy
+* Context requirements
+* Tool use
+* Hosting requirements
+* Vendor dependence
+* Scalability
+
+Show examples of the ecosystem using existing logo components:
+
+OpenAI
+
+Anthropic
+
+Google Gemini
+
+Mistral
+
+Open-source models
+
+Cloud platforms
+
+AI frameworks
+
+Do not imply that RockScale exclusively recommends one provider.
+
+⸻
+
+12. ROADMAP
+
+Create one of the most important sections.
+
+Headline:
+
+From AI Ideas to an Executable Roadmap
+
+Show a visual roadmap.
+
+Phase 1 — Discover
+
+Identify business opportunities and assess AI readiness.
+
+↓
+
+Phase 2 — Prioritize
+
+Rank opportunities by value, feasibility, risk and effort.
+
+↓
+
+Phase 3 — Validate
+
+Build focused experiments or proof-of-concepts where necessary.
+
+↓
+
+Phase 4 — Build
+
+Develop high-value production solutions.
+
+↓
+
+Phase 5 — Deploy
+
+Integrate into real business workflows.
+
+↓
+
+Phase 6 — Scale
+
+Expand successful AI initiatives across the organization.
+
+Use an existing timeline/process component.
+
+⸻
+
+13. STRATEGY DELIVERABLES
+
+Create a clean deliverables section.
+
+Headline:
+
+What You Walk Away With
+
+Include:
+
+AI Readiness Assessment
+
+AI Opportunity Map
+
+Prioritized Use Cases
+
+AI Architecture Recommendations
+
+Data Readiness Assessment
+
+Technology Recommendations
+
+Build vs Buy Analysis
+
+AI Investment Priorities
+
+Implementation Roadmap
+
+Governance Considerations
+
+90-Day Action Plan
+
+Avoid making these sound like generic consulting documents.
+
+Explain that each deliverable is designed to support actual implementation decisions.
+
+⸻
+
+14. 90-DAY AI PLAN
+
+Create a visually strong section.
+
+Headline:
+
+Know What to Do in the Next 90 Days
+
+Show a practical example:
+
+Days 1–30
+
+Assess
+
+Discover
+
+Prioritize
+
+Days 31–60
+
+Validate
+
+Prototype
+
+Prepare data and architecture
+
+Days 61–90
+
+Build
+
+Deploy
+
+Measure
+
+This section should make the strategy feel actionable rather than theoretical.
+
+⸻
+
+15. FROM STRATEGY TO BUILD
+
+Create a transition section connecting AI Strategy to RockScale’s implementation services.
+
+Headline:
+
+Strategy Shouldn’t End With a Slide Deck
+
+Explain:
+
+Once priorities are established, RockScale can continue into implementation.
+
+Show:
+
+Strategy
+
+↓
+
+Data Engineering
+
+↓
+
+AI Software Development
+
+↓
+
+Forward Deployed Engineering
+
+↓
+
+Scale
+
+Link each stage to the relevant RockScale service page.
+
+Use the existing service-card components.
+
+⸻
+
+16. WHY ROCKSCALE
 
 Create a differentiator section.
 
-AI Engineering Expertise
+Engineering-Led Strategy
 
-We understand modern AI systems beyond basic API integrations.
+Our strategy is informed by people who actually build AI systems.
 
-Full-Stack Capability
+Practical
 
-AI, software, data and cloud engineering under one roof.
+We focus on decisions that can be implemented.
 
-Business Context
+Technology-Agnostic
 
-We focus on the problem behind the technical requirement.
+We recommend technology based on the problem.
 
-Production Focus
+Data-Aware
 
-We don’t stop at prototypes.
+We consider the data foundation required for AI from the beginning.
 
-Embedded Collaboration
+Production-Focused
 
-Our engineers work directly with your team.
+We think beyond prototypes and experiments.
 
-Flexible Engagement
+End-to-End
 
-Scale engineering expertise based on the problem and stage of the project.
+Strategy can continue directly into data, software and engineering implementation.
 
 ⸻
 
-15. CASE STUDIES / PROOF
+17. CASE STUDIES
 
 Use the existing case study component.
 
-Show relevant projects where available.
+Show relevant RockScale work where available.
 
 Prioritize examples involving:
 
 AI implementation
 
-Data engineering
+AI products
 
-Cloud infrastructure
+Data platforms
 
-AI applications
+AI automation
 
-Productionization
+AI infrastructure
 
-If real client case studies are not available, use clearly labelled:
+If real client case studies are not available:
 
-* Internal Product
-* Reference Implementation
-* Concept Solution
-* Technical Showcase
+Use Qorebit AI or clearly labelled internal/reference projects.
 
-Do NOT fabricate clients or results.
+Do NOT fabricate:
+
+* Clients
+* Testimonials
+* Revenue
+* ROI
+* Statistics
+* Case study results
 
 ⸻
 
-16. FAQ
+18. FAQ
 
 Create an enterprise-focused FAQ.
 
 Include:
 
-How is an FDE different from a consultant?
+What is an AI strategy?
 
-Is the engineer part of our team?
+Why does a business need an AI roadmap?
 
-How long does an engagement typically last?
+How do you identify AI use cases?
 
-Can an FDE work with our existing engineering team?
+How do you prioritize AI opportunities?
 
-Can you work inside our cloud environment?
+Can you assess our AI readiness?
 
-Can you work with our existing technology stack?
+Do you help with AI architecture?
 
-Do you provide AI engineers specifically?
+Can you evaluate our existing AI projects?
 
-Can an engagement start with a short technical sprint?
+How do you determine whether we should build or buy?
 
-What happens after the FDE engagement ends?
+Can RockScale help us implement the roadmap?
 
-Can RockScale provide additional specialists?
+How long does an AI strategy engagement take?
+
+What do we receive at the end of the engagement?
 
 Use the existing FAQ component.
 
 ⸻
 
-17. FINAL CTA
+19. FINAL CTA
 
-Create a strong premium CTA.
+Create a premium final CTA.
 
 Headline:
 
-Have a Complex Problem? Put an Engineer on It.
+Know Where AI Can Take Your Business
 
 Supporting copy:
 
-Bring experienced AI, software, data and cloud engineering expertise directly into your team and move from problem to production faster.
+Let’s identify the opportunities worth pursuing, build a practical roadmap and create a clear path from AI strategy to production.
 
 Primary CTA:
 
-Deploy a RockScale Engineer
+Build Your AI Roadmap
 
 Secondary CTA:
 
-Talk to Our Team
+Talk to RockScale
 
 Reuse the existing premium CTA component.
 
 ⸻
 
-NAVIGATION
-
-Ensure the Forward Deployed Engineer service is accessible from:
-
-Services → Forward Deployed Engineer
-
-URL:
-
-/services/forward-deployed-engineer
-
-Do not create a new navigation style.
-
-Use the existing Services dropdown architecture.
-
-⸻
-
 SEO
-
-Update page metadata.
 
 Suggested title:
 
-Forward Deployed Engineer | RockScale
+AI Strategy & Roadmap | RockScale
 
-Suggested description:
+Suggested meta description:
 
-Embed experienced AI, software, data and cloud engineers directly with your team to solve complex technical problems and move from idea to production faster.
+RockScale helps businesses identify high-value AI opportunities, assess readiness and build practical AI roadmaps that move from strategy to production.
 
-Use appropriate semantic headings.
+Use proper semantic headings.
 
 ⸻
 
-COPYWRITING GUIDELINES
+COPY STYLE
 
 The tone should be:
 
-Technical
+Clear
+
+Strategic
+
+Technical when useful
 
 Confident
 
-Clear
-
-Direct
-
-Enterprise-focused
-
 Practical
 
-Avoid:
+Business-focused
 
-Generic outsourcing language
+Avoid generic consulting language such as:
 
-“Scale your team instantly”
+“Unlock the transformative power of AI”
 
-“Access top developers”
+“Revolutionize your organization”
 
-“World-class developers at a fraction of the cost”
+“Navigate the AI landscape”
 
-“Cutting-edge technology”
+“Cutting-edge AI strategy”
 
-“Revolutionary”
+“Game-changing transformation”
 
-“Game-changing”
+Instead focus on:
 
-Do not make RockScale sound like a staffing agency.
+What should we build?
 
-The message should consistently communicate:
+Why should we build it?
 
-Expertise + Ownership + Embedded Collaboration + Business Outcomes
+What will it cost?
+
+What data do we need?
+
+What technology should we use?
+
+What should we prioritize?
+
+What should we do next?
 
 ⸻
 
-DESIGN GUIDELINES
+DESIGN
 
 Use the existing RockScale visual system.
 
-Maintain:
+Prioritize:
 
-* Large typography
-* Generous whitespace
-* Premium cards
-* Subtle animations
-* Strong visual hierarchy
-* Existing color palette
-* Existing iconography
-* Existing components
+* Strategy diagrams
+* Roadmaps
+* Matrices
+* Cards
+* Timelines
+* Data flows
+* Existing animations
+* Existing typography
+* Existing illustrations
 
-Where possible, use visual storytelling to explain the FDE concept.
+Animations should communicate:
 
-For example:
+Prioritization
 
-Business Problem → Embedded Engineer → Collaboration → Production System
+Decision-making
 
-Avoid generic stock photos of developers sitting at computers.
+Roadmap progression
 
-Prefer diagrams, architecture visuals, existing illustrations and UI components already available in the template.
+Data → AI
+
+Strategy → Implementation
+
+Avoid decorative animations that do not communicate anything.
+
+Do not use generic corporate boardroom imagery unless the existing template specifically supports it.
 
 ⸻
 
-FINAL QUALITY CHECK
+RESPONSIVE DESIGN
 
-Before completing the implementation:
+Ensure the page works correctly across:
 
-* Explore the entire existing template.
+Desktop
+
+Tablet
+
+Mobile
+
+The prioritization matrix, roadmap and architecture visuals must adapt cleanly to smaller screens.
+
+Avoid horizontal scrolling.
+
+⸻
+
+FINAL CHECK
+
+Before completing:
+
+* Explore the full existing template.
 * Reuse existing components wherever possible.
-* Maintain visual consistency with RockScale.
-* Ensure the page clearly explains what an FDE is.
-* Clearly differentiate FDE from traditional staff augmentation.
-* Position RockScale as an engineering partner, not a staffing company.
-* Show practical engagement scenarios.
-* Explain how engineers integrate with client teams.
-* Highlight AI + Software + Data + Cloud capabilities.
-* Do not fabricate clients, testimonials or metrics.
-* Ensure all CTAs are clear and actionable.
-* Ensure the page is fully responsive.
-* Ensure the navigation includes the new Forward Deployed Engineer page.
-* Ensure the page can serve both technical decision-makers and business executives.
+* Keep all new component names short.
+* Maintain the RockScale design system.
+* Create /services/ai-strategy-roadmap.
+* Add AI Strategy & Roadmap to the What We Do dropdown.
+* Ensure desktop and mobile navigation work.
+* Clearly distinguish practical AI strategy from traditional consulting.
+* Make the roadmap actionable.
+* Connect strategy to RockScale’s implementation services.
+* Link to Data Engineering & Analytics where appropriate.
+* Do not fabricate metrics, clients or case studies.
+* Ensure every CTA works.
+* Ensure the page is responsive.
+* Ensure the final page positions RockScale as an engineering-led AI strategy partner, not a strategy-only consultancy.

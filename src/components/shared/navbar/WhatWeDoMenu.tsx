@@ -3,15 +3,15 @@ import { cn } from '@/utils/cn';
 import Link from 'next/link';
 
 const menuData = [
-  {
-    title: 'CORE SERVICES',
-    links: [
-      { label: 'AI Strategy & Roadmap', href: '/services#strategy' },
-      { label: 'AI-Powered Software Development', href: '/services#development' },
-      { label: 'Data Engineering & Analytics', href: '/services#data' },
-      { label: 'Forward Deployed Engineer', href: '/services#fde' },
-    ],
-  },
+          {
+            title: 'CORE SERVICES',
+            links: [
+              { label: 'AI Strategy & Roadmap', href: '/services#strategy' },
+              { label: 'AI-Powered Software Development', href: '/services/ai-powered-software-development' },
+              { label: 'Data Engineering & Analytics', href: '/services/data-engineering-analytics' },
+                { label: 'Forward Deployed Engineer', href: '/services/forward-deployed-engineer' },
+            ],
+          },
   {
     title: 'ACCELERATORS',
     links: [
@@ -22,15 +22,15 @@ const menuData = [
       { label: 'GenIQ', href: '/services#geniq' },
     ],
   },
-  {
-    title: 'AI TRAINING & WORKSHOPS',
-    links: [
-      { label: 'AI Training for Teams', href: '/services/ai-training' },
-      { label: 'Executive AI Training', href: '/services#executive' },
-      { label: 'AI Roadmap & ROI Workshop', href: '/services#roi-workshop' },
-      { label: 'GenDD Training Workshop', href: '/services#gendd-workshop' },
-    ],
-  },
+      {
+        title: 'AI TRAINING & WORKSHOPS',
+        links: [
+          { label: 'AI Training for Teams', href: '/services#training' },
+          { label: 'Executive AI Training', href: '/services#executive' },
+          { label: 'AI Roadmap & ROI Workshop', href: '/services#roi-workshop' },
+          { label: 'GenDD Training Workshop', href: '/services#gendd-workshop' },
+        ],
+      },
 ];
 
 const WhatWeDoMenu = ({
