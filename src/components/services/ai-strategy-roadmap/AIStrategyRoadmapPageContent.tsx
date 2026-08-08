@@ -5,30 +5,203 @@ import Navbar from '@/components/shared/navbar/Navbar';
 import Footer from '@/components/shared/footer/Footer';
 import AIStrategyRoadmapHero from '@/components/services/ai-strategy-roadmap/AIStrategyRoadmapHero';
 
+const sectionLabelClass =
+  'mb-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary';
+const sectionTitleClass =
+  'text-3xl font-bold tracking-tight text-secondary dark:text-white md:text-4xl lg:text-[42px]';
+const sectionTextClass = 'text-base leading-8 text-secondary/70 dark:text-white/70 md:text-lg';
+
+const readinessCategories = [
+  {
+    title: 'Business',
+    icon: '01',
+    items: ['Goals', 'AI opportunities', 'Expected ROI'],
+  },
+  {
+    title: 'Data',
+    icon: '02',
+    items: ['Availability', 'Quality', 'Accessibility', 'Governance'],
+  },
+  {
+    title: 'Technology',
+    icon: '03',
+    items: ['Architecture', 'Infrastructure', 'Existing software', 'Integration capability'],
+  },
+  {
+    title: 'People',
+    icon: '04',
+    items: ['Technical skills', 'AI literacy', 'Team capacity'],
+  },
+  {
+    title: 'Governance',
+    icon: '05',
+    items: ['Security', 'Privacy', 'Risk', 'Responsible AI'],
+  },
+];
+
+const opportunities = [
+  'Customer Experience',
+  'Operations',
+  'Sales',
+  'Marketing',
+  'Finance',
+  'HR',
+  'Product',
+  'Data',
+  'Internal Knowledge',
+  'Software Development',
+];
+
+const useCases = [
+  {
+    title: 'Customer Support Copilot',
+    description: 'Assist support teams with knowledge retrieval and faster, more consistent response generation.',
+  },
+  {
+    title: 'Document Intelligence',
+    description: 'Extract and analyze information from contracts, invoices and high-volume business documents.',
+  },
+  {
+    title: 'AI Sales Assistant',
+    description: 'Automate research, summarize accounts and support pipeline execution with AI-driven context.',
+  },
+  {
+    title: 'Knowledge Assistant',
+    description: 'Give employees natural-language access to internal company knowledge and operating procedures.',
+  },
+  {
+    title: 'AI Workflow Agent',
+    description: 'Automate multi-step operational processes across tools, people and approvals.',
+  },
+  {
+    title: 'Predictive Analytics',
+    description: 'Use business data to forecast trends, reduce risk and identify growth opportunities.',
+  },
+];
+
+const roadmapPhases = [
+  {
+    phase: 'Phase 1 — Discover',
+    description: 'Identify business opportunities and assess AI readiness.',
+  },
+  {
+    phase: 'Phase 2 — Prioritize',
+    description: 'Rank opportunities by value, feasibility, risk and effort.',
+  },
+  {
+    phase: 'Phase 3 — Validate',
+    description: 'Run focused experiments or proof-of-concepts where needed.',
+  },
+  {
+    phase: 'Phase 4 — Build',
+    description: 'Develop high-value production solutions with the right foundation.',
+  },
+  {
+    phase: 'Phase 5 — Deploy',
+    description: 'Integrate AI into real workflows, operations and decision-making.',
+  },
+  {
+    phase: 'Phase 6 — Scale',
+    description: 'Expand successful initiatives across teams and business units.',
+  },
+];
+
+const deliverables = [
+  'AI Readiness Assessment',
+  'AI Opportunity Map',
+  'Prioritized Use Cases',
+  'AI Architecture Recommendations',
+  'Data Readiness Assessment',
+  'Technology Recommendations',
+  'Build vs Buy Analysis',
+  'AI Investment Priorities',
+  'Implementation Roadmap',
+  'Governance Considerations',
+  '90-Day Action Plan',
+];
+
+const faqs = [
+  {
+    question: 'What is an AI strategy?',
+    answer:
+      'An AI strategy defines how an organization will use artificial intelligence to achieve business objectives, including identifying opportunities, prioritizing use cases and planning implementation.',
+  },
+  {
+    question: 'Why does a business need an AI roadmap?',
+    answer:
+      'An AI roadmap provides a sequenced plan for developing and deploying AI solutions so teams can move from experimentation to production with clarity and momentum.',
+  },
+  {
+    question: 'How do you identify AI use cases?',
+    answer:
+      'We assess business processes, pain points and strategic goals to uncover high-value AI opportunities across functions and workflows.',
+  },
+  {
+    question: 'How do you prioritize AI opportunities?',
+    answer:
+      'We evaluate each opportunity based on business value, technical feasibility, data availability, implementation complexity, risk and time to value.',
+  },
+  {
+    question: 'Can you assess our AI readiness?',
+    answer:
+      'Yes. We evaluate readiness across business, data, technology, people and governance so you understand current capability and critical gaps.',
+  },
+  {
+    question: 'Can RockScale help us implement the roadmap?',
+    answer:
+      'Yes. We can continue from strategy into data engineering, AI software development and forward-deployed execution support.',
+  },
+];
+
 const TheProblemSection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-secondary dark:text-white">
-        AI Is Easy to Experiment With. Knowing What to Build Is Hard.
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <section className="relative overflow-hidden py-20 md:py-28">
+    <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(126,87,253,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.10),transparent_30%)]" />
+    <div className="main-container">
+      <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
-          <p className="text-lg text-secondary/70 dark:text-white/70">
-            Organizations often grapple with a plethora of AI tools and an overwhelming number of possible use cases, making it difficult to discern true value and clear ROI. Teams experiment without clear direction, leading to AI projects disconnected from core business goals.
+          <span className={sectionLabelClass}>The challenge</span>
+          <h2 className={sectionTitleClass}>AI is easy to explore. Knowing what to build is where most teams stall.</h2>
+          <p className={`${sectionTextClass} mt-6 max-w-2xl`}>
+            Organizations often face too many AI tools, too many possible use cases and too little clarity on where real business value lives. The result is scattered experimentation, unclear ROI and initiatives disconnected from strategic priorities.
           </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              { value: 'Too many', label: 'tools and vendors to evaluate' },
+              { value: 'Unclear', label: 'ROI and business prioritization' },
+              { value: 'Hard', label: 'path from pilot to production' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-primary/10 bg-white p-5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-background-7">
+                <p className="text-2xl font-bold text-primary">{item.value}</p>
+                <p className="mt-2 text-sm leading-6 text-secondary/70 dark:text-white/70">{item.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div>
-          <ul className="list-disc list-inside space-y-4 text-secondary/70 dark:text-white/70 text-lg">
-            <li>Too many AI tools and use cases</li>
-            <li>Unclear ROI and experimentation without direction</li>
-            <li>AI projects disconnected from business goals</li>
-            <li>Poor-quality or inaccessible data</li>
-            <li>Security and governance concerns</li>
-            <li>Difficulty moving from PoC to production</li>
-            <li>Lack of internal AI expertise</li>
-          </ul>
-          <p className="mt-8 text-lg text-secondary/70 dark:text-white/70">
-            RockScale transforms this uncertainty into a structured, executable plan, guiding you from chaotic experimentation to strategic implementation.
+
+        <div className="rounded-[28px] border border-primary/10 bg-white p-7 shadow-[0_20px_80px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-background-7 md:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary/80">What gets in the way</p>
+          <div className="mt-6 space-y-4">
+            {[
+              'Too many AI tools and possible use cases',
+              'Unclear ROI and experimentation without direction',
+              'AI projects disconnected from business goals',
+              'Poor-quality or inaccessible data',
+              'Security and governance concerns',
+              'Difficulty moving from PoC to production',
+              'Lack of internal AI expertise',
+            ].map((item, index) => (
+              <div key={item} className="flex items-start gap-4 rounded-2xl bg-primary/5 px-4 py-4 dark:bg-white/5">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                  {index + 1}
+                </div>
+                <p className="text-sm leading-7 text-secondary/80 dark:text-white/80 md:text-base">{item}</p>
+              </div>
+            ))}
+          </div>
+          <p className={`${sectionTextClass} mt-6`}>
+            RockScale turns uncertainty into a structured, executable plan — so your organization can move from AI curiosity to strategic implementation.
           </p>
         </div>
       </div>
@@ -37,31 +210,46 @@ const TheProblemSection = () => (
 );
 
 const WhatAIStrategyMeansToRockScaleSection = () => (
-  <section className="py-16 md:py-24 bg-gray-50 dark:bg-background-8">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-secondary dark:text-white">
-        Strategy That Leads Somewhere
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <h3 className="text-2xl font-bold mb-4 text-secondary dark:text-white">Not Just:</h3>
-          <ul className="list-disc list-inside space-y-2 text-secondary/70 dark:text-white/70 text-lg">
-            <li>Reports</li>
-            <li>Workshops</li>
-            <li>Presentations</li>
-          </ul>
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 text-center">
+        <span className={sectionLabelClass}>What good strategy looks like</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>Strategy that leads somewhere practical</h2>
+        <p className={`${sectionTextClass} mx-auto mt-5 max-w-3xl`}>
+          For RockScale, strategy is not a slide deck that ends the conversation. It is a decision framework that clarifies where to invest, what to build and how to execute with confidence.
+        </p>
+      </div>
+
+      <div className="grid gap-8 lg:grid-cols-2">
+        <div className="rounded-[28px] border border-rose-200/60 bg-gradient-to-br from-rose-50 to-white p-8 dark:border-rose-500/20 dark:from-rose-500/10 dark:to-background-7">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-500">Not just</p>
+          <div className="mt-6 space-y-4">
+            {['Reports', 'Workshops', 'Presentations'].map((item) => (
+              <div key={item} className="flex items-center gap-4 rounded-2xl border border-rose-200/60 bg-white/90 px-5 py-4 dark:border-white/10 dark:bg-background-7/80">
+                <span className="text-lg text-rose-500">✕</span>
+                <p className="text-lg font-medium text-secondary dark:text-white">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div>
-          <h3 className="text-2xl font-bold mb-4 text-secondary dark:text-white">Instead, the Outcome Should Be:</h3>
-          <ul className="list-disc list-inside space-y-2 text-primary text-lg font-semibold">
-            <li>Prioritized use cases</li>
-            <li>Technical direction</li>
-            <li>Architecture recommendations</li>
-            <li>Data requirements</li>
-            <li>Implementation plan</li>
-            <li>Investment priorities</li>
-            <li>Execution roadmap</li>
-          </ul>
+
+        <div className="rounded-[28px] border border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-white p-8 dark:border-emerald-500/20 dark:from-emerald-500/10 dark:to-background-7">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-600">Instead, the outcome should be</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              'Prioritized use cases',
+              'Technical direction',
+              'Architecture recommendations',
+              'Data requirements',
+              'Implementation plan',
+              'Investment priorities',
+              'Execution roadmap',
+            ].map((item) => (
+              <div key={item} className="rounded-2xl border border-emerald-200/60 bg-white/90 px-5 py-4 dark:border-white/10 dark:bg-background-7/80">
+                <p className="text-base font-semibold text-secondary dark:text-white">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -69,24 +257,34 @@ const WhatAIStrategyMeansToRockScaleSection = () => (
 );
 
 const AIReadinessAssessmentSection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-secondary dark:text-white">
-        Understand Where You Stand Before You Build
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          { title: "Business", items: ["Goals", "AI opportunities", "Expected ROI"] },
-          { title: "Data", items: ["Availability", "Quality", "Accessibility", "Governance"] },
-          { title: "Technology", items: ["Architecture", "Infrastructure", "Existing software", "Integration capability"] },
-          { title: "People", items: ["Technical skills", "AI literacy", "Team capacity"] },
-          { title: "Governance", items: ["Security", "Privacy", "Risk", "Responsible AI"] },
-        ].map((category) => (
-          <div key={category.title} className="bg-white dark:bg-background-7 p-6 rounded-lg shadow-md">
-            <h4 className="text-xl font-semibold mb-3 text-primary">{category.title}</h4>
-            <ul className="list-disc list-inside text-secondary/70 dark:text-white/70">
+  <section className="bg-gray-50 py-20 dark:bg-background-8 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl">
+          <span className={sectionLabelClass}>AI readiness assessment</span>
+          <h2 className={`${sectionTitleClass} mt-4`}>Understand where you stand before you build</h2>
+        </div>
+        <p className={`${sectionTextClass} max-w-xl`}>
+          We evaluate the capabilities that determine whether AI initiatives can succeed sustainably — from business clarity and data quality to governance and implementation readiness.
+        </p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+        {readinessCategories.map((category) => (
+          <div
+            key={category.title}
+            className="group rounded-[26px] border border-primary/10 bg-white p-6 shadow-[0_14px_40px_rgba(15,23,42,0.06)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-background-7">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold tracking-[0.2em] text-primary/60">{category.icon}</span>
+              <div className="h-10 w-10 rounded-full bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-white" />
+            </div>
+            <h3 className="mt-6 text-xl font-semibold text-secondary dark:text-white">{category.title}</h3>
+            <ul className="mt-5 space-y-3">
               {category.items.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="flex items-start gap-3 text-sm leading-7 text-secondary/70 dark:text-white/70">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-primary" />
+                  <span>{item}</span>
+                </li>
               ))}
             </ul>
           </div>
@@ -97,84 +295,105 @@ const AIReadinessAssessmentSection = () => (
 );
 
 const AIOpportunityDiscoverySection = () => (
-  <section className="py-16 md:py-24 bg-gray-50 dark:bg-background-8">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        Find the AI Opportunities Worth Pursuing
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        RockScale helps identify high-impact AI opportunities across your organization, ensuring alignment with strategic objectives.
-      </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {["Customer Experience", "Operations", "Sales", "Marketing", "Finance", "HR", "Product", "Data", "Internal Knowledge", "Software Development"].map((area) => (
-          <div key={area} className="bg-white dark:bg-background-7 p-4 rounded-lg shadow-sm text-center">
-            <p className="text-lg font-semibold text-primary">{area}</p>
-          </div>
-        ))}
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="rounded-[32px] border border-primary/10 bg-gradient-to-br from-primary/[0.08] via-white to-sky-50 p-8 shadow-[0_20px_80px_rgba(15,23,42,0.08)] dark:border-white/10 dark:from-primary/10 dark:via-background-7 dark:to-background-8 md:p-10 lg:p-12">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className={sectionLabelClass}>Opportunity discovery</span>
+          <h2 className={`${sectionTitleClass} mt-4`}>Find the AI opportunities worth pursuing</h2>
+          <p className={`${sectionTextClass} mt-5`}>
+            RockScale helps uncover high-impact AI opportunities across your business and evaluate them against the variables that matter most: value, feasibility, data readiness, risk and time to value.
+          </p>
+        </div>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          {opportunities.map((area) => (
+            <div
+              key={area}
+              className="rounded-full border border-primary/15 bg-white px-5 py-3 text-sm font-semibold text-secondary shadow-sm dark:border-white/10 dark:bg-background-7 dark:text-white md:text-base">
+              {area}
+            </div>
+          ))}
+        </div>
       </div>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mt-12">
-        Each opportunity is rigorously evaluated based on business value, technical feasibility, data availability, implementation complexity, risk, and time to value.
-      </p>
     </div>
   </section>
 );
 
 const PrioritizationFrameworkSection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        Not Every AI Idea Deserves to Be Built
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        Our prioritization matrix helps you focus on AI initiatives that deliver maximum impact with feasible effort.
-      </p>
-      <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto">
-        <div className="bg-green-100 dark:bg-green-900/30 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-green-700 dark:text-green-300">Quick Wins</h3>
-          <p className="text-secondary/80 dark:text-white/80">High value / Low complexity</p>
-          <p className="text-sm text-secondary/60 dark:text-white/60 mt-2">Build first.</p>
-        </div>
-        <div className="bg-blue-100 dark:bg-blue-900/30 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-blue-700 dark:text-blue-300">Strategic Bets</h3>
-          <p className="text-secondary/80 dark:text-white/80">High value / High complexity</p>
-          <p className="text-sm text-secondary/60 dark:text-white/60 mt-2">Plan carefully.</p>
-        </div>
-        <div className="bg-yellow-100 dark:bg-yellow-900/30 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">Experiments</h3>
-          <p className="text-secondary/80 dark:text-white/80">Low value / Low complexity</p>
-          <p className="text-sm text-secondary/60 dark:text-white/60 mt-2">Test selectively.</p>
-        </div>
-        <div className="bg-red-100 dark:bg-red-900/30 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-red-700 dark:text-red-300">Avoid</h3>
-          <p className="text-secondary/80 dark:text-white/80">Low value / High complexity</p>
-          <p className="text-sm text-secondary/60 dark:text-white/60 mt-2">Do not prioritize.</p>
-        </div>
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 text-center">
+        <span className={sectionLabelClass}>Prioritization matrix</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>Not every AI idea deserves to be built</h2>
+        <p className={`${sectionTextClass} mx-auto mt-5 max-w-3xl`}>
+          Our prioritization framework helps you focus on initiatives that balance strategic value with realistic execution effort.
+        </p>
+      </div>
+
+      <div className="grid gap-5 md:grid-cols-2">
+        {[
+          {
+            title: 'Quick Wins',
+            subtitle: 'High value / Low complexity',
+            note: 'Start here to prove momentum and capture measurable results early.',
+            className: 'from-emerald-100 to-white text-emerald-700 dark:from-emerald-500/20 dark:to-background-7 dark:text-emerald-300',
+          },
+          {
+            title: 'Strategic Bets',
+            subtitle: 'High value / High complexity',
+            note: 'Plan carefully and invest deliberately when the payoff is transformative.',
+            className: 'from-sky-100 to-white text-sky-700 dark:from-sky-500/20 dark:to-background-7 dark:text-sky-300',
+          },
+          {
+            title: 'Experiments',
+            subtitle: 'Low value / Low complexity',
+            note: 'Test selectively to learn fast without overcommitting resources.',
+            className: 'from-amber-100 to-white text-amber-700 dark:from-amber-500/20 dark:to-background-7 dark:text-amber-300',
+          },
+          {
+            title: 'Avoid',
+            subtitle: 'Low value / High complexity',
+            note: 'Do not prioritize unless assumptions change significantly.',
+            className: 'from-rose-100 to-white text-rose-700 dark:from-rose-500/20 dark:to-background-7 dark:text-rose-300',
+          },
+        ].map((item) => (
+          <div
+            key={item.title}
+            className={`rounded-[28px] border border-primary/10 bg-gradient-to-br p-8 shadow-[0_16px_50px_rgba(15,23,42,0.06)] dark:border-white/10 ${item.className}`}>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] opacity-80">Priority zone</p>
+            <h3 className="mt-4 text-3xl font-bold">{item.title}</h3>
+            <p className="mt-2 text-base font-medium text-secondary/80 dark:text-white/80">{item.subtitle}</p>
+            <p className="mt-5 max-w-md text-sm leading-7 text-secondary/70 dark:text-white/70">{item.note}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 );
 
 const AIUseCaseExamplesSection = () => (
-  <section className="py-16 md:py-24 bg-gray-50 dark:bg-background-8">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        AI Use Case Examples
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        Explore practical applications of AI that can drive tangible business value. These are illustrative examples, not guaranteed solutions for every business.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          { title: "Customer Support Copilot", description: "Assist support teams with knowledge retrieval and response generation." },
-          { title: "Document Intelligence", description: "Extract and analyze information from contracts, invoices and business documents." },
-          { title: "AI Sales Assistant", description: "Automate research, summarize customer information and support sales workflows." },
-          { title: "Knowledge Assistant", description: "Give employees natural-language access to internal company knowledge." },
-          { title: "AI Workflow Agent", description: "Automate multi-step operational processes." },
-          { title: "Predictive Analytics", description: "Use business data to forecast trends and identify opportunities." },
-        ].map((useCase) => (
-          <div key={useCase.title} className="bg-white dark:bg-background-7 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-3 text-primary">{useCase.title}</h3>
-            <p className="text-secondary/70 dark:text-white/70">{useCase.description}</p>
+  <section className="bg-gray-50 py-20 dark:bg-background-8 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 text-center">
+        <span className={sectionLabelClass}>Illustrative use cases</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>Examples of AI initiatives that create real business value</h2>
+        <p className={`${sectionTextClass} mx-auto mt-5 max-w-3xl`}>
+          These examples show the kinds of opportunities we help businesses explore, validate and bring into production.
+        </p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {useCases.map((useCase, index) => (
+          <div
+            key={useCase.title}
+            className="group rounded-[28px] border border-primary/10 bg-white p-7 shadow-[0_16px_50px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-background-7">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold tracking-[0.2em] text-primary/60">0{index + 1}</span>
+              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Use case</span>
+            </div>
+            <h3 className="mt-6 text-2xl font-semibold text-secondary dark:text-white">{useCase.title}</h3>
+            <p className="mt-4 text-base leading-8 text-secondary/70 dark:text-white/70">{useCase.description}</p>
           </div>
         ))}
       </div>
@@ -183,23 +402,30 @@ const AIUseCaseExamplesSection = () => (
 );
 
 const AIArchitectureStrategySection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        Design the Architecture Before You Build
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        RockScale evaluates the critical components of your AI ecosystem to ensure a robust and scalable foundation.
-      </p>
-      <div className="flex flex-col items-center space-y-4 text-lg font-medium text-primary">
-        {["Business Problem", "AI Application", "AI Orchestration", "Models", "Business Data", "Enterprise Systems", "Cloud Infrastructure"].map((item, idx, arr) => (
-          <div key={item} className="flex flex-col items-center">
-            <p className="bg-primary/10 dark:bg-primary/20 px-6 py-3 rounded-lg">{item}</p>
-            {idx < arr.length - 1 && (
-              <svg className="w-6 h-6 text-primary my-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            )}
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 text-center">
+        <span className={sectionLabelClass}>Architecture strategy</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>Design the architecture before you build</h2>
+        <p className={`${sectionTextClass} mx-auto mt-5 max-w-3xl`}>
+          We map the full AI system — from business problem to infrastructure — to ensure your roadmap is technically sound, scalable and implementation-ready.
+        </p>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {[
+          'Business Problem',
+          'AI Application',
+          'AI Orchestration',
+          'Models',
+          'Business Data',
+          'Enterprise Systems',
+          'Cloud Infrastructure',
+        ].map((item) => (
+          <div
+            key={item}
+            className="rounded-[24px] border border-primary/10 bg-gradient-to-br from-white to-primary/[0.04] px-6 py-8 text-center shadow-[0_12px_40px_rgba(15,23,42,0.05)] dark:border-white/10 dark:from-background-7 dark:to-primary/10">
+            <p className="text-lg font-semibold text-secondary dark:text-white">{item}</p>
           </div>
         ))}
       </div>
@@ -208,29 +434,40 @@ const AIArchitectureStrategySection = () => (
 );
 
 const DataReadinessSection = () => (
-  <section className="py-16 md:py-24 bg-gray-50 dark:bg-background-8">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        Your AI Strategy Is Only as Strong as Your Data
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        A successful AI strategy is intrinsically linked to the quality and accessibility of your data.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <ul className="list-disc list-inside space-y-3 text-secondary/70 dark:text-white/70 text-lg">
-          <li>Data availability and quality</li>
-          <li>Data accessibility and architecture</li>
-          <li>Data governance and pipelines</li>
-          <li>Relevant knowledge sources</li>
-          <li>Integration requirements</li>
-        </ul>
-        <div>
-          <p className="text-secondary/70 dark:text-white/70">
-            If gaps exist in your data infrastructure, our roadmap will include the necessary data engineering work to prepare your organization for AI.
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div className="rounded-[30px] bg-secondary p-8 text-white shadow-[0_18px_60px_rgba(15,23,42,0.16)] dark:bg-background-7 md:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Data foundation</p>
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Your AI strategy is only as strong as your data</h2>
+          <p className="mt-5 text-base leading-8 text-white/75 md:text-lg">
+            If the data foundation is weak, even great AI ideas will struggle. We assess whether the right data exists, whether it can be accessed and whether the supporting architecture is ready for production AI systems.
           </p>
-          <Link href="/services/data-engineering-analytics" className="inline-block mt-4 text-primary hover:underline font-semibold">
-            Learn more about our Data Engineering & Analytics services →
+          <Link
+            href="/services/data-engineering-analytics"
+            className="mt-8 inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-secondary">
+            Explore Data Engineering & Analytics
           </Link>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {[
+            'Data availability and quality',
+            'Data accessibility and architecture',
+            'Data governance and pipelines',
+            'Relevant knowledge sources',
+            'Integration requirements',
+            'Foundational data engineering work',
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-[24px] border border-primary/10 bg-white px-6 py-6 shadow-[0_12px_40px_rgba(15,23,42,0.05)] dark:border-white/10 dark:bg-background-7">
+              <div className="flex items-start gap-3">
+                <span className="mt-1 h-3 w-3 rounded-full bg-primary" />
+                <p className="text-base font-medium leading-7 text-secondary dark:text-white">{item}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -238,24 +475,43 @@ const DataReadinessSection = () => (
 );
 
 const BuildVsBuySection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        Build, Buy or Integrate?
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        Making the right decision between building custom AI solutions, buying existing products, or integrating them is crucial for efficient and impactful AI adoption.
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+  <section className="bg-gray-50 py-20 dark:bg-background-8 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 text-center">
+        <span className={sectionLabelClass}>Decision framework</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>Build, buy, integrate or customize?</h2>
+        <p className={`${sectionTextClass} mx-auto mt-5 max-w-3xl`}>
+          Making the right product and platform decision is a key part of your roadmap. We evaluate options based on fit, cost, speed and long-term leverage.
+        </p>
+      </div>
+
+      <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {[
-          { title: "Build", description: "Create custom software when the problem requires differentiated capabilities." },
-          { title: "Buy", description: "Use an existing AI product when it already solves the problem effectively." },
-          { title: "Integrate", description: "Connect existing AI tools with the organization's systems and workflows." },
-          { title: "Customize", description: "Extend an existing solution when some customization is required." },
-        ].map((option) => (
-          <div key={option.title} className="bg-white dark:bg-background-7 p-6 rounded-lg shadow-md text-center">
-            <h3 className="text-xl font-semibold mb-3 text-primary">{option.title}</h3>
-            <p className="text-secondary/70 dark:text-white/70">{option.description}</p>
+          {
+            title: 'Build',
+            description: 'Create custom software when the problem requires differentiated capability.',
+          },
+          {
+            title: 'Buy',
+            description: 'Choose an existing AI product when it already solves the problem well.',
+          },
+          {
+            title: 'Integrate',
+            description: 'Connect existing tools to your systems and workflows for faster adoption.',
+          },
+          {
+            title: 'Customize',
+            description: 'Extend an existing solution when some adaptation creates better business fit.',
+          },
+        ].map((option, index) => (
+          <div
+            key={option.title}
+            className="rounded-[28px] border border-primary/10 bg-white p-7 shadow-[0_16px_50px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-background-7">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-lg font-bold text-primary">
+              {index + 1}
+            </div>
+            <h3 className="mt-6 text-2xl font-semibold text-secondary dark:text-white">{option.title}</h3>
+            <p className="mt-4 text-base leading-8 text-secondary/70 dark:text-white/70">{option.description}</p>
           </div>
         ))}
       </div>
@@ -264,67 +520,87 @@ const BuildVsBuySection = () => (
 );
 
 const ModelTechnologyStrategySection = () => (
-  <section className="py-16 md:py-24 bg-gray-50 dark:bg-background-8">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        Choose Technology Based on the Problem
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        We provide technology-agnostic recommendations, evaluating solutions based on model capability, cost, latency, reliability, privacy, and scalability.
-      </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {["OpenAI", "Anthropic", "Google Gemini", "Mistral", "Open-source models", "Cloud platforms"].map((tech) => (
-          <div key={tech} className="p-4 bg-white dark:bg-background-7 rounded-lg shadow-sm text-center">
-            <p className="text-primary font-semibold">{tech}</p>
-          </div>
-        ))}
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="rounded-[32px] border border-primary/10 bg-gradient-to-br from-secondary to-secondary/90 p-8 text-white shadow-[0_20px_80px_rgba(15,23,42,0.18)] dark:border-white/10 md:p-12">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1 text-sm font-semibold text-white/90">
+            Technology strategy
+          </span>
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl lg:text-[42px]">Choose technology based on the problem, not the hype</h2>
+          <p className="mt-5 text-base leading-8 text-white/75 md:text-lg">
+            We provide technology-agnostic recommendations based on model capability, cost, latency, privacy, reliability and scalability.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          {['OpenAI', 'Anthropic', 'Google Gemini', 'Mistral', 'Open-source models', 'Cloud platforms'].map((tech) => (
+            <div key={tech} className="rounded-2xl border border-white/10 bg-white/10 px-4 py-5 text-center backdrop-blur-sm">
+              <p className="text-sm font-semibold text-white md:text-base">{tech}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 );
 
 const RoadmapSection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        From AI Ideas to an Executable Roadmap
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        Our structured roadmap guides your AI journey from initial discovery to scalable production.
-      </p>
-      <div className="max-w-3xl mx-auto">
-        {[
-          { phase: "Phase 1 — Discover", description: "Identify business opportunities and assess AI readiness." },
-          { phase: "Phase 2 — Prioritize", description: "Rank opportunities by value, feasibility, risk and effort." },
-          { phase: "Phase 3 — Validate", description: "Build focused experiments or proof-of-concepts where necessary." },
-          { phase: "Phase 4 — Build", description: "Develop high-value production solutions." },
-          { phase: "Phase 5 — Deploy", description: "Integrate into real business workflows." },
-          { phase: "Phase 6 — Scale", description: "Expand successful AI initiatives across the organization." },
-        ].map((item, idx) => (
-          <div key={item.phase} className={`relative my-6 p-6 border-l-4 border-primary pl-8 ${idx === 0 ? 'mt-0' : ''}`}>
-            <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full" />
-            <h3 className="text-xl font-semibold text-primary">{item.phase}</h3>
-            <p className="text-secondary/70 dark:text-white/70">{item.description}</p>
-          </div>
-        ))}
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="mb-14 text-center">
+        <span className={sectionLabelClass}>Execution roadmap</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>From AI ideas to an executable roadmap</h2>
+        <p className={`${sectionTextClass} mx-auto mt-5 max-w-3xl`}>
+          We translate strategy into a structured path that moves your organization from discovery to deployment and scale.
+        </p>
+      </div>
+
+      <div className="relative mx-auto max-w-5xl">
+        <div className="absolute left-5 top-0 hidden h-full w-px bg-primary/20 md:block" />
+        <div className="grid gap-6">
+          {roadmapPhases.map((item, index) => (
+            <div key={item.phase} className="grid gap-4 md:grid-cols-[70px_1fr] md:gap-6">
+              <div className="hidden md:flex">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                  {index + 1}
+                </div>
+              </div>
+              <div className="rounded-[28px] border border-primary/10 bg-white p-7 shadow-[0_14px_40px_rgba(15,23,42,0.05)] dark:border-white/10 dark:bg-background-7">
+                <div className="md:hidden mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                  {index + 1}
+                </div>
+                <h3 className="text-2xl font-semibold text-secondary dark:text-white">{item.phase}</h3>
+                <p className="mt-3 text-base leading-8 text-secondary/70 dark:text-white/70">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 );
 
 const StrategyDeliverablesSection = () => (
-  <section className="py-16 md:py-24 bg-gray-50 dark:bg-background-8">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        What You Walk Away With
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        Our deliverables are designed to support actual implementation decisions, providing clear, actionable insights for your AI journey.
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {["AI Readiness Assessment", "AI Opportunity Map", "Prioritized Use Cases", "AI Architecture Recommendations", "Data Readiness Assessment", "Technology Recommendations", "Build vs Buy Analysis", "AI Investment Priorities", "Implementation Roadmap", "Governance Considerations", "90-Day Action Plan"].map((deliverable) => (
-          <div key={deliverable} className="bg-white dark:bg-background-7 p-4 rounded-lg shadow-md text-center">
-            <p className="text-lg font-semibold text-primary">{deliverable}</p>
+  <section className="bg-gray-50 py-20 dark:bg-background-8 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl">
+          <span className={sectionLabelClass}>Deliverables</span>
+          <h2 className={`${sectionTitleClass} mt-4`}>What you walk away with</h2>
+        </div>
+        <p className={`${sectionTextClass} max-w-xl`}>
+          Every engagement is designed to produce implementation-ready outputs, not generic recommendations.
+        </p>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {deliverables.map((deliverable) => (
+          <div
+            key={deliverable}
+            className="flex items-center gap-4 rounded-[22px] border border-primary/10 bg-white px-5 py-5 shadow-[0_10px_30px_rgba(15,23,42,0.05)] dark:border-white/10 dark:bg-background-7">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">✓</span>
+            <p className="text-base font-semibold text-secondary dark:text-white">{deliverable}</p>
           </div>
         ))}
       </div>
@@ -333,27 +609,49 @@ const StrategyDeliverablesSection = () => (
 );
 
 const NinetyDayAIPlanSection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        Know What to Do in the Next 90 Days
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        Our practical 90-day action plan provides a clear, actionable path for immediate progress and long-term success.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+  <section id="90-day-ai-plan" className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 text-center">
+        <span className={sectionLabelClass}>90-day action plan</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>Know what to do in the next 90 days</h2>
+        <p className={`${sectionTextClass} mx-auto mt-5 max-w-3xl`}>
+          A practical roadmap should create momentum immediately. We break the first 90 days into focused stages that turn strategy into action.
+        </p>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-3">
         {[
-          { title: "Days 1–30", items: ["Assess", "Discover", "Prioritize"] },
-          { title: "Days 31–60", items: ["Validate", "Prototype", "Prepare data and architecture"] },
-          { title: "Days 61–90", items: ["Build", "Deploy", "Measure"] },
+          {
+            title: 'Days 1–30',
+            items: ['Assess', 'Discover', 'Prioritize'],
+            accent: 'from-primary to-[#8B5CF6]',
+          },
+          {
+            title: 'Days 31–60',
+            items: ['Validate', 'Prototype', 'Prepare data and architecture'],
+            accent: 'from-sky-500 to-primary',
+          },
+          {
+            title: 'Days 61–90',
+            items: ['Build', 'Deploy', 'Measure'],
+            accent: 'from-emerald-500 to-sky-500',
+          },
         ].map((period) => (
-          <div key={period.title} className="bg-primary/10 dark:bg-primary/20 p-8 rounded-lg text-center">
-            <h3 className="text-2xl font-bold mb-4 text-primary">{period.title}</h3>
-            <ul className="list-none space-y-2 text-secondary/80 dark:text-white/80 text-lg">
-              {period.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+          <div
+            key={period.title}
+            className="overflow-hidden rounded-[30px] border border-primary/10 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.07)] dark:border-white/10 dark:bg-background-7">
+            <div className={`h-2 w-full bg-gradient-to-r ${period.accent}`} />
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-secondary dark:text-white">{period.title}</h3>
+              <ul className="mt-6 space-y-4">
+                {period.items.map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-base font-medium text-secondary/80 dark:text-white/80">
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
@@ -362,55 +660,80 @@ const NinetyDayAIPlanSection = () => (
 );
 
 const FromStrategyToBuildSection = () => (
-  <section className="py-16 md:py-24 bg-gray-50 dark:bg-background-8">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary dark:text-white">
-        Strategy Shouldn&#39;t End With a Slide Deck
-      </h2>
-      <p className="text-lg text-center text-secondary/70 dark:text-white/70 mb-12 max-w-3xl mx-auto">
-        Once priorities are established, RockScale can seamlessly continue into implementation, bringing your AI strategy to life.
-      </p>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-        {[
-          { title: "Strategy", link: "/services/ai-strategy-roadmap" },
-          { title: "Data Engineering", link: "/services/data-engineering-analytics" },
-          { title: "AI Software Development", link: "/services/ai-powered-software-development" },
-          { title: "Forward Deployed Engineering", link: "/services/forward-deployed-engineer" },
-        ].map((service, idx, arr) => (
-          <div key={service.title} className="flex items-center gap-4">
-            <Link href={service.link} className="bg-white dark:bg-background-7 p-4 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
-              <p className="text-lg font-semibold text-primary">{service.title}</p>
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="rounded-[32px] border border-primary/10 bg-gradient-to-br from-primary/[0.08] via-white to-white p-8 shadow-[0_20px_80px_rgba(15,23,42,0.08)] dark:border-white/10 dark:from-primary/10 dark:via-background-7 dark:to-background-8 md:p-12">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className={sectionLabelClass}>From strategy to execution</span>
+          <h2 className={`${sectionTitleClass} mt-4`}>Strategy shouldn&apos;t end with a slide deck</h2>
+          <p className={`${sectionTextClass} mt-5`}>
+            Once priorities are clear, RockScale can continue directly into implementation support across data, software and embedded engineering execution.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-4">
+          {[
+            { title: 'Strategy', link: '/services/ai-strategy-roadmap' },
+            { title: 'Data Engineering', link: '/services/data-engineering-analytics' },
+            { title: 'AI Software Development', link: '/services/ai-powered-software-development' },
+            { title: 'Forward Deployed Engineering', link: '/services/forward-deployed-engineer' },
+          ].map((service) => (
+            <Link
+              key={service.title}
+              href={service.link}
+              className="rounded-[24px] border border-primary/10 bg-white px-6 py-8 text-center shadow-[0_14px_40px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(15,23,42,0.09)] dark:border-white/10 dark:bg-background-7">
+              <p className="text-lg font-semibold text-secondary dark:text-white">{service.title}</p>
             </Link>
-            {idx < arr.length - 1 && (
-              <svg className="w-6 h-6 text-primary hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>
 );
 
 const WhyRockScaleSection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-secondary dark:text-white">
-        Why RockScale for AI Strategy?
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <section className="bg-gray-50 py-20 dark:bg-background-8 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 text-center">
+        <span className={sectionLabelClass}>Why RockScale</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>Why teams choose RockScale for AI strategy</h2>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {[
-          { title: "Engineering-Led Strategy", description: "Our strategy is informed by people who actually build AI systems." },
-          { title: "Practical", description: "We focus on decisions that can be implemented and deliver tangible results." },
-          { title: "Technology-Agnostic", description: "We recommend technology based on the problem, not vendor partnerships." },
-          { title: "Data-Aware", description: "We consider the data foundation required for AI from the beginning." },
-          { title: "Production-Focused", description: "We think beyond prototypes and experiments, aiming for live systems." },
-          { title: "End-to-End", description: "Strategy can continue directly into data, software and engineering implementation." },
-        ].map((item) => (
-          <div key={item.title} className="bg-white dark:bg-background-7 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
-            <p className="text-secondary/70 dark:text-white/70">{item.description}</p>
+          {
+            title: 'Engineering-led strategy',
+            description: 'Our recommendations are shaped by people who design and build production AI systems.',
+          },
+          {
+            title: 'Practical and actionable',
+            description: 'We focus on decisions that can be implemented and tied to business outcomes.',
+          },
+          {
+            title: 'Technology-agnostic',
+            description: 'We recommend what fits your problem best, not what serves a vendor agenda.',
+          },
+          {
+            title: 'Data-aware from day one',
+            description: 'We account for the data reality required to support sustainable AI systems.',
+          },
+          {
+            title: 'Production-focused',
+            description: 'We think beyond pilots and frame the path to live, scalable systems.',
+          },
+          {
+            title: 'End-to-end execution support',
+            description: 'Strategy can continue directly into data, software and embedded implementation.',
+          },
+        ].map((item, index) => (
+          <div
+            key={item.title}
+            className="rounded-[28px] border border-primary/10 bg-white p-7 shadow-[0_16px_50px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-background-7">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-lg font-bold text-primary">
+              {index + 1}
+            </div>
+            <h3 className="mt-6 text-2xl font-semibold text-secondary dark:text-white">{item.title}</h3>
+            <p className="mt-4 text-base leading-8 text-secondary/70 dark:text-white/70">{item.description}</p>
           </div>
         ))}
       </div>
@@ -419,42 +742,48 @@ const WhyRockScaleSection = () => (
 );
 
 const CaseStudiesSection = () => (
-  <section className="py-16 md:py-24 bg-gray-50 dark:bg-background-8">
-    <div className="container mx-auto px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-secondary dark:text-white">
-        AI Strategy Case Studies
-      </h2>
-      <p className="text-lg text-secondary/70 dark:text-white/70 mb-8">
-        Explore how RockScale has helped organizations transform their AI vision into reality.
-      </p>
-      <Link href="/case-studies" className="text-primary hover:underline font-semibold">
-        View All Case Studies →
-      </Link>
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="rounded-[32px] border border-primary/10 bg-secondary px-8 py-12 text-center text-white shadow-[0_20px_80px_rgba(15,23,42,0.18)] dark:border-white/10 md:px-12">
+        <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1 text-sm font-semibold text-white/90">
+          Proof in practice
+        </span>
+        <h2 className="mt-4 text-3xl font-bold md:text-4xl">AI strategy case studies</h2>
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/75 md:text-lg">
+          Explore how RockScale helps organizations turn AI ambition into focused execution and measurable outcomes.
+        </p>
+        <Link
+          href="/case-studies"
+          className="mt-8 inline-flex rounded-full bg-white px-7 py-3 text-sm font-semibold text-secondary transition hover:bg-primary hover:text-white">
+          View all case studies
+        </Link>
+      </div>
     </div>
   </section>
 );
 
 const FAQSection = () => (
-  <section className="py-16 md:py-24">
-    <div className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-secondary dark:text-white">
-        Frequently Asked Questions
-      </h2>
-      <div className="space-y-6 max-w-3xl mx-auto">
-        {[
-          { question: "What is an AI strategy?", answer: "An AI strategy defines how an organization will use artificial intelligence to achieve its business objectives, including identifying opportunities, prioritizing use cases, and planning for implementation." },
-          { question: "Why does a business need an AI roadmap?", answer: "An AI roadmap provides a clear, sequenced plan for developing and deploying AI solutions, moving beyond experimentation to production with defined milestones and expected outcomes." },
-          { question: "How do you identify AI use cases?", answer: "We conduct comprehensive assessments of business processes, pain points, and strategic goals to uncover high-value AI opportunities across various departments." },
-          { question: "How do you prioritize AI opportunities?", answer: "We use a rigorous framework that evaluates opportunities based on business value, technical feasibility, data availability, implementation complexity, risk, and time to value." },
-          { question: "Can you assess our AI readiness?", answer: "Yes, we provide AI readiness assessments across business, data, technology, people, and governance to understand your current state and identify gaps." },
-          { question: "Do you help with AI architecture?", answer: "Absolutely. We design AI architectures that are scalable, secure, and integrated, considering models, data, applications, and cloud infrastructure." },
-          { question: "Can RockScale help us implement the roadmap?", answer: "Yes, RockScale offers end-to-end services, seamlessly transitioning from strategy and roadmap development to data engineering, AI software development, and forward-deployed engineering." },
-          { question: "How long does an AI strategy engagement take?", answer: "The duration varies depending on the scope and complexity of your organization, typically ranging from a few weeks to several months for comprehensive engagements." },
-          { question: "What do we receive at the end of the engagement?", answer: "You receive a comprehensive set of deliverables, including an AI Readiness Assessment, AI Opportunity Map, Prioritized Use Cases, AI Architecture Recommendations, Implementation Roadmap, a 90-Day Action Plan, and more." },
-        ].map((faq, idx) => (
-          <div key={idx} className="bg-white dark:bg-background-7 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-primary">{faq.question}</h3>
-            <p className="text-secondary/70 dark:text-white/70">{faq.answer}</p>
+  <section className="py-20 md:py-28">
+    <div className="main-container">
+      <div className="mb-12 text-center">
+        <span className={sectionLabelClass}>FAQs</span>
+        <h2 className={`${sectionTitleClass} mx-auto mt-4 max-w-3xl`}>Frequently asked questions</h2>
+      </div>
+
+      <div className="mx-auto grid max-w-4xl gap-5">
+        {faqs.map((faq, index) => (
+          <div
+            key={faq.question}
+            className="rounded-[26px] border border-primary/10 bg-white p-7 shadow-[0_14px_40px_rgba(15,23,42,0.05)] dark:border-white/10 dark:bg-background-7">
+            <div className="flex items-start gap-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                {index + 1}
+              </span>
+              <div>
+                <h3 className="text-xl font-semibold text-secondary dark:text-white">{faq.question}</h3>
+                <p className="mt-3 text-base leading-8 text-secondary/70 dark:text-white/70">{faq.answer}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -463,21 +792,32 @@ const FAQSection = () => (
 );
 
 const FinalCTASection = () => (
-  <section className="py-16 md:py-24 bg-primary/5 dark:bg-primary/10">
-    <div className="container mx-auto px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-secondary dark:text-white">
-        Know Where AI Can Take Your Business
-      </h2>
-      <p className="text-lg text-secondary/70 dark:text-white/70 mb-8 max-w-2xl mx-auto">
-        Let&#39;s identify the opportunities worth pursuing, build a practical roadmap and create a clear path from AI strategy to production.
-      </p>
-      <div className="flex flex-col sm:flex-row justify-center gap-4">
-        <Link href="/contact-us" className="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors">
-          Build Your AI Roadmap
-        </Link>
-        <Link href="/contact-us" className="border border-primary text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/10 transition-colors">
-          Talk to RockScale
-        </Link>
+  <section className="pb-20 pt-10 md:pb-28">
+    <div className="main-container">
+      <div className="relative overflow-hidden rounded-[36px] border border-primary/10 bg-gradient-to-r from-primary via-[#7E57FD] to-sky-500 px-8 py-14 text-center text-white shadow-[0_24px_100px_rgba(126,87,253,0.28)] md:px-12 md:py-16">
+        <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+        <div className="relative z-10 mx-auto max-w-3xl">
+          <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm font-semibold text-white/90">
+            Ready to move?
+          </span>
+          <h2 className="mt-5 text-3xl font-bold md:text-4xl lg:text-[44px]">Know where AI can take your business</h2>
+          <p className="mt-5 text-base leading-8 text-white/80 md:text-lg">
+            Let&apos;s identify the opportunities worth pursuing, build a practical roadmap and create a clear path from AI strategy to production.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-base font-semibold text-secondary transition hover:bg-secondary hover:text-white">
+              Build Your AI Roadmap
+            </Link>
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/10">
+              Talk to RockScale
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -485,7 +825,7 @@ const FinalCTASection = () => (
 
 const AIStrategyRoadmapPageContent = () => {
   return (
-    <main>
+    <main className="overflow-hidden bg-white dark:bg-background-9">
       <Navbar />
       <AIStrategyRoadmapHero />
       <TheProblemSection />
