@@ -21,7 +21,7 @@ export const mobileMenuData: MobileMenuGroup[] = [
       { id: 'wwd-assessment', label: 'AI Data Readiness & Governance', href: '/services#assessment' },
       { id: 'wwd-accelerator', label: 'AI Solution Accelerator', href: '/services#accelerator' },
       { id: 'wwd-training', label: 'AI Training for Teams', href: '/services/ai-training' },
-      { id: 'wwd-executive', label: 'Executive AI Training', href: '/services#executive' },
+      { id: 'wwd-executive', label: 'Executive AI Training', href: '/services/executive-ai-training' },
       { id: 'wwd-roi', label: 'AI Roadmap & ROI Workshop', href: '/services#roi-workshop' },
     ],
   },

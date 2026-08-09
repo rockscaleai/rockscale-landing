@@ -1,16 +1,28 @@
-Task: Build AI Strategy & Roadmap Page
+Task: Build Executive AI Training Page
 
-Build a complete AI Strategy & Roadmap service page for RockScale.
+Build a complete Executive AI Training service page for RockScale.
 
-RockScale is an AI solutions, data engineering and cloud infrastructure consulting company helping startups, SMEs and mid-market companies identify, build and deploy practical AI solutions.
+RockScale is an AI solutions, data engineering and cloud infrastructure consulting company helping organizations understand, adopt and implement AI.
 
-This page should position RockScale as a practical AI strategy and implementation partner, helping organizations move from AI uncertainty and experimentation to a clear, prioritized and executable AI roadmap.
+The Executive AI Training offering is designed specifically for:
 
-The page should NOT feel like a traditional management consulting page filled with abstract strategy frameworks and presentation decks.
+* CEOs
+* Founders
+* CTOs
+* CIOs
+* COOs
+* CFOs
+* Business leaders
+* Senior executives
+* Board-level technology decision-makers
 
-The core idea is:
+The purpose is to help leaders understand how AI can affect their business, where to invest, what risks to consider, and how to lead AI adoption across their organization.
 
-Know where AI creates value. Know what to build. Know how to get it into production.
+This should NOT feel like a generic corporate AI course.
+
+The central positioning should be:
+
+Give leaders the clarity to make better AI decisions.
 
 ⸻
 
@@ -23,66 +35,65 @@ Before implementing this page:
 * Explore the entire template.
 * Review all existing pages.
 * Review all reusable components.
-* Identify components that can be reused for:
+* Identify components suitable for:
     * Services
+    * Training
     * Strategy
     * Features
-    * Process/timeline
-    * Case studies
     * Statistics
+    * Process/timeline
+    * Cards
     * Testimonials
     * FAQs
     * CTAs
     * Technology sections
-    * Cards
-    * Diagrams
 
 Reuse existing components wherever possible.
 
-DO NOT create a completely new visual design.
+DO NOT introduce a completely new visual design.
 
-The page must feel like a natural part of the existing RockScale website.
+The page must feel like a natural extension of the existing RockScale website.
 
-Maintain the existing:
+Maintain:
 
-* Typography
-* Colors
-* Spacing
-* Buttons
-* Cards
-* Icons
-* Animations
-* Borders
-* Grid system
-* Responsive behavior
+* Existing typography
+* Existing colors
+* Existing spacing
+* Existing buttons
+* Existing cards
+* Existing icons
+* Existing animations
+* Existing borders
+* Existing grid system
+* Existing responsive behavior
 
-If an existing component needs improvement, modify it while maintaining the existing RockScale design language.
+If an existing component needs improvement, modify it while preserving the existing RockScale visual language.
 
 ⸻
 
 COMPONENT NAMING
 
-Keep all newly created component names short and clean.
+Keep all newly created component names short.
 
-DO NOT create long names such as:
+Do NOT create long component names such as:
 
-AITransformationStrategyAndImplementationRoadmapSection
+ExecutiveArtificialIntelligenceTransformationTrainingSection
 
-Use concise names such as:
+Use names such as:
 
-* StrategyHero
-* StrategyIntro
-* StrategyGrid
-* StrategyFlow
-* StrategyProcess
-* StrategyMap
-* StrategyCases
-* StrategyFAQ
-* StrategyCTA
+* ExecHero
+* ExecIntro
+* ExecTopics
+* ExecGrid
+* ExecFlow
+* ExecProgram
+* ExecOutcomes
+* ExecFAQ
+* ExecCTA
 
 Keep component names around 1–3 words.
 
-Reuse existing components rather than creating unnecessary new ones.
+Reuse existing components wherever possible.
 
 ⸻
 
@@ -90,65 +101,96 @@ PAGE ROUTE
 
 Create the page at:
 
-/services/ai-strategy-roadmap
+/services/executive-ai-training
 
 ⸻
 
 NAVIGATION UPDATE
 
-Add AI Strategy & Roadmap to the existing “What We Do” dropdown menu.
+Add Executive AI Training to the existing “What We Do” dropdown menu.
 
-The “What We Do” dropdown should contain RockScale’s core services using the existing navigation architecture.
+Use the existing navigation architecture.
+
+The “What We Do” dropdown should include:
+
+* AI Strategy & Roadmap
+* AI-Powered Software Development
+* Data Engineering & Analytics
+* Forward Deployed Engineer
+* AI Training for Teams
+* Executive AI Training
 
 Add:
 
-AI Strategy & Roadmap
+Executive AI Training
 
-with the route:
+Route:
 
-/services/ai-strategy-roadmap
+/services/executive-ai-training
 
 Ensure:
 
 * The item is clickable.
 * The route works.
-* The active state works if supported.
+* Active navigation state works if supported.
 * Desktop navigation works.
 * Mobile navigation works.
 * Existing navigation items remain intact.
-* Do not create a new dropdown design.
+* No new navigation style is introduced.
 
 ⸻
 
-ROCKSCALE CORE SERVICES
+POSITIONING
 
-The page should understand the relationship between RockScale’s services:
+Executive AI Training should answer a different question from team training.
 
-1. AI Strategy & Roadmap
-2. AI-Powered Software Development
-3. Data Engineering & Analytics
-4. Forward Deployed Engineer
+Team training asks:
 
-AI Strategy & Roadmap is the starting point that can lead into RockScale’s implementation capabilities.
+“How can my employees use AI?”
 
-The strategic journey should communicate:
+Executive training asks:
 
-Discover → Prioritize → Plan → Build → Deploy → Scale
+“What does AI mean for my business, and what should I do about it?”
+
+The page should focus on:
+
+* AI strategy
+* Business opportunity
+* AI adoption
+* Investment decisions
+* AI operating models
+* AI governance
+* Risk
+* Competitive advantage
+* Organizational change
+* AI leadership
+* Identifying high-value use cases
+
+Do NOT make the primary focus:
+
+* Prompt engineering
+* Basic ChatGPT usage
+* Coding
+* AI tool tutorials
+
+Those can be mentioned only as supporting topics where relevant.
 
 ⸻
 
 PAGE OBJECTIVES
 
-The visitor should understand:
+The page should make executives understand:
 
-* Why an AI strategy is necessary.
-* Where AI can realistically create business value.
-* Which AI opportunities should be prioritized.
-* What data and infrastructure are required.
-* Which solutions should be built internally or bought.
-* How AI initiatives should be sequenced.
-* How to move from strategy to production.
-* How RockScale can continue into implementation.
+* What AI means for their organization.
+* Where AI can create meaningful business value.
+* Which AI opportunities deserve investment.
+* What executives need to understand about modern AI.
+* How AI changes operations and competitive advantage.
+* What risks leadership needs to manage.
+* How to create an AI adoption strategy.
+* How to evaluate AI investments.
+* How to lead AI adoption responsibly.
+* How RockScale can help move from executive education into implementation.
 
 ⸻
 
@@ -158,202 +200,241 @@ Use the existing Hero component.
 
 Headline:
 
-Turn AI Opportunities Into a Clear Roadmap
+AI Training for Leaders Making AI Decisions
+
+Alternative:
+
+Understand AI. Make Better Decisions. Lead the Change.
 
 Supporting copy:
 
-RockScale helps businesses identify high-value AI opportunities, prioritize what matters and create a practical roadmap for turning AI ideas into production systems.
+Give your leadership team the knowledge and strategic perspective needed to understand AI opportunities, evaluate investments, manage risks and lead practical AI adoption across the organization.
 
 Primary CTA:
 
-Build Your AI Roadmap
+Train Your Leadership Team
 
 Secondary CTA:
 
-Talk to Our Team
+Talk to RockScale
 
-The visual should communicate strategy, prioritization and execution.
+Use a sophisticated visual from the existing template.
 
-Avoid generic AI brain/robot imagery.
+Avoid generic robots, glowing brains or cliché AI imagery.
 
-Use existing template visuals, cards, diagrams or animations.
+The visual should feel executive, strategic and technology-focused.
 
 ⸻
 
-2. THE PROBLEM
+2. THE EXECUTIVE AI GAP
 
 Create an introductory section.
 
 Headline:
 
-AI Is Easy to Experiment With. Knowing What to Build Is Hard.
+AI Is Moving Faster Than Most Leadership Teams
 
-Explain the challenges organizations face:
+Explain that executives are increasingly expected to make decisions about:
 
-* Too many AI tools
-* Too many possible use cases
-* Unclear ROI
-* Teams experimenting without direction
-* AI projects disconnected from business goals
-* Poor-quality or inaccessible data
-* Security and governance concerns
-* Difficulty moving from PoC to production
-* Lack of internal AI expertise
+* AI investments
+* AI tools
+* AI vendors
+* Automation
+* Data infrastructure
+* AI talent
+* Governance
+* Security
+* Product strategy
+* Competitive positioning
 
-Explain that RockScale helps turn this uncertainty into a structured plan.
+But many leadership teams lack a shared understanding of what modern AI can realistically do.
+
+Explain that this creates risks such as:
+
+* Investing in the wrong tools
+* Running disconnected AI experiments
+* Missing valuable opportunities
+* Underestimating implementation complexity
+* Failing to prepare employees
+* Creating unnecessary AI risk
 
 Use an existing split-content component.
 
 ⸻
 
-3. WHAT AI STRATEGY MEANS TO ROCKSCALE
+3. WHAT EXECUTIVES NEED TO UNDERSTAND
 
-Create a strong positioning section.
-
-Headline:
-
-Strategy That Leads Somewhere
-
-Explain that RockScale’s strategy work is designed to produce practical decisions and an executable roadmap.
-
-Not just:
-
-Reports
-
-Workshops
-
-Presentations
-
-Instead, the outcome should be:
-
-Prioritized use cases
-
-Technical direction
-
-Architecture recommendations
-
-Data requirements
-
-Implementation plan
-
-Investment priorities
-
-Execution roadmap
-
-Use an existing feature or comparison component.
-
-⸻
-
-4. AI READINESS ASSESSMENT
-
-Create a dedicated section.
+Create a visual grid.
 
 Headline:
 
-Understand Where You Stand Before You Build
+The AI Knowledge Every Executive Team Needs
 
-Assess the organization’s readiness across:
+Include:
 
-Business
+AI Fundamentals
 
-Goals
+Understand modern AI, LLMs, generative AI and AI agents without needing to become engineers.
 
-AI opportunities
+Business Value
 
-Expected ROI
+Identify where AI can improve revenue, productivity, customer experience and operations.
+
+AI Strategy
+
+Understand how to create an AI roadmap aligned with business objectives.
+
+AI Investment
+
+Evaluate where to invest, what to build and what to buy.
 
 Data
 
-Availability
+Understand why data quality, infrastructure and access matter to AI.
 
-Quality
+AI Risk
 
-Accessibility
+Understand privacy, security, hallucinations, reliability and governance.
 
-Governance
+AI Adoption
 
-Technology
+Understand how AI changes workflows, roles and organizational processes.
 
-Architecture
+Competitive Advantage
 
-Infrastructure
+Identify where AI can create differentiation rather than simply improve productivity.
 
-Existing software
-
-Integration capability
-
-People
-
-Technical skills
-
-AI literacy
-
-Team capacity
-
-Governance
-
-Security
-
-Privacy
-
-Risk
-
-Responsible AI
-
-Use an existing grid or assessment-style component.
+Use existing cards/grid components.
 
 ⸻
 
-5. AI OPPORTUNITY DISCOVERY
+4. AI FOR BUSINESS LEADERS
 
-Create a section focused on identifying valuable use cases.
+Create a section explaining AI in business terms.
 
 Headline:
 
-Find the AI Opportunities Worth Pursuing
+AI Through a Business Lens
 
-Explain that RockScale helps identify opportunities across:
+Show how AI can affect:
 
-* Customer experience
-* Operations
-* Sales
-* Marketing
-* Finance
-* HR
-* Product
-* Data
-* Internal knowledge
-* Software development
+Revenue
 
-Each opportunity should be evaluated based on factors such as:
+New products
+
+Personalization
+
+Sales intelligence
+
+New services
+
+Productivity
+
+Automation
+
+AI copilots
+
+Knowledge systems
+
+Workflow optimization
+
+Customer Experience
+
+AI assistants
+
+Personalization
+
+Faster support
+
+Intelligent interfaces
+
+Operations
+
+Process automation
+
+Document processing
+
+Decision support
+
+Operational intelligence
+
+Product
+
+AI-powered features
+
+AI-native products
+
+Intelligent workflows
+
+Use an existing feature grid.
+
+⸻
+
+5. UNDERSTANDING THE AI LANDSCAPE
+
+Create a visual ecosystem section.
+
+Headline:
+
+Know What’s Real, What’s Useful and What’s Hype
+
+Explain the current AI ecosystem in executive-friendly language.
+
+Cover:
+
+Foundation models
+
+LLMs
+
+AI agents
+
+AI copilots
+
+RAG
+
+AI automation
+
+Multimodal AI
+
+Open-source models
+
+AI infrastructure
+
+AI applications
+
+The goal is not to teach technical implementation.
+
+The goal is to give executives enough context to make informed decisions.
+
+Use existing visual components.
+
+⸻
+
+6. AI STRATEGY & USE CASE DISCOVERY
+
+Create a section connecting executive training with RockScale’s AI Strategy service.
+
+Headline:
+
+Find the AI Opportunities That Matter
+
+Teach executives how to evaluate opportunities based on:
 
 Business value
 
-Technical feasibility
+Feasibility
 
 Data availability
 
-Implementation complexity
+Cost
 
 Risk
 
 Time to value
 
-Use an existing card/grid component.
+Strategic importance
 
-⸻
-
-6. PRIORITIZATION FRAMEWORK
-
-Create a visually strong section.
-
-Headline:
-
-Not Every AI Idea Deserves to Be Built
-
-Create a simple prioritization matrix.
-
-Axes:
+Show an example prioritization matrix:
 
 Business Value
 
@@ -363,386 +444,298 @@ Implementation Complexity
 
 Low → High
 
-Create quadrants such as:
+Use existing matrix/card components where available.
 
-Quick Wins
+CTA:
 
-High value / Low complexity
-
-Build first.
-
-Strategic Bets
-
-High value / High complexity
-
-Plan carefully.
-
-Experiments
-
-Low value / Low complexity
-
-Test selectively.
-
-Avoid
-
-Low value / High complexity
-
-Do not prioritize.
-
-Use existing visual components to create the matrix.
-
-Do not make the visual overly complicated.
-
-⸻
-
-7. AI USE CASE EXAMPLES
-
-Create a use-case section.
-
-Examples:
-
-Customer Support Copilot
-
-Assist support teams with knowledge retrieval and response generation.
-
-Document Intelligence
-
-Extract and analyze information from contracts, invoices and business documents.
-
-AI Sales Assistant
-
-Automate research, summarize customer information and support sales workflows.
-
-Knowledge Assistant
-
-Give employees natural-language access to internal company knowledge.
-
-AI Workflow Agent
-
-Automate multi-step operational processes.
-
-Predictive Analytics
-
-Use business data to forecast trends and identify opportunities.
-
-Make clear that these are examples, not guaranteed solutions for every business.
-
-⸻
-
-8. AI ARCHITECTURE STRATEGY
-
-Create a technical but accessible section.
-
-Headline:
-
-Design the Architecture Before You Build
-
-Explain that RockScale evaluates:
-
-Models
-
-Data
-
-Applications
-
-APIs
-
-Agents
-
-Cloud infrastructure
-
-Security
-
-Observability
-
-Integrations
-
-Evaluation
-
-Show a simplified architecture:
-
-Business Problem
-
-↓
-
-AI Application
-
-↓
-
-AI Orchestration
-
-↓
-
-Models
-
-↓
-
-Business Data
-
-↓
-
-Enterprise Systems
-
-↓
-
-Cloud Infrastructure
-
-Use existing diagram/visual components.
-
-⸻
-
-9. DATA READINESS
-
-Create a section connecting strategy to RockScale’s Data Engineering service.
-
-Headline:
-
-Your AI Strategy Is Only as Strong as Your Data
-
-Explain that RockScale assesses:
-
-Data availability
-
-Data quality
-
-Data accessibility
-
-Data architecture
-
-Data governance
-
-Data pipelines
-
-Knowledge sources
-
-Integration requirements
-
-If gaps exist, the roadmap should include the necessary data engineering work.
+Explore AI Strategy & Roadmap
 
 Link to:
 
-Data Engineering & Analytics
-
-Route:
-
-/services/data-engineering-analytics
+/services/ai-strategy-roadmap
 
 ⸻
 
-10. BUILD VS BUY
+7. BUILD, BUY OR INTEGRATE
 
-Create a strategy decision section.
+Create a decision-making section.
 
 Headline:
 
-Build, Buy or Integrate?
+Know When to Build, Buy or Integrate
 
-Explain how RockScale helps organizations determine when to:
+Explain the three choices:
 
 Build
 
-Create custom software when the problem requires differentiated capabilities.
+When AI capabilities are strategically important or require significant customization.
 
 Buy
 
-Use an existing AI product when it already solves the problem effectively.
+When an existing product already solves the problem effectively.
 
 Integrate
 
-Connect existing AI tools with the organization’s systems and workflows.
+When the organization can connect existing AI capabilities to its systems and workflows.
 
-Customize
+Explain that executives should avoid building custom AI simply because it is technically possible.
 
-Extend an existing solution when some customization is required.
-
-The goal is to avoid building AI simply because it is technically possible.
+Use an existing comparison/card component.
 
 ⸻
 
-11. MODEL & TECHNOLOGY STRATEGY
+8. AI INVESTMENT & ROI
 
-Create a section explaining technology selection.
+Create a strong executive-focused section.
 
 Headline:
 
-Choose Technology Based on the Problem
+Make AI Investments With a Clear Business Case
 
-Evaluate:
+Explain how executives can think about:
 
-* Model capability
-* Cost
-* Latency
-* Reliability
-* Privacy
-* Context requirements
-* Tool use
-* Hosting requirements
-* Vendor dependence
-* Scalability
+* Expected business value
+* Implementation cost
+* Infrastructure cost
+* AI model costs
+* Integration complexity
+* Employee adoption
+* Maintenance
+* Risk
+* Time to value
+* Long-term scalability
 
-Show examples of the ecosystem using existing logo components:
+Emphasize that AI projects should be evaluated as business investments, not technology experiments.
 
-OpenAI
-
-Anthropic
-
-Google Gemini
-
-Mistral
-
-Open-source models
-
-Cloud platforms
-
-AI frameworks
-
-Do not imply that RockScale exclusively recommends one provider.
+Do NOT include fabricated ROI percentages.
 
 ⸻
 
-12. ROADMAP
+9. AI RISK & GOVERNANCE
 
-Create one of the most important sections.
+Create a dedicated section.
 
 Headline:
 
-From AI Ideas to an Executable Roadmap
+Lead AI Responsibly
 
-Show a visual roadmap.
+Cover:
 
-Phase 1 — Discover
+Data Privacy
 
-Identify business opportunities and assess AI readiness.
+Understand what organizational information can safely be used with AI systems.
 
-↓
+Security
 
-Phase 2 — Prioritize
+Understand common security considerations when introducing AI.
 
-Rank opportunities by value, feasibility, risk and effort.
+Reliability
 
-↓
+Understand hallucinations, model limitations and the importance of evaluation.
 
-Phase 3 — Validate
+Governance
 
-Build focused experiments or proof-of-concepts where necessary.
+Establish appropriate policies and accountability.
 
-↓
+Human Oversight
 
-Phase 4 — Build
+Determine where human review should remain part of the workflow.
 
-Develop high-value production solutions.
+Responsible Adoption
 
-↓
+Create practical guidelines for employees and teams.
 
-Phase 5 — Deploy
-
-Integrate into real business workflows.
-
-↓
-
-Phase 6 — Scale
-
-Expand successful AI initiatives across the organization.
-
-Use an existing timeline/process component.
+Do not make unsupported legal, regulatory or compliance claims.
 
 ⸻
 
-13. STRATEGY DELIVERABLES
+10. AI AND THE FUTURE OF WORK
 
-Create a clean deliverables section.
+Create a section focused on organizational change.
 
 Headline:
 
-What You Walk Away With
+AI Will Change How Work Gets Done
+
+Discuss how AI can change:
+
+* Employee workflows
+* Roles
+* Productivity
+* Decision-making
+* Team structures
+* Customer interactions
+* Software development
+* Operations
+
+Avoid fear-based messaging.
+
+The message should be:
+
+AI changes work.
+
+Leadership must decide how their organization responds.
+
+⸻
+
+11. EXECUTIVE TRAINING PROGRAM
+
+Create a premium program section.
+
+Headline:
+
+A Practical AI Program for Leadership Teams
+
+Structure the program into modules.
+
+Module 01 — AI Foundations
+
+What modern AI can and cannot do.
+
+Module 02 — AI & Your Business
+
+Identify where AI could affect the organization’s products, customers and operations.
+
+Module 03 — AI Opportunities
+
+Discover and prioritize valuable use cases.
+
+Module 04 — AI Strategy
+
+Understand how to build an AI roadmap.
+
+Module 05 — AI Investment
+
+Evaluate build, buy and integration decisions.
+
+Module 06 — AI Risk
+
+Understand privacy, security, governance and responsible adoption.
+
+Module 07 — AI Adoption
+
+Prepare teams, workflows and operating models for AI.
+
+Module 08 — Executive Action Plan
+
+Define the organization’s next steps.
+
+Use the existing timeline, accordion or card components.
+
+⸻
+
+12. TRAINING FORMAT
+
+Create a section showing flexible delivery options.
+
+Executive Briefing
+
+A focused session introducing leadership teams to the current AI landscape and business implications.
+
+Executive Workshop
+
+A practical workshop focused on AI opportunities, strategy and decision-making.
+
+AI Strategy Session
+
+A deeper working session focused on identifying and prioritizing AI opportunities.
+
+Leadership Program
+
+A structured multi-session program covering AI strategy, investment, governance and adoption.
+
+Board / Leadership Session
+
+A concise executive-level briefing focused on AI’s strategic implications for the organization.
+
+Do not display pricing unless actual pricing has been defined.
+
+⸻
+
+13. HANDS-ON EXECUTIVE EXPERIENCE
+
+Executives should not simply sit through slides.
+
+Create a section:
+
+Headline:
+
+Learn by Working Through Real Business Problems
+
+Explain that participants can work through scenarios such as:
+
+* Identifying AI opportunities
+* Evaluating AI use cases
+* Comparing build vs buy
+* Assessing AI risks
+* Designing an AI adoption roadmap
+* Evaluating potential AI investments
+
+If appropriate, include controlled demonstrations of modern AI tools.
+
+The experience should remain executive-focused rather than becoming a technical workshop.
+
+⸻
+
+14. WHAT LEADERS WALK AWAY WITH
+
+Create an outcome section.
+
+Headline:
+
+Leave With Clarity, Not Just Knowledge
 
 Include:
 
-AI Readiness Assessment
+AI Literacy
 
-AI Opportunity Map
+A shared understanding of modern AI.
 
-Prioritized Use Cases
+Strategic Clarity
 
-AI Architecture Recommendations
+A clearer view of where AI can create value.
 
-Data Readiness Assessment
+Prioritized Opportunities
 
-Technology Recommendations
+A shortlist of AI opportunities worth exploring.
 
-Build vs Buy Analysis
+Better Decisions
 
-AI Investment Priorities
+A framework for evaluating AI investments.
 
-Implementation Roadmap
+Risk Awareness
 
-Governance Considerations
+A better understanding of AI risks and governance.
 
-90-Day Action Plan
+Action Plan
 
-Avoid making these sound like generic consulting documents.
+Clear next steps for the organization.
 
-Explain that each deliverable is designed to support actual implementation decisions.
-
-⸻
-
-14. 90-DAY AI PLAN
-
-Create a visually strong section.
-
-Headline:
-
-Know What to Do in the Next 90 Days
-
-Show a practical example:
-
-Days 1–30
-
-Assess
-
-Discover
-
-Prioritize
-
-Days 31–60
-
-Validate
-
-Prototype
-
-Prepare data and architecture
-
-Days 61–90
-
-Build
-
-Deploy
-
-Measure
-
-This section should make the strategy feel actionable rather than theoretical.
+Do not fabricate quantitative outcomes.
 
 ⸻
 
-15. FROM STRATEGY TO BUILD
+15. FROM TRAINING TO IMPLEMENTATION
 
-Create a transition section connecting AI Strategy to RockScale’s implementation services.
+Create a strong RockScale ecosystem section.
 
 Headline:
 
-Strategy Shouldn’t End With a Slide Deck
+Training Is the Beginning — Not the End
 
-Explain:
-
-Once priorities are established, RockScale can continue into implementation.
+Explain that after executive training, RockScale can help organizations move into implementation.
 
 Show:
 
-Strategy
+Executive Training
 
 ↓
 
-Data Engineering
+AI Strategy
+
+↓
+
+Data Readiness
 
 ↓
 
@@ -756,9 +749,17 @@ Forward Deployed Engineering
 
 Scale
 
-Link each stage to the relevant RockScale service page.
+Link to the relevant RockScale service pages:
 
-Use the existing service-card components.
+/services/ai-strategy-roadmap
+
+/services/data-engineering-analytics
+
+/services/ai-powered-software-development
+
+/services/forward-deployed-engineer
+
+This section should make the page commercially connected to RockScale’s broader consulting offering.
 
 ⸻
 
@@ -766,112 +767,127 @@ Use the existing service-card components.
 
 Create a differentiator section.
 
-Engineering-Led Strategy
+Engineering-Led
 
-Our strategy is informed by people who actually build AI systems.
+Training is informed by people who actually build AI systems.
 
 Practical
 
-We focus on decisions that can be implemented.
+Executives learn how AI applies to real business problems.
+
+Strategic
+
+Training connects AI capabilities to business objectives.
 
 Technology-Agnostic
 
-We recommend technology based on the problem.
+We focus on choosing the right technology for the problem.
 
-Data-Aware
+Implementation-Aware
 
-We consider the data foundation required for AI from the beginning.
-
-Production-Focused
-
-We think beyond prototypes and experiments.
+We understand what it takes to move from strategy into production.
 
 End-to-End
 
-Strategy can continue directly into data, software and engineering implementation.
+RockScale can support organizations beyond training with strategy, data and engineering.
 
 ⸻
 
-17. CASE STUDIES
+17. WHO THIS IS FOR
 
-Use the existing case study component.
-
-Show relevant RockScale work where available.
-
-Prioritize examples involving:
-
-AI implementation
-
-AI products
-
-Data platforms
-
-AI automation
-
-AI infrastructure
-
-If real client case studies are not available:
-
-Use Qorebit AI or clearly labelled internal/reference projects.
-
-Do NOT fabricate:
-
-* Clients
-* Testimonials
-* Revenue
-* ROI
-* Statistics
-* Case study results
-
-⸻
-
-18. FAQ
-
-Create an enterprise-focused FAQ.
+Create an audience section.
 
 Include:
 
-What is an AI strategy?
+CEOs
 
-Why does a business need an AI roadmap?
+Founders
 
-How do you identify AI use cases?
+CTOs
 
-How do you prioritize AI opportunities?
+CIOs
 
-Can you assess our AI readiness?
+COOs
 
-Do you help with AI architecture?
+CFOs
 
-Can you evaluate our existing AI projects?
+Business Unit Leaders
 
-How do you determine whether we should build or buy?
+Product Leaders
 
-Can RockScale help us implement the roadmap?
+Technology Leaders
 
-How long does an AI strategy engagement take?
+Board Members
 
-What do we receive at the end of the engagement?
+Make clear that the content can be tailored based on the organization’s leadership structure and objectives.
+
+⸻
+
+18. CASE STUDIES / PROOF
+
+Use the existing case study component.
+
+Show relevant RockScale projects, products or AI initiatives where available.
+
+Qorebit AI can be used as an example of practical AI infrastructure and product development.
+
+If there are no relevant public executive-training case studies yet:
+
+Do NOT fabricate them.
+
+Use clearly labelled internal examples or reference projects instead.
+
+⸻
+
+19. FAQ
+
+Create an executive-focused FAQ.
+
+Include:
+
+Who is Executive AI Training designed for?
+
+Does the training require technical knowledge?
+
+Is this the same as AI Training for Teams?
+
+Can the training be customized to our industry?
+
+Can you train our entire leadership team?
+
+Can the session focus on our specific business?
+
+Do you cover AI strategy?
+
+Do you cover AI risks and governance?
+
+Can the training include AI opportunity discovery?
+
+Can RockScale help implement the opportunities identified during the training?
+
+How long are executive sessions?
+
+Can the training be delivered remotely or on-site?
 
 Use the existing FAQ component.
 
 ⸻
 
-19. FINAL CTA
+20. FINAL CTA
 
 Create a premium final CTA.
 
 Headline:
 
-Know Where AI Can Take Your Business
+Give Your Leadership Team an AI Advantage
 
 Supporting copy:
 
-Let’s identify the opportunities worth pursuing, build a practical roadmap and create a clear path from AI strategy to production.
+Equip your leaders with the understanding and strategic clarity they need to make better AI decisions and lead adoption across the organization.
 
 Primary CTA:
 
-Build Your AI Roadmap
+Train Your Leadership Team
 
 Secondary CTA:
 
@@ -885,11 +901,11 @@ SEO
 
 Suggested title:
 
-AI Strategy & Roadmap | RockScale
+Executive AI Training | RockScale
 
 Suggested meta description:
 
-RockScale helps businesses identify high-value AI opportunities, assess readiness and build practical AI roadmaps that move from strategy to production.
+Executive AI training for CEOs, founders and leadership teams. Learn how to identify AI opportunities, evaluate investments, manage risk and lead AI adoption.
 
 Use proper semantic headings.
 
@@ -899,43 +915,45 @@ COPY STYLE
 
 The tone should be:
 
+Executive
+
 Clear
 
 Strategic
-
-Technical when useful
 
 Confident
 
 Practical
 
-Business-focused
+Intelligent
 
-Avoid generic consulting language such as:
+Avoid excessive technical jargon.
 
-“Unlock the transformative power of AI”
+Avoid generic AI marketing phrases such as:
 
-“Revolutionize your organization”
+“Unlock the power of AI”
 
-“Navigate the AI landscape”
+“Revolutionize your business”
 
-“Cutting-edge AI strategy”
+“Game-changing”
 
-“Game-changing transformation”
+“Cutting-edge”
 
-Instead focus on:
+“AI-powered future”
 
-What should we build?
+“Transform overnight”
 
-Why should we build it?
+Instead answer executive questions:
 
-What will it cost?
+Where can AI create value?
 
-What data do we need?
+What should we invest in?
 
-What technology should we use?
+What should we avoid?
 
-What should we prioritize?
+What risks should we manage?
+
+What capabilities do we need?
 
 What should we do next?
 
@@ -943,41 +961,51 @@ What should we do next?
 
 DESIGN
 
-Use the existing RockScale visual system.
+Maintain the existing RockScale design system.
 
-Prioritize:
+Use existing:
 
+* Premium cards
 * Strategy diagrams
-* Roadmaps
-* Matrices
-* Cards
 * Timelines
-* Data flows
+* Comparison components
+* Feature grids
+* Statistics components
 * Existing animations
 * Existing typography
 * Existing illustrations
 
-Animations should communicate:
+The visual language should feel:
 
-Prioritization
+Premium
 
-Decision-making
+Strategic
 
-Roadmap progression
+Modern
 
-Data → AI
+Technical
 
-Strategy → Implementation
+Executive
 
-Avoid decorative animations that do not communicate anything.
+Avoid making the page look like an online course marketplace.
 
-Do not use generic corporate boardroom imagery unless the existing template specifically supports it.
+Do not use generic graduation caps, classrooms or stock corporate training photography.
+
+Prefer:
+
+* Strategy maps
+* AI ecosystem diagrams
+* Decision frameworks
+* Business workflow visuals
+* Technology architecture
+* Executive-focused data visualizations
+* Existing template illustrations
 
 ⸻
 
 RESPONSIVE DESIGN
 
-Ensure the page works correctly across:
+Ensure the page works correctly on:
 
 Desktop
 
@@ -985,28 +1013,29 @@ Tablet
 
 Mobile
 
-The prioritization matrix, roadmap and architecture visuals must adapt cleanly to smaller screens.
+Decision matrices, diagrams and program modules must collapse gracefully on smaller screens.
 
-Avoid horizontal scrolling.
+Avoid horizontal overflow.
 
 ⸻
 
-FINAL CHECK
+FINAL QUALITY CHECK
 
 Before completing:
 
 * Explore the full existing template.
 * Reuse existing components wherever possible.
-* Keep all new component names short.
-* Maintain the RockScale design system.
-* Create /services/ai-strategy-roadmap.
-* Add AI Strategy & Roadmap to the What We Do dropdown.
+* Keep new component names short.
+* Maintain the RockScale visual identity.
+* Create /services/executive-ai-training.
+* Add Executive AI Training to the What We Do dropdown.
 * Ensure desktop and mobile navigation work.
-* Clearly distinguish practical AI strategy from traditional consulting.
-* Make the roadmap actionable.
-* Connect strategy to RockScale’s implementation services.
-* Link to Data Engineering & Analytics where appropriate.
-* Do not fabricate metrics, clients or case studies.
-* Ensure every CTA works.
-* Ensure the page is responsive.
-* Ensure the final page positions RockScale as an engineering-led AI strategy partner, not a strategy-only consultancy.
+* Clearly differentiate Executive AI Training from AI Training for Teams.
+* Keep the content focused on leadership, strategy and decision-making.
+* Connect executive training to RockScale’s AI Strategy service.
+* Connect training to implementation services.
+* Do not fabricate testimonials, clients, metrics or outcomes.
+* Ensure all CTAs work.
+* Ensure the page is fully responsive.
+* Ensure the final page positions RockScale as an engineering-led AI advisory and implementation partner, rather than a generic corporate training provider.
+let it be visual appealing

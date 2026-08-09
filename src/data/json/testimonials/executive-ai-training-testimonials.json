@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Sarah Chen",
+    "title": "CEO, Tech Innovators",
+    "avatar": "/images/ns-avatar-1.png",
+    "testimonial": "The executive AI training was a game-changer for our leadership team. It demystified complex AI concepts and helped us build a clear, actionable AI strategy. We now have a shared language and vision for how AI will drive our business forward."
+  },
+  {
+    "name": "David Rodriguez",
+    "title": "COO, Global Logistics Inc.",
+    "avatar": "/images/ns-avatar-2.png",
+    "testimonial": "Rockscale's workshop was instrumental in aligning our executives on AI priorities. We moved from scattered, siloed experiments to a focused AI roadmap. The session on identifying high-value use cases was particularly insightful."
+  },
+  {
+    "name": "Emily White",
+    "title": "CFO, Healthcare Solutions",
+    "avatar": "/images/ns-avatar-3.png",
+    "testimonial": "As a non-technical leader, I was concerned about making informed decisions on AI investments. This training provided the perfect balance of strategic overview and practical knowledge. I now feel confident evaluating AI proposals and understanding their potential ROI."
+  }
+]
