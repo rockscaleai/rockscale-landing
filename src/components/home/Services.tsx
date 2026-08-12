@@ -13,49 +13,41 @@ const services = [
     id: '1',
     layer: 'layer-1',
     icon: 'ns-shape-8',
-    title: 'Custom AI Solutions',
+    title: 'AI Strategy & Roadmap',
     description:
-      'Design and build bespoke AI applications — from GenAI copilots and LLM-powered tools to document intelligence and automated workflows.',
+      'Understand where AI can create real business value. We help you identify high-value opportunities, assess readiness, and build practical AI roadmaps that move from strategy to production.',
+    phase: 'THINK',
+    href: '/services/ai-strategy-roadmap',
   },
   {
     id: '2',
-    layer: 'layer-1',
-    icon: 'ns-shape-35',
-    title: 'AI Copilots & LLM Integration',
+    layer: 'layer-2',
+    icon: 'ns-shape-23',
+    title: 'AI-Powered Software Development',
     description:
-      'Embed AI assistants into your products and operations using RAG, fine-tuning, and multi-agent frameworks built on leading foundation models.',
+      'Turn high-value opportunities into production-ready software. We build AI applications, agents, copilots and intelligent workflows custom-built to solve real business problems at scale.',
+    phase: 'BUILD',
+    href: '/services/ai-powered-software-development',
   },
   {
     id: '3',
-    layer: 'layer-2',
+    layer: 'layer-3',
     icon: 'ns-shape-41',
-    title: 'Data Engineering',
+    title: 'Data Engineering & Analytics',
     description:
-      'Build the data foundation your AI needs — robust ELT/ETL pipelines, modern data warehouses, and governed data platforms at scale.',
+      'Build the data foundation that makes intelligent systems reliable. We create robust pipelines, modern data warehouses, analytics platforms and AI-ready data foundations.',
+    phase: 'POWER',
+    href: '/services/data-engineering-analytics',
   },
   {
     id: '4',
-    layer: 'layer-2',
-    icon: 'ns-shape-19',
-    title: 'Business Intelligence',
+    layer: 'layer-4',
+    icon: 'ns-shape-35',
+    title: 'Forward Deployed Engineer',
     description:
-      'Move beyond reporting to predictive analytics — ML-driven dashboards, customer segmentation, and forecasting models grounded in your data.',
-  },
-  {
-    id: '5',
-    layer: 'layer-3',
-    icon: 'ns-shape-31',
-    title: 'Cloud Infrastructure',
-    description:
-      'Architect and manage secure, scalable cloud environments on AWS, GCP and Azure — with full MLOps pipelines for reliable model deployment.',
-  },
-  {
-    id: '6',
-    layer: 'layer-3',
-    icon: 'ns-shape-21',
-    title: 'AI Strategy & Consulting',
-    description:
-      'Navigate your AI transformation with confidence — AI readiness assessments, vendor selection, compliance roadmaps, and executive alignment.',
+      'Put experienced engineers directly inside your organization. Our specialists embed with your team to accelerate implementation, solve hard problems and move from idea to production.',
+    phase: 'DEPLOY',
+    href: '/services/forward-deployed-engineer',
   },
 ];
 
@@ -110,14 +102,14 @@ const Services = () => {
           <div>
             <h2 className="mb-4 text-white">What we build for you.</h2>
             <p className="mx-auto max-w-[600px] text-white/70">
-              From AI-powered copilots to enterprise data infrastructure — our six core service areas
-              cover every layer of your AI transformation.
+              From AI strategy and roadmaps to production-ready software and embedded engineering — our four core services
+              cover every stage of your AI transformation journey.
             </p>
           </div>
         </div>
 
         {/* Cards Grid */}
-        <div className="service-grid mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+        <div className="service-grid mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {services.map((service) => (
             <div key={service.id} className="service-card">
               <ServiceCard service={service} />
@@ -131,16 +123,34 @@ const Services = () => {
 
 // Card — removed backdrop-blur (very expensive during scroll), use solid semi-transparent bg instead
 const ServiceCard = ({ service }: { service: Omit<typeof services[0], 'layer'> }) => {
+  const CardWrapper = service.href ? 'a' : 'div';
+  const cardProps = service.href ? { href: service.href } : {};
+
   return (
-    <div className="group relative flex h-full flex-col space-y-5 rounded-[24px] border border-white/10 bg-white/8 p-8 transition-colors duration-300 ease-out hover:bg-white/12 hover:border-white/20">
-      <div className="w-full">
+    <CardWrapper
+      {...cardProps}
+      className="group relative flex h-full flex-col space-y-5 rounded-[24px] border border-white/10 bg-white/8 p-8 transition-all duration-300 ease-out hover:bg-white/12 hover:border-white/20 hover:scale-[1.02] cursor-pointer">
+      <div className="flex items-start justify-between w-full">
         <span className={`${service.icon} text-white/90 text-[52px]`} />
+        {service.phase && (
+          <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/20">
+            {service.phase}
+          </span>
+        )}
       </div>
-      <div className="space-y-3 relative z-10">
+      <div className="space-y-3 relative z-10 flex-1">
         <h5 className="text-white max-sm:text-heading-6">{service.title}</h5>
         <p className="text-white/70 leading-relaxed text-sm md:text-base">{service.description}</p>
       </div>
-    </div>
+      {service.href && (
+        <div className="pt-2">
+          <span className="text-white/80 text-sm font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+            Learn more
+            <span className="ns-shape-30 text-[16px]" />
+          </span>
+        </div>
+      )}
+    </CardWrapper>
   );
 };
 
