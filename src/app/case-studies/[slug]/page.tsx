@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import RevealAnimation from '@/components/animation/RevealAnimation';
-import Image from 'next/image';
-import LinkButton from '@/components/ui/button/LinkButton';
+
 import CTA from '@/components/shared/cta/CTA';
 
 export const metadata: Metadata = {

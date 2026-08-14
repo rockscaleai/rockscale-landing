@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import RevealAnimation from '../animation/RevealAnimation';
 import SocialIcon, { Platform } from '../shared/SocialIcon';
-import LinkButton from '../ui/button/LinkButton';
+
 
 const teamMembers = [
   {
@@ -84,7 +84,7 @@ const Team = () => {
                     <div className="flex items-center justify-center gap-2.5">
                       {['github', 'linkedin'].map((platform) => {
                         const href = member.social[platform as keyof typeof member.social];
-                        if (!href) return null;
+                        if (!href) { return null; }
                         return (
                           <Link
                             key={platform}

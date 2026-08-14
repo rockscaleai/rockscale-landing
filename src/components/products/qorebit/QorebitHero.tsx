@@ -1,8 +1,8 @@
 'use client';
-import gradient12 from '@public/images/ns-img-504.png';
-import Image from 'next/image';
+
+
 import RevealAnimation from '@/components/animation/RevealAnimation';
-import LinkButton from '@/components/ui/button/LinkButton';
+
 
 const QorebitHero = () => {
   return (

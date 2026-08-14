@@ -1,12 +1,9 @@
 'use client';
 import { useGSAP } from '@gsap/react';
-import step from '@public/images/ns-img-149.png';
-import stepDark from '@public/images/ns-img-dark-103.png';
-import Image from 'next/image';
-import { useRef } from 'react';
-import RevealAnimation from '../animation/RevealAnimation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef } from 'react';
+import RevealAnimation from '../animation/RevealAnimation';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,91 +11,80 @@ if (typeof window !== 'undefined') {
 
 const steps = [
   {
-    id: 'step-1',
-    number: 'STEP 1',
-    title: 'Discover',
-    description:
-      'We audit your existing systems, data assets, and business workflows to identify where AI can create the most meaningful impact.',
-    side: 'left',
+    id: '01',
+    title: 'Discovery & Audit',
+    description: 'We audit your existing systems, data assets, and business workflows to identify where AI can create the most meaningful impact.',
+    icon: 'ns-shape-8',
+    color: 'text-[#7E57FD]',
+    bgColor: 'bg-[#7E57FD]/10',
   },
   {
-    id: 'step-2',
-    number: 'STEP 2',
-    title: 'Strategy',
-    description:
-      'We design a tailored AI roadmap — selecting the right models, tools, compliance frameworks, and architecture for your business context.',
-    side: 'right',
+    id: '02',
+    title: 'Strategy & Roadmap',
+    description: 'We design a tailored AI roadmap — selecting the right models, tools, compliance frameworks, and architecture for your business context.',
+    icon: 'ns-shape-23',
+    color: 'text-ns-green',
+    bgColor: 'bg-ns-green/10',
   },
   {
-    id: 'step-3',
-    number: 'STEP 3',
+    id: '03',
     title: 'Data Foundation',
-    description:
-      'We build the data infrastructure your AI needs: secure pipelines, ELT architectures, data warehouses, and governance frameworks.',
-    side: 'left',
+    description: 'We build the data infrastructure your AI needs: secure pipelines, ELT architectures, data warehouses, and governance frameworks.',
+    icon: 'ns-shape-41',
+    color: 'text-blue-500',
+    bgColor: 'bg-blue-500/10',
   },
   {
-    id: 'step-4',
-    number: 'STEP 4',
+    id: '04',
     title: 'AI Development',
-    description:
-      'Our engineers build custom LLM applications, copilots, document intelligence, RAG pipelines, and predictive models tailored to your operations.',
-    side: 'right',
+    description: 'Our engineers build custom LLM applications, copilots, document intelligence, RAG pipelines, and predictive models tailored to your operations.',
+    icon: 'ns-shape-35',
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-500/10',
   },
   {
-    id: 'step-5',
-    number: 'STEP 5',
-    title: 'Deployment',
-    description:
-      'We deploy your AI systems into secure, cloud-native environments with full MLOps pipelines, monitoring, and rollback safety.',
-    side: 'left',
+    id: '05',
+    title: 'Deployment & MLOps',
+    description: 'We deploy your AI systems into secure, cloud-native environments with full MLOps pipelines, monitoring, and rollback safety.',
+    icon: 'ns-shape-19',
+    color: 'text-pink-500',
+    bgColor: 'bg-pink-500/10',
   },
   {
-    id: 'step-6',
-    number: 'STEP 6',
-    title: 'Optimization',
-    description:
-      'We continuously monitor model performance, data drift, infrastructure costs, and business outcomes to drive ongoing improvement.',
-    side: 'right',
+    id: '06',
+    title: 'Optimization & Scale',
+    description: 'We continuously monitor model performance, data drift, infrastructure costs, and business outcomes to drive ongoing improvement.',
+    icon: 'ns-shape-31',
+    color: 'text-ns-cyan',
+    bgColor: 'bg-ns-cyan/10',
   },
 ];
 
 const Journey = () => {
-  const lineRefs = useRef<(SVGSVGElement | null)[]>([]);
-  const scopeRef = useRef<HTMLDivElement | null>(null);
-  const animationInitialized = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      if (animationInitialized.current) return;
-      animationInitialized.current = true;
-
-      const stepLines = lineRefs.current.filter(Boolean) as SVGSVGElement[];
-      if (!stepLines.length) return;
-
-      gsap.set(stepLines, { height: 0 });
-
-      stepLines.forEach((line, index) => {
-        gsap.to(line, {
-          height: 320,
-          duration: 1.5,
-          ease: 'power3.out',
-          delay: index * 0.15,
+      if (lineRef.current) {
+        gsap.to(lineRef.current, {
+          scaleY: 1,
+          ease: 'none',
           scrollTrigger: {
-            trigger: line,
-            start: 'top 80%',
-            end: 'top 20%',
-            toggleActions: 'play none none reverse',
+            trigger: containerRef.current,
+            start: 'top 60%',
+            end: 'bottom 80%',
+            scrub: 1,
           },
         });
-      });
+      }
     },
-    { scope: scopeRef },
+    { scope: containerRef }
   );
 
   return (
-    <section className="py-20 md:py-[120px] lg:py-[160px]" aria-label="AI Transformation Journey">
-      <div className="main-container" ref={scopeRef}>
+    <section className="bg-background-3 py-20 md:py-[120px] lg:py-[160px] dark:bg-background-7" aria-label="AI Transformation Journey">
+      <div className="main-container" ref={containerRef}>
         {/* Heading */}
         <div className="mx-auto mb-16 max-w-[740px] space-y-5 text-center md:mb-[80px]">
           <RevealAnimation delay={0.1}>
@@ -109,7 +95,7 @@ const Journey = () => {
               <h2>Your AI Transformation Journey</h2>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
-              <p className="mx-auto max-w-[600px]">
+              <p className="mx-auto max-w-[600px] text-secondary/70 dark:text-accent/70">
                 A structured, enterprise-grade process — from discovery to deployment and continuous
                 optimization. We partner with you at every stage.
               </p>
@@ -117,72 +103,48 @@ const Journey = () => {
           </div>
         </div>
 
-        {/* Steps */}
-        <RevealAnimation delay={0.4}>
-          <div className="mx-auto max-w-[870px]">
-            {steps.map((s, i) => (
-              <div key={s.id} className="relative">
-                {/* Center node + line */}
-                <div>
-                  <div className="mx-auto flex size-[34px] items-center justify-center rounded-full bg-white drop-shadow-2xl dark:bg-black">
-                    <figure className="size-7">
-                      <Image src={step} alt="step" className="h-full w-full object-cover dark:hidden" />
-                      <Image src={stepDark} alt="step" className="hidden h-full w-full object-cover dark:block" />
-                    </figure>
-                  </div>
-                  {/* Only render line if not last step */}
-                  {i < steps.length - 1 && (
-                    <div className="bg-stroke-2 dark:bg-stroke-6 mx-auto h-[260px] w-1 lg:h-[320px]">
-                      <svg
-                        ref={(el) => { lineRefs.current[i] = el; }}
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="step-line h-[0px] w-1"
-                        viewBox="0 0 2 222"
-                        fill="none">
-                        <path
-                          d="M1 1L0.99999 221"
-                          stroke={`url(#journey-gradient-${i})`}
-                          strokeWidth={2}
-                          strokeLinecap="round"
-                        />
-                        <defs>
-                          <linearGradient
-                            id={`journey-gradient-${i}`}
-                            x1="0.5"
-                            y1={1}
-                            x2="0.49999"
-                            y2={221}
-                            gradientUnits="userSpaceOnUse">
-                            <stop offset={0} stopColor="#64D9FD" />
-                            <stop offset="0.25" stopColor="#7E57FD" />
-                            <stop offset="0.5" stopColor="white" />
-                            <stop offset={1} stopColor="#B04BFD" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                    </div>
-                  )}
-                </div>
+        {/* Timeline */}
+        <div className="relative mx-auto max-w-[900px]">
+          {/* Background Line */}
+          <div className="absolute left-[27px] top-[24px] bottom-[24px] hidden w-px bg-stroke-1/30 dark:bg-white/10 md:block" />
+          
+          {/* Animated Fill Line */}
+          <div 
+            ref={lineRef}
+            className="absolute left-[27px] top-[24px] bottom-[24px] hidden w-px bg-gradient-to-b from-[#7E57FD] via-ns-green to-blue-500 md:block origin-top scale-y-0" 
+          />
 
-                {/* Content bubble — alternating left/right on lg */}
-                <RevealAnimation delay={0.2 + i * 0.1}>
-                  <div
-                    className={`card-item dark:bg-background-6 max-sm:bg-background-4 absolute top-1/2 w-full max-w-[370px] -translate-y-1/2 space-y-3 rounded-[20px] p-6 lg:top-0 lg:translate-y-0 lg:rounded-none lg:bg-none lg:p-0 lg:dark:bg-transparent
-                    ${s.side === 'left'
-                      ? 'left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0'
-                      : 'right-1/2 translate-x-1/2 lg:right-0 lg:translate-x-0'
-                    }`}>
-                    <p className="text-tagline-2 text-primary-500">{s.number}</p>
-                    <div className="space-y-2">
-                      <h3 className="text-heading-6 lg:text-heading-5">{s.title}</h3>
-                      <p className="max-w-[320px]">{s.description}</p>
-                    </div>
+          <div className="space-y-8 md:space-y-12">
+            {steps.map((step, index) => (
+              <RevealAnimation key={step.id} delay={0.2 + (index * 0.1)}>
+                <div className="group relative flex flex-col gap-6 md:flex-row md:items-start md:gap-10">
+                  {/* Node */}
+                  <div className={`relative z-10 hidden md:flex size-14 shrink-0 items-center justify-center rounded-full border-[6px] border-background-3 dark:border-background-7 transition-transform duration-300 group-hover:scale-110 ${step.bgColor}`}>
+                    <span className={`text-sm font-bold ${step.color}`}>{step.id}</span>
                   </div>
-                </RevealAnimation>
-              </div>
+
+                  {/* Mobile Node */}
+                  <div className={`md:hidden inline-flex w-fit items-center gap-2 rounded-full px-4 py-1.5 ${step.bgColor}`}>
+                     <span className={`text-sm font-bold ${step.color}`}>STEP {step.id}</span>
+                  </div>
+
+                  {/* Content Card */}
+                  <div className="flex-grow rounded-[24px] border border-stroke-1/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-white/5 dark:bg-background-6">
+                    <div className="mb-4 flex items-center gap-4">
+                      <div className={`flex size-12 items-center justify-center rounded-xl ${step.bgColor}`}>
+                        <span className={`${step.icon} text-2xl ${step.color}`} />
+                      </div>
+                      <h3 className="text-heading-6 lg:text-heading-5">{step.title}</h3>
+                    </div>
+                    <p className="text-secondary/70 dark:text-accent/70 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </RevealAnimation>
             ))}
           </div>
-        </RevealAnimation>
+        </div>
       </div>
     </section>
   );

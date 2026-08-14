@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import LinkButton from '@/components/ui/button/LinkButton';
 
