@@ -5,26 +5,34 @@ import Link from 'next/link';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
 
-/* ─── Project Card ────────────────────────────────────────────────── */
+const getMetricLabel = (result?: string) => {
+  if (!result) {
+    return 'Real-world impact';
+  }
+
+  return result.split(' ').slice(0, 5).join(' ');
+};
+
 const ProjectCard = ({
   project,
   index,
-  size = 'normal',
+  featured = false,
 }: {
   project: ICaseStudy;
   index: number;
-  size?: 'hero' | 'normal';
+  featured?: boolean;
 }) => {
-  const imageHeight = size === 'hero' ? 'h-[380px] lg:h-[580px]' : 'h-[300px] lg:h-[440px]';
-
   return (
-    <RevealAnimation delay={0.3 + index * 0.1}>
+    <RevealAnimation delay={0.28 + index * 0.1}>
       <Link
         href={`/case-study/${project.slug}`}
-        className="group relative block w-full overflow-hidden rounded-[24px] outline-none"
+        className="group relative block h-full overflow-hidden rounded-[30px] outline-none"
       >
-        {/* Image */}
-        <div className={`relative w-full ${imageHeight} overflow-hidden rounded-[24px]`}>
+        <div
+          className={`relative h-full min-h-[420px] overflow-hidden rounded-[30px] border border-white/10 bg-secondary shadow-[0_30px_80px_-35px_rgba(15,23,42,0.45)] dark:bg-background-7 ${
+            featured ? 'lg:min-h-[620px]' : 'lg:min-h-[300px]'
+          }`}
+        >
           <Image
             src={project.thumbnail}
             fill
@@ -33,60 +41,55 @@ const ProjectCard = ({
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
 
-          {/* Persistent gradient scrim — always visible at bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,15,35,0.15)_0%,rgba(8,15,35,0.4)_38%,rgba(8,15,35,0.88)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(126,87,253,0.28),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_30%)] opacity-90" />
 
-          {/* Index number — top right */}
-          <div className="absolute top-5 right-5 flex size-9 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-sm">
-            <span className="text-xs font-bold text-white/80">
+          <div className="absolute left-5 top-5 right-5 flex items-start justify-between gap-3 md:left-6 md:top-6 md:right-6">
+            <span className="inline-flex max-w-[70%] items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur-md">
+              <span className="size-2 rounded-full bg-ns-green" />
+              {getMetricLabel(project.result)}
+            </span>
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-xs font-bold text-white/85 backdrop-blur-md">
               {String(index + 1).padStart(2, '0')}
             </span>
           </div>
 
-          {/* Result metric pill — top left */}
-          {project.result && (
-            <div className="absolute top-5 left-5">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-ns-green/30 bg-ns-green/20 px-3 py-1.5 text-[11px] font-semibold text-white backdrop-blur-md">
-                <span className="size-1.5 rounded-full bg-ns-green" />
-                {project.result.split(' ').slice(0, 4).join(' ')}
-              </span>
-            </div>
-          )}
+          <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 lg:p-7">
+            <div className="rounded-[26px] border border-white/12 bg-white/10 p-5 backdrop-blur-md md:p-6">
+              <div className="mb-4 flex items-center justify-between gap-4">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/55">
+                  Case study
+                </span>
+                <div className="flex size-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all duration-300 group-hover:scale-110 group-hover:border-ns-green group-hover:bg-ns-green">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="-rotate-45"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
 
-          {/* Bottom overlay — title + description + arrow */}
-          <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-6 md:p-8">
-            <div className="flex-1 min-w-0">
-              <p className="mb-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/50">
-                Case Study
-              </p>
-              <h3
-                className={`font-medium text-white transition-colors group-hover:text-ns-green ${
-                  size === 'hero' ? 'text-2xl md:text-3xl lg:text-4xl' : 'text-xl md:text-2xl'
-                }`}
-              >
-                {project.title}
-              </h3>
-              <p className="mt-2 line-clamp-2 max-w-[520px] text-sm leading-relaxed text-white/60">
-                {project.description}
-              </p>
-            </div>
-
-            {/* Arrow button */}
-            <div className="shrink-0 flex size-12 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-sm transition-all duration-300 group-hover:bg-ns-green group-hover:border-ns-green group-hover:scale-110">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-white -rotate-45"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
+              <div className="space-y-3">
+                <h3
+                  className={`font-medium tracking-tight text-white transition-colors duration-300 group-hover:text-ns-green ${
+                    featured ? 'text-2xl md:text-3xl lg:text-[36px]' : 'text-xl md:text-2xl'
+                  }`}
+                >
+                  {project.title}
+                </h3>
+                <p className={`text-white/65 ${featured ? 'max-w-[560px] text-base leading-7' : 'line-clamp-3 text-sm leading-6'}`}>
+                  {project.description}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -95,34 +98,36 @@ const ProjectCard = ({
   );
 };
 
-/* ─── Projects Section ────────────────────────────────────────────── */
 const Projects = ({ featuredProjects }: { featuredProjects: ICaseStudy[] }) => {
-  return (
-    <section className="bg-white pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-[90px] lg:pb-[90px] xl:pt-[130px] xl:pb-[130px] dark:bg-black">
-      <div className="main-container">
+  const [featuredProject, secondProject, thirdProject] = featuredProjects;
 
-        {/* Header */}
-        <div className="mb-12 flex flex-col items-start justify-between gap-6 md:mb-[60px] md:flex-row md:items-end">
-          <div className="max-w-[640px] space-y-4">
+  return (
+    <section className="relative overflow-hidden bg-white py-16 md:py-20 lg:py-[100px] xl:py-[130px] dark:bg-black">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[8%] top-12 h-52 w-52 rounded-full bg-[#7E57FD]/8 blur-[120px]" />
+        <div className="absolute bottom-10 right-[8%] h-64 w-64 rounded-full bg-sky-400/8 blur-[140px]" />
+      </div>
+
+      <div className="main-container relative z-10">
+        <div className="mb-12 flex flex-col gap-8 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-[700px] space-y-5">
             <RevealAnimation delay={0.1}>
               <span className="badge badge-green">Projects</span>
             </RevealAnimation>
             <RevealAnimation delay={0.2}>
-              <h2 className="text-4xl font-medium tracking-tight md:text-5xl">
-                AI solutions powering<br className="hidden sm:block" /> real businesses.
+              <h2 className="text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+                AI solutions powering real business transformation.
               </h2>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
-              <p className="max-w-[520px] text-secondary/60 dark:text-accent/60">
-                Explore how RockScale has helped startups, SMEs, and mid-size companies unlock
-                growth, streamline operations, and future-proof their businesses through AI.
+              <p className="max-w-[620px] text-base leading-7 text-secondary/65 dark:text-accent/65 md:text-lg">
+                Three selected case studies showing how RockScale turns complex AI ideas into production-ready systems with measurable outcomes.
               </p>
             </RevealAnimation>
           </div>
 
-          {/* Desktop CTA — top right */}
-          <RevealAnimation delay={0.3}>
-            <div className="hidden md:block shrink-0">
+          <RevealAnimation delay={0.35}>
+            <div className="hidden shrink-0 md:block">
               <LinkButton
                 href="/case-study"
                 className="btn btn-secondary btn-md hover:btn-primary dark:btn-transparent"
@@ -133,37 +138,22 @@ const Projects = ({ featuredProjects }: { featuredProjects: ICaseStudy[] }) => {
           </RevealAnimation>
         </div>
 
-        {/* Grid */}
-        <div className="flex flex-col gap-5 lg:gap-6">
-          {/* Row 1 — hero full-width */}
-          {featuredProjects[0] && (
-            <ProjectCard project={featuredProjects[0]} index={0} size="hero" />
-          )}
+        <div className="overflow-hidden rounded-[36px] border border-stroke-1/10 bg-secondary p-4 shadow-[0_35px_100px_-45px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-background-8 sm:p-5 lg:p-6">
+          <div className="grid grid-cols-1 gap-4 xl:grid-cols-[1.2fr_0.8fr] xl:gap-6">
+            {featuredProject && <ProjectCard project={featuredProject} index={0} featured />}
 
-          {/* Row 2 — two side-by-side */}
-          {(featuredProjects[1] || featuredProjects[2]) && (
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
-              {featuredProjects[1] && (
-                <ProjectCard project={featuredProjects[1]} index={1} />
-              )}
-              {featuredProjects[2] && (
-                <ProjectCard project={featuredProjects[2]} index={2} />
-              )}
+            <div className="grid grid-cols-1 gap-4 lg:gap-6">
+              {secondProject && <ProjectCard project={secondProject} index={1} />}
+              {thirdProject && <ProjectCard project={thirdProject} index={2} />}
             </div>
-          )}
-
-          {/* Row 3 — full-width again */}
-          {featuredProjects[3] && (
-            <ProjectCard project={featuredProjects[3]} index={3} size="hero" />
-          )}
+          </div>
         </div>
 
-        {/* Mobile CTA */}
-        <RevealAnimation delay={0.9}>
+        <RevealAnimation delay={0.7}>
           <div className="mt-10 text-center md:hidden">
             <LinkButton
               href="/case-study"
-              className="btn btn-secondary btn-md hover:btn-primary dark:btn-transparent mx-auto w-[85%]"
+              className="btn btn-secondary btn-md mx-auto w-[85%] hover:btn-primary dark:btn-transparent"
             >
               View all projects
             </LinkButton>

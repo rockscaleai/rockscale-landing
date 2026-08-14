@@ -1,6 +1,5 @@
 import Counter from '@/components/home/Counter';
 import CTA from '@/components/home/CTA';
-import Faq from '@/components/home/Faq';
 import Hero from '@/components/home/Hero';
 import IndustrySolutions from '@/components/home/IndustrySolutions';
 import Journey from '@/components/home/Journey';
@@ -24,7 +23,9 @@ export const metadata: Metadata = {
 const page = () => {
   const featuredProjects = getMarkDownData<ICaseStudy & { [key: string]: unknown }>(
     'src/data/case-study',
-  ).slice(0, 4);
+  )
+    .filter((project) => project.slug !== 'eduFlow-digital-learning-transformation')
+    .slice(0, 3);
 
   return (
     <main className="bg-background-2 dark:bg-background-5">
@@ -55,10 +56,7 @@ const page = () => {
       {/* 9. Client Testimonials */}
       <Testimonial />
 
-      {/* 10. Frequently Asked Questions */}
-      <Faq />
-
-      {/* 12. Final CTA */}
+      {/* 10. Final CTA */}
       <CTA />
     </main>
   );
