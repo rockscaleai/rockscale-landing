@@ -1,4 +1,3 @@
-import Counter from '@/components/home/Counter';
 import CTA from '@/components/home/CTA';
 import Hero from '@/components/home/Hero';
 import IndustrySolutions from '@/components/home/IndustrySolutions';
@@ -49,9 +48,6 @@ const page = () => {
 
       {/* 7. Featured Case Studies */}
       <Projects featuredProjects={featuredProjects} />
-
-      {/* 8. Metrics / Impact */}
-      <Counter />
 
       {/* 9. Client Testimonials */}
       <Testimonial />

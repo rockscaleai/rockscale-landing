@@ -5,7 +5,7 @@ import { MobileMenuProvider } from '@/context/MobileMenuContext';
 import { mobileMenuData } from '@/data/navbar-data';
 import { useNavbarScroll } from '@/hooks/useScrollHeader';
 import { cn } from '@/utils/cn';
-import rockscaleLogo from '@public/images/Rockscale_logo.png';
+import rockscaleLogo from '@public/images/rockscale-logo.jpeg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -47,18 +47,18 @@ const Navbar = () => {
           isScrolled && 'top-2',
         )}>
         <RevealAnimation direction="up" offset={100} delay={0.1} instant>
-          <div
-            className={cn(
-              'border-stroke-2 bg-accent mx-auto flex items-center justify-between rounded-full border px-2.5 py-2.5 xl:py-0',
-            )}>
+            <div
+              className={cn(
+                'mx-auto flex items-center justify-between rounded-[2rem] border border-white/10 bg-black/30 px-2.5 py-2.5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md xl:py-0',
+              )}>
             <div className="flex items-center justify-center">
-              <Link href="/" className="inline-flex items-center">
+              <Link href="/" className="inline-flex items-center ml-2">
                 <span className="sr-only">Home</span>
                 <figure className="hidden lg:block">
-                  <Image src={rockscaleLogo} alt="RockScale" className="h-auto w-[72px]" priority />
+                  <Image src={rockscaleLogo} alt="RockScale" className="h-auto w-[160px] rounded-sm" priority />
                 </figure>
-                <figure className="block max-w-[22px] lg:hidden">
-                  <Image src={rockscaleLogo} alt="RockScale" className="h-auto w-full" priority />
+                <figure className="block lg:hidden">
+                  <Image src={rockscaleLogo} alt="RockScale" className="h-auto w-[120px] rounded-sm" priority />
                 </figure>
               </Link>
             </div>
@@ -68,7 +68,7 @@ const Navbar = () => {
                   <li key={label} className="py-2.5">
                     <Link
                       href={href}
-                      className="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent flex cursor-pointer items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200">
+                      className="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-white/80 hover:text-white flex cursor-pointer items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200">
                       <span>{label}</span>
                     </Link>
                   </li>
@@ -81,7 +81,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleMenuHover(dataMenu)}>
                     <button
                       type="button"
-                      className="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent flex cursor-pointer items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200">
+                      className="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-white/80 hover:text-white flex cursor-pointer items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200">
                       <span>{label}</span>
                       <span className="block origin-center translate-y-px transition-all duration-300 group-hover/item:rotate-180">
                         <svg
@@ -102,7 +102,7 @@ const Navbar = () => {
                   <li key={label} className="py-2.5">
                     <Link
                       href={href}
-                      className="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent flex cursor-pointer items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200">
+                      className="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-white/80 hover:text-white flex cursor-pointer items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200">
                       <span>{label}</span>
                     </Link>
                   </li>

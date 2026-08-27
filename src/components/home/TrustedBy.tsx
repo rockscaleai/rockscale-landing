@@ -37,49 +37,58 @@ const clientLogos: ClientLogo[] = [
 const TrustedBy = () => {
   return (
     <section
-      className="bg-background-3 dark:bg-background-7 py-14 md:py-16"
+      className="border-b border-stroke-3 bg-background-3 py-16 md:py-24"
       aria-labelledby="trusted-by-heading">
       <div className="main-container relative">
         <RevealAnimation delay={0.1}>
-          <p
-            id="trusted-by-heading"
-            className="text-tagline-2 text-secondary/50 dark:text-accent/50 mb-10 text-center font-medium uppercase tracking-widest">
-            Trusted by forward-thinking teams
-          </p>
+          <div className="mb-14 flex flex-col items-center gap-4">
+            <span className="badge badge-green-v2 px-5 py-1.5 text-xs font-semibold uppercase tracking-widest">
+              Global Scale
+            </span>
+            <h2
+              id="trusted-by-heading"
+              className="text-center text-xl font-medium text-secondary md:text-2xl">
+              Trusted by leading enterprises worldwide
+            </h2>
+          </div>
         </RevealAnimation>
+        
         <RevealAnimation delay={0.2} instant>
-          <div className="overflow-hidden" aria-label="Logos of companies partnering with RockScale">
-            <Marquee speed={38} autoFill pauseOnHover>
-              <div className="flex items-center justify-center gap-x-16">
+          <div className="relative overflow-hidden" aria-label="Logos of companies partnering with RockScale">
+            <Marquee speed={35} autoFill pauseOnHover>
+              <div className="flex items-center justify-center gap-x-20">
                 {clientLogos.map((logo) => (
                   <figure
                     key={logo.id}
-                    className={cn('shrink-0 opacity-60 transition-opacity duration-300 hover:opacity-100', {
-                      'ml-16': logo.isFirst,
-                    })}
+                    className={cn(
+                      'shrink-0 opacity-40 mix-blend-multiply transition-all duration-500 hover:opacity-100',
+                      {
+                        'ml-20': logo.isFirst,
+                      }
+                    )}
                     style={{ width: `${logo.width}px`, height: `${logo.height}px` }}>
                     <Image
                       src={logo.src}
                       alt={`${logo.alt} logo`}
-                      className="dark:invert"
                       loading="lazy"
                     />
                   </figure>
                 ))}
               </div>
             </Marquee>
+
+            {/* Left fade - dynamically uses the background color */}
+            <div
+              className="pointer-events-none absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[#f4f5f8] to-transparent md:w-40"
+              aria-hidden="true"
+            />
+            {/* Right fade */}
+            <div
+              className="pointer-events-none absolute top-0 right-0 bottom-0 w-24 bg-gradient-to-l from-[#f4f5f8] to-transparent md:w-40"
+              aria-hidden="true"
+            />
           </div>
         </RevealAnimation>
-        {/* left fade */}
-        <div
-          className="dark:from-background-7 pointer-events-none absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-[#f5f4f2] to-transparent md:w-32"
-          aria-hidden="true"
-        />
-        {/* right fade */}
-        <div
-          className="dark:to-background-7 pointer-events-none absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-[#f5f4f2] to-transparent md:w-32"
-          aria-hidden="true"
-        />
       </div>
     </section>
   );

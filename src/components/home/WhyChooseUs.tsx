@@ -1,95 +1,75 @@
 'use client';
+
 import { cn } from '@/utils/cn';
-import rockscaleDesign from '@public/images/rockscale-design.jpeg';
+import teamImg from '@public/images/rockscale-ai-team-new.jpg';
 import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
 
 const differentiators = [
   {
-    id: 'enterprise-ready',
+    id: '01',
     title: 'Enterprise-Grade Architecture',
-    text: 'Robust, scalable, and secure AI solutions ready for the enterprise from day one.',
-    iconClass: 'ns-shape-10',
-    color: 'text-[#7E57FD]',
-    bg: 'bg-[#7E57FD]/10',
-    hoverBorder: 'hover:border-[#7E57FD]/30',
+    text: 'Robust, scalable, and secure AI solutions engineered for the enterprise from day one.',
   },
   {
-    id: 'end-to-end',
+    id: '02',
     title: 'End-to-End Delivery',
-    text: 'End-to-end support, from strategy and design to implementation and deployment.',
-    iconClass: 'ns-shape-12',
-    color: 'text-ns-green',
-    bg: 'bg-ns-green/10',
-    hoverBorder: 'hover:border-ns-green/30',
+    text: 'Comprehensive support, from strategy and AI system design to full deployment.',
   },
   {
-    id: 'cloud',
+    id: '03',
     title: 'Multi-Cloud Expertise',
-    text: 'Deep expertise across all major cloud platforms, including AWS, GCP, and Azure.',
-    iconClass: 'ns-shape-14',
-    color: 'text-blue-500',
-    bg: 'bg-blue-500/10',
-    hoverBorder: 'hover:border-blue-500/30',
+    text: 'Deep architectural expertise across AWS, Google Cloud, and Azure environments.',
   },
   {
-    id: 'security',
+    id: '04',
     title: 'Security & Compliance',
-    text: 'Security and compliance built into every layer, ensuring your data is always protected.',
-    iconClass: 'ns-shape-16',
-    color: 'text-orange-500',
-    bg: 'bg-orange-500/10',
-    hoverBorder: 'hover:border-orange-500/30',
-  },
-  {
-    id: 'outcomes',
-    title: 'Business-Outcome Focus',
-    text: 'A focus on delivering measurable business outcomes, not just technical solutions.',
-    iconClass: 'ns-shape-18',
-    color: 'text-pink-500',
-    bg: 'bg-pink-500/10',
-    hoverBorder: 'hover:border-pink-500/30',
+    text: 'Data security and compliance frameworks built into every layer of our infrastructure.',
   },
 ];
 
 const stats = [
-  { value: '90', unit: 'Days', label: 'Strategy to production' },
-  { value: '3×', unit: '', label: 'Faster AI delivery' },
-  { value: '100%', unit: '', label: 'Outcome focused' },
+  { value: '90', unit: 'Days', label: 'Strategy to Production' },
+  { value: '3×', unit: '', label: 'Faster AI Delivery' },
+  { value: '100%', unit: '', label: 'Outcome Focused' },
 ];
 
 const WhyChooseUs = () => {
   return (
     <section
-      className="relative overflow-hidden bg-background-3 py-20 dark:bg-background-7 md:py-[120px] lg:py-[160px]"
+      className="relative overflow-hidden bg-[#ebecef] py-20 md:py-[120px] lg:py-[160px]"
       aria-labelledby="why-rockscale-heading"
     >
-      {/* Ambient glow */}
+      {/* ── Ambient Background Glows ── */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute -top-1/4 -left-1/4 h-[600px] w-[600px] rounded-full bg-[#7E57FD]/5 blur-[140px]" />
-        <div className="absolute -bottom-1/4 -right-1/4 h-[500px] w-[500px] rounded-full bg-ns-green/5 blur-[120px]" />
+        <div className="absolute top-0 right-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-[#7E57FD]/5 blur-[140px]" />
+        <div className="absolute bottom-0 left-0 h-[600px] w-[600px] -translate-x-1/3 translate-y-1/3 rounded-full bg-[#25CA22]/5 blur-[120px]" />
       </div>
 
       <div className="main-container relative z-10">
-        <div className="grid grid-cols-12 items-center gap-y-16 lg:gap-16 xl:gap-24">
-
-          {/* ── Left column ── */}
-          <div className="col-span-12 lg:col-span-6">
-            <div className="mx-auto max-w-[540px] space-y-10 lg:mx-0 lg:max-w-full">
-
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-20">
+          
+          {/* ── Left Column (Content) ── */}
+          <div className="lg:col-span-6 lg:pr-8">
+            <div className="space-y-10">
+              
               {/* Header */}
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <RevealAnimation delay={0.1}>
-                  <span className="badge badge-green">Why RockScale</span>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-[#25CA22]/30 bg-[#25CA22]/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#25CA22]">
+                    Why RockScale
+                  </div>
                 </RevealAnimation>
+                
                 <RevealAnimation delay={0.2}>
-                  <h2 id="why-rockscale-heading" className="text-4xl font-medium tracking-tight md:text-5xl">
+                  <h2 id="why-rockscale-heading" className="text-4xl font-medium tracking-tight text-secondary md:text-5xl lg:text-[52px] lg:leading-[1.1]">
                     Why companies trust RockScale to deliver
                   </h2>
                 </RevealAnimation>
+                
                 <RevealAnimation delay={0.3}>
-                  <p className="max-w-[520px] text-lg leading-relaxed text-secondary/70 dark:text-accent/70">
+                  <p className="max-w-[540px] text-lg leading-relaxed text-secondary/70">
                     AI projects fail when they are treated as technology experiments instead of business
                     programmes. We are engineers and strategists who focus on measurable outcomes — reduced
                     costs, faster operations, and sustainable competitive advantages.
@@ -97,39 +77,17 @@ const WhyChooseUs = () => {
                 </RevealAnimation>
               </div>
 
-              {/* Stats row */}
-              <RevealAnimation delay={0.35}>
-                <div className="grid grid-cols-3 gap-4">
-                  {stats.map((s) => (
-                    <div
-                      key={s.label}
-                      className="rounded-2xl border border-stroke-1/10 bg-white p-5 text-center shadow-sm dark:border-white/5 dark:bg-background-6"
-                    >
-                      <p className="text-2xl font-bold text-secondary dark:text-white md:text-3xl">
-                        {s.value}<span className="text-primary">{s.unit}</span>
-                      </p>
-                      <p className="mt-1 text-xs leading-5 text-secondary/50 dark:text-white/40">{s.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </RevealAnimation>
-
-              {/* Differentiator cards */}
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+              {/* Differentiators List */}
+              <div className="space-y-6 pt-4">
                 {differentiators.map((item, index) => (
-                  <RevealAnimation key={item.id} delay={0.4 + index * 0.08}>
-                    <div
-                      className={cn(
-                        'group flex h-full flex-col gap-4 rounded-2xl border border-stroke-1/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-white/5 dark:bg-background-6',
-                        item.hoverBorder,
-                      )}
-                    >
-                      <div className={cn('flex size-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110', item.bg)}>
-                        <span className={cn('text-2xl', item.iconClass, item.color)} aria-hidden="true" />
+                  <RevealAnimation key={item.id} delay={0.4 + index * 0.1}>
+                    <div className="group flex items-start gap-5 rounded-[20px] border border-transparent p-4 transition-all duration-300 hover:border-stroke-3 hover:bg-white/50">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-lg font-bold text-[#25CA22] shadow-sm transition-colors duration-300 group-hover:bg-[#25CA22] group-hover:text-white">
+                        {item.id}
                       </div>
-                      <div className="space-y-1.5">
-                        <h3 className="text-sm font-semibold text-secondary dark:text-accent">{item.title}</h3>
-                        <p className="text-sm leading-relaxed text-secondary/60 dark:text-accent/60">{item.text}</p>
+                      <div className="pt-1">
+                        <h3 className="mb-1 text-lg font-semibold tracking-tight text-secondary">{item.title}</h3>
+                        <p className="text-[15px] leading-relaxed text-secondary/60">{item.text}</p>
                       </div>
                     </div>
                   </RevealAnimation>
@@ -138,68 +96,71 @@ const WhyChooseUs = () => {
 
               {/* CTA */}
               <RevealAnimation delay={0.9}>
-                <div className="pt-2">
+                <div className="pt-6">
                   <LinkButton
                     href="/why-choose-us"
-                    className="btn btn-secondary hover:btn-primary btn-md w-[85%] md:w-auto"
+                    className="btn btn-md border-none bg-secondary font-semibold text-white transition-colors hover:bg-[#25CA22] hover:text-white"
                   >
                     See our approach
                   </LinkButton>
                 </div>
               </RevealAnimation>
+              
             </div>
           </div>
 
-          {/* ── Right column — visual ── */}
-          <div className="col-span-12 lg:col-span-6">
-            <RevealAnimation delay={0.2} direction="up" offset={80}>
-              <div className="relative mx-auto w-full max-w-[520px] lg:mx-0 lg:max-w-none">
-                {/* Main image */}
-                <figure className="group relative w-full overflow-hidden rounded-[32px] shadow-[0_30px_80px_-20px_rgba(15,23,42,0.2)] dark:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]">
+          {/* ── Right Column (Visuals) ── */}
+          <div className="lg:col-span-6">
+            <RevealAnimation delay={0.3} direction="left" offset={60}>
+              <div className="relative mx-auto w-full max-w-[560px] lg:mx-0 lg:max-w-none">
+                
+                {/* Main Premium Image */}
+                <figure className="relative z-0 overflow-hidden rounded-[32px] border border-black/5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
                   <Image
-                    src={rockscaleDesign}
-                    alt="Enterprise AI consulting team reviewing architecture"
-                    className="size-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                    src={teamImg}
+                    alt="Enterprise AI Consulting Team"
+                    className="h-auto w-full object-cover transition-transform duration-700 ease-in-out hover:scale-105"
+                    quality={95}
                   />
-                  {/* Subtle overlay */}
-                  <div className="pointer-events-none absolute inset-0 rounded-[32px] ring-1 ring-inset ring-black/5 dark:ring-white/5" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent opacity-80" />
                 </figure>
 
-                {/* Floating badge — top left */}
-                <RevealAnimation delay={0.6} direction="right" offset={30}>
-                  <div className="absolute -left-6 top-8 z-10 flex items-center gap-3 rounded-2xl border border-white/80 bg-white px-5 py-3.5 shadow-xl dark:border-white/10 dark:bg-background-6 md:-left-10">
-                    <span className="relative flex size-3">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ns-green opacity-75" />
-                      <span className="relative inline-flex size-3 rounded-full bg-ns-green" />
-                    </span>
-                    <div>
-                      <p className="text-xs font-bold text-secondary dark:text-white">Available Now</p>
-                      <p className="text-[11px] text-secondary/50 dark:text-white/40">Taking new clients</p>
-                    </div>
-                  </div>
-                </RevealAnimation>
-
-                {/* Floating metric — bottom right */}
-                <RevealAnimation delay={0.7} direction="left" offset={30}>
-                  <div className="absolute -bottom-6 -right-4 z-10 rounded-2xl border border-white/80 bg-white p-5 shadow-xl dark:border-white/10 dark:bg-background-6 md:-right-10">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-primary">Avg. Project ROI</p>
-                    <p className="mt-1 text-4xl font-bold text-secondary dark:text-white">+300<span className="text-primary">%</span></p>
-                    <div className="mt-3 flex gap-1">
-                      {[80, 60, 90, 75, 100, 85, 95].map((h, i) => (
+                {/* Floating Metric Card */}
+                <RevealAnimation delay={0.6} direction="up" offset={40}>
+                  <div className="absolute -bottom-8 -left-4 z-10 rounded-[24px] border border-black/5 bg-white/90 p-6 shadow-xl backdrop-blur-xl md:-left-8 md:p-8">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-[#25CA22]">Avg. Project ROI</p>
+                    <p className="mt-1 text-5xl font-bold tracking-tight text-secondary">+300<span className="text-[#25CA22]">%</span></p>
+                    <div className="mt-4 flex items-end gap-1.5 h-12">
+                      {[40, 60, 50, 80, 70, 90, 100].map((h, i) => (
                         <div
                           key={i}
-                          className="w-2 rounded-sm bg-primary/20"
-                          style={{ height: `${h * 0.36}px` }}
+                          className="w-2.5 rounded-sm bg-black/5"
+                          style={{ height: '100%' }}
                         >
                           <div
-                            className="w-full rounded-sm bg-primary"
-                            style={{ height: `${h}%` }}
+                            className="w-full rounded-sm bg-[#25CA22] transition-all duration-1000"
+                            style={{ height: `${h}%`, marginTop: `${100 - h}%` }}
                           />
                         </div>
                       ))}
                     </div>
                   </div>
                 </RevealAnimation>
+
+                {/* Floating Stats Glass Panel */}
+                <RevealAnimation delay={0.8} direction="right" offset={40}>
+                  <div className="absolute -right-4 top-12 z-10 space-y-3 rounded-[20px] border border-black/5 bg-white/80 p-5 shadow-xl backdrop-blur-md md:-right-8">
+                    {stats.slice(0, 2).map((s) => (
+                      <div key={s.label} className="border-b border-stroke-3 pb-3 last:border-0 last:pb-0">
+                        <p className="text-3xl font-bold tracking-tight text-secondary">
+                          {s.value}<span className="text-lg text-[#7E57FD]">{s.unit}</span>
+                        </p>
+                        <p className="text-[11px] font-medium uppercase tracking-wider text-secondary/50">{s.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </RevealAnimation>
+
               </div>
             </RevealAnimation>
           </div>

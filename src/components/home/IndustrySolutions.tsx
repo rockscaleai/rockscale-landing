@@ -1,163 +1,180 @@
 'use client';
-import gradientBorder from '@public/images/ns-img-523.png';
-import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
 
 const industries = [
   {
-    id: '1',
-    shapeClass: 'ns-shape-19',
+    id: '01',
     title: 'Financial Services',
     description: 'Fraud detection, credit risk AI, intelligent automation for lending, trading, and compliance workflows.',
     tags: ['Fraud Detection', 'Credit Risk', 'RegTech'],
-    accentColor: 'bg-[#7E57FD]',
-    tagColor: 'bg-[#7E57FD]/10 text-[#7E57FD] border-[#7E57FD]/20',
-    iconColor: 'text-[#7E57FD]',
+    color: '#7E57FD',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
   },
   {
-    id: '2',
-    shapeClass: 'ns-shape-35',
+    id: '02',
     title: 'Healthcare',
     description: 'Clinical decision support, medical document intelligence, patient data pipelines, and HIPAA-compliant AI systems.',
     tags: ['Clinical AI', 'HIPAA', 'Doc Intelligence'],
-    accentColor: 'bg-ns-green',
-    tagColor: 'bg-ns-green/10 text-ns-green border-ns-green/20',
-    iconColor: 'text-ns-green',
+    color: '#25CA22',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+      </svg>
+    ),
   },
   {
-    id: '3',
-    shapeClass: 'ns-shape-4',
+    id: '03',
     title: 'Retail & E-Commerce',
     description: 'AI-driven demand forecasting, dynamic pricing engines, personalized recommendations, and supply chain intelligence.',
     tags: ['Forecasting', 'Personalization', 'Pricing AI'],
-    accentColor: 'bg-blue-500',
-    tagColor: 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-    iconColor: 'text-blue-500',
+    color: '#7E57FD',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+      </svg>
+    ),
   },
   {
-    id: '4',
-    shapeClass: 'ns-shape-32',
+    id: '04',
     title: 'Logistics & Supply Chain',
     description: 'Route optimization, real-time visibility platforms, predictive maintenance, and intelligent warehouse automation.',
     tags: ['Route Optimization', 'Predictive Ops', 'Automation'],
-    accentColor: 'bg-orange-500',
-    tagColor: 'bg-orange-500/10 text-orange-600 border-orange-500/20',
-    iconColor: 'text-orange-500',
+    color: '#25CA22',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+      </svg>
+    ),
   },
   {
-    id: '5',
-    shapeClass: 'ns-shape-41',
+    id: '05',
     title: 'Legal & Compliance',
     description: 'Contract analysis, document extraction, regulatory monitoring, and AI-assisted due diligence pipelines.',
     tags: ['Contract AI', 'Regulatory', 'Due Diligence'],
-    accentColor: 'bg-pink-500',
-    tagColor: 'bg-pink-500/10 text-pink-600 border-pink-500/20',
-    iconColor: 'text-pink-500',
+    color: '#7E57FD',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+      </svg>
+    ),
   },
   {
-    id: '6',
-    shapeClass: 'ns-shape-8',
+    id: '06',
     title: 'Manufacturing & Energy',
     description: 'Predictive quality control, energy optimization AI, equipment failure forecasting, and operational analytics.',
     tags: ['Quality Control', 'Energy AI', 'Predictive Ops'],
-    accentColor: 'bg-ns-cyan',
-    tagColor: 'bg-ns-cyan/10 text-ns-cyan border-ns-cyan/20',
-    iconColor: 'text-ns-cyan',
+    color: '#25CA22',
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+      </svg>
+    ),
   },
 ];
 
 const IndustrySolutions = () => {
   return (
     <section
-      className="bg-background-3 dark:bg-background-7 py-16 md:py-20 lg:py-[100px]"
+      className="relative overflow-hidden bg-[#061225] py-24 md:py-32 lg:py-40"
       aria-labelledby="industries-heading"
     >
-      <div className="main-container">
-        {/* Heading */}
-        <div className="mx-auto mb-14 max-w-[750px] space-y-5 text-center md:mb-[70px]">
+      {/* ── Background Glows ── */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute top-1/4 right-0 h-[600px] w-[600px] -translate-y-1/2 translate-x-1/3 rounded-full bg-[#7E57FD]/10 blur-[140px]" />
+        <div className="absolute bottom-0 left-0 h-[600px] w-[600px] -translate-x-1/3 translate-y-1/3 rounded-full bg-[#25CA22]/10 blur-[120px]" />
+      </div>
+
+      <div className="main-container relative z-10">
+        
+        {/* Header */}
+        <div className="mx-auto mb-20 max-w-[800px] text-center md:mb-24">
           <RevealAnimation delay={0.1}>
-            <span className="badge badge-green">Industries</span>
+            <div className="mb-6">
+              <span className="badge badge-green-v2">Industries</span>
+            </div>
           </RevealAnimation>
-          <div className="space-y-3">
-            <RevealAnimation delay={0.2}>
-              <h2 id="industries-heading">Built for complex, regulated industries</h2>
-            </RevealAnimation>
-            <RevealAnimation delay={0.3}>
-              <p className="mx-auto max-w-[600px]">
-                We engineer AI solutions for sectors where data quality, security, and compliance are
-                non-negotiable. Our domain expertise translates directly into better outcomes.
-              </p>
-            </RevealAnimation>
-          </div>
+          
+          <RevealAnimation delay={0.2}>
+            <h2 id="industries-heading" className="mb-6 text-4xl font-medium tracking-tight text-white md:text-5xl lg:text-[56px] lg:leading-[1.1]">
+              Built for complex, regulated industries
+            </h2>
+          </RevealAnimation>
+          
+          <RevealAnimation delay={0.3}>
+            <p className="mx-auto max-w-[680px] text-lg leading-relaxed text-white/70">
+              We engineer AI solutions for sectors where data quality, security, and compliance are
+              non-negotiable. Our deep domain expertise translates directly into measurable outcomes.
+            </p>
+          </RevealAnimation>
         </div>
 
-        {/* Industry Cards */}
-        <div className="grid grid-cols-12 items-stretch justify-center gap-6 md:gap-8">
-          {industries.map((industry, index) => (
-            <RevealAnimation key={industry.id} delay={0.3 + index * 0.1}>
-              {/* Outer wrapper — preserves gradient border */}
-              <div className="dark:bg-background-5 relative col-span-12 w-full overflow-hidden rounded-[20px] bg-white p-2 md:col-span-6 lg:col-span-4">
-                {/* gradient border glow */}
-                <figure className="pointer-events-none absolute top-[-95%] left-[-85%] size-[800px] rotate-[82deg] overflow-hidden select-none opacity-60">
-                  <Image src={gradientBorder} alt="" aria-hidden="true" className="size-full" />
-                </figure>
+        {/* Industry Cards Grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+          {industries.map((industry, index) => {
+            const isGreen = industry.color === '#25CA22';
+            const iconBg = isGreen ? 'bg-[#25CA22]/10 text-[#25CA22]' : 'bg-[#7E57FD]/10 text-[#7E57FD]';
+            const tagBg = isGreen ? 'bg-[#25CA22]/5 text-[#25CA22] border-[#25CA22]/20' : 'bg-[#7E57FD]/5 text-[#7E57FD] border-[#7E57FD]/20';
+            const hoverBorder = isGreen ? 'group-hover:border-[#25CA22]/30' : 'group-hover:border-[#7E57FD]/30';
+            const gradientLine = isGreen ? 'from-[#25CA22]' : 'from-[#7E57FD]';
 
-                {/* Card content */}
-                <div className="bg-background-1 dark:bg-background-6 group relative z-10 flex h-full flex-col rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+            return (
+              <RevealAnimation key={industry.id} delay={0.2 + (index % 3) * 0.1}>
+                <div className={`group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-white/5 bg-white/[0.02] p-8 transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-white/[0.04] ${hoverBorder} hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]`}>
+                  
+                  {/* Subtle top gradient accent */}
+                  <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${gradientLine} to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
+                  
+                  <div className="mb-8 flex items-start justify-between">
+                    <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${iconBg} transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3`}>
+                      {industry.icon}
+                    </div>
+                    <span className="text-xl font-bold text-white/10 transition-colors duration-500 group-hover:text-white/20">
+                      {industry.id}
+                    </span>
+                  </div>
 
-                  {/* Coloured accent top bar */}
-                  <div className={`h-1 w-full ${industry.accentColor} opacity-80`} />
+                  <div className="flex-1 space-y-4">
+                    <h3 className="text-[22px] font-semibold tracking-tight text-white">{industry.title}</h3>
+                    <p className="text-[15px] leading-relaxed text-white/60">
+                      {industry.description}
+                    </p>
+                  </div>
 
-                  <div className="flex flex-col gap-5 p-7 sm:p-8 flex-1">
-                    {/* Icon row */}
-                    <div className="flex items-start justify-between">
-                      <div className="flex size-12 items-center justify-center rounded-xl bg-secondary/5 dark:bg-white/5 group-hover:scale-110 transition-transform duration-300">
-                        <span className={`${industry.shapeClass} ${industry.iconColor} text-[28px]`} />
-                      </div>
-                      {/* Sector number */}
-                      <span className="text-[11px] font-bold tracking-[0.2em] text-secondary/25 dark:text-white/20">
-                        {String(index + 1).padStart(2, '0')}
+                  {/* Tags */}
+                  <div className="mt-8 flex flex-wrap gap-2 pt-2 border-t border-white/5 transition-colors duration-500 group-hover:border-white/10">
+                    {industry.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`rounded-full border px-3 py-1 text-[11px] font-semibold tracking-wide ${tagBg}`}
+                      >
+                        {tag}
                       </span>
-                    </div>
-
-                    {/* Text */}
-                    <div className="flex-1 space-y-2.5">
-                      <h3 className="text-heading-5">{industry.title}</h3>
-                      <p className="text-secondary/65 dark:text-accent/65 text-sm leading-relaxed">
-                        {industry.description}
-                      </p>
-                    </div>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 pt-1">
-                      {industry.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className={`rounded-full border px-3 py-1 text-[11px] font-semibold tracking-wide ${industry.tagColor}`}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            </RevealAnimation>
-          ))}
+              </RevealAnimation>
+            );
+          })}
         </div>
 
         {/* CTA */}
-        <RevealAnimation delay={0.8}>
-          <div className="mt-14 flex items-center justify-center">
+        <RevealAnimation delay={0.6}>
+          <div className="mt-20 flex justify-center">
             <LinkButton
               href="/contact-us"
-              className="btn btn-secondary hover:btn-primary btn-md mx-auto w-[85%] md:w-auto"
+              className="btn btn-md border-none bg-white font-semibold text-secondary transition-colors hover:bg-[#25CA22] hover:text-white"
             >
               Discuss your industry challenge
             </LinkButton>
           </div>
         </RevealAnimation>
+        
       </div>
     </section>
   );

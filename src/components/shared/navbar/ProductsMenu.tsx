@@ -39,7 +39,7 @@ const ProductsMenu = ({
       <div
         id="products-mega-menu"
         className={cn(
-          'dropdown-menu dark:bg-background-6 border-stroke-1 dark:border-background-7 pointer-events-none absolute top-full left-1/2 z-50 mt-2 flex w-full -translate-x-1/2 items-start gap-y-6 rounded-[20px] border bg-white p-10 pb-12 opacity-0 transition-all duration-300 md:w-[850px] md:gap-x-14',
+          'dropdown-menu pointer-events-none absolute top-full left-1/2 z-50 mt-2 flex w-full -translate-x-1/2 items-start gap-y-6 rounded-[20px] border border-white/10 bg-black/40 backdrop-blur-xl p-10 pb-12 opacity-0 shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-300 md:w-[850px] md:gap-x-14',
           menuDropdownId === 'products-mega-menu'
             ? '!pointer-events-auto translate-y-0 opacity-100'
             : 'pointer-events-none translate-y-2.5 opacity-0',
@@ -50,7 +50,7 @@ const ProductsMenu = ({
           ))}
         </ul>
         <div className="flex-1 space-y-4">
-          <p className="text-tagline-2 text-secondary/60 dark:text-accent/60 font-medium">Available Products</p>
+          <p className="text-tagline-2 font-medium text-white/50 uppercase tracking-widest text-[12px]">Available Products</p>
           <Link href="/products/qorebit-ai" onClick={handleClose} className="block">
             <div className="group relative flex min-h-[220px] w-full flex-col justify-end overflow-hidden rounded-[14px] bg-secondary p-6">
               <div className="absolute inset-0 z-0 bg-[url('/images/ns-img-169.png')] bg-cover bg-center opacity-40 transition-transform duration-500 group-hover:scale-105" />

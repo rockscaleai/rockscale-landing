@@ -22,8 +22,8 @@ const CompanyMenuLink = ({ title, description, href, icon: Icon, onClose }: Comp
         <Icon />
       </div>
       <div className="relative z-10 space-y-0.5">
-        <p className="text-tagline-1 text-secondary dark:text-accent font-normal">{title}</p>
-        <p className="text-tagline-3 text-secondary/60 dark:text-accent/60 font-normal">{description}</p>
+        <p className="text-tagline-1 font-normal text-white/90">{title}</p>
+        <p className="text-tagline-3 font-normal text-white/60">{description}</p>
       </div>
     </Link>
   </li>

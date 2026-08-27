@@ -1,103 +1,90 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import createGlobe from 'cobe';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
+import globeImg from '@public/images/rockscale-globe.jpg';
 
 const locations = [
-  { id: 'ng', name: 'Nigeria, Africa', lat: 9.082, lng: 8.6753, flag: '🇳🇬' },
-  { id: 'us', name: 'United States, America', lat: 37.0902, lng: -95.7129, flag: '🇺🇸' },
-  { id: 'uk', name: 'United Kingdom, Europe', lat: 51.5074, lng: -0.1278, flag: '🇬🇧' },
+  { id: 'ng', name: 'Nigeria, Africa', flag: '🇳🇬' },
+  { id: 'us', name: 'United States, America', flag: '🇺🇸' },
+  { id: 'uk', name: 'United Kingdom, Europe', flag: '🇬🇧' },
 ];
 
 const GlobalPresence = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [activeLocation, setActiveLocation] = useState(0);
 
   useEffect(() => {
-    let phi = 0;
-    
-    if (!canvasRef.current) { return; }
-
-    // Use a fixed high-resolution internal buffer.
-    const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: 1000,
-      height: 1000,
-      phi: 0,
-      theta: 0.3,
-      dark: 0,
-      diffuse: 1.2,
-      mapSamples: 20000,
-      mapBrightness: 4,
-      baseColor: [0.8, 0.8, 0.8], // Silver/Grey globe so it doesn't blend perfectly into white
-      markerColor: [126 / 255, 87 / 255, 253 / 255],
-      glowColor: [0.9, 0.9, 0.9],
-      markers: locations.map((loc) => ({ location: [loc.lat, loc.lng] as [number, number], size: 0.08 })),
-      onRender: (state: any) => {
-        state.phi = phi;
-        phi += 0.003;
-      },
-    } as any);
-
     const interval = setInterval(() => {
       setActiveLocation((prev) => (prev + 1) % locations.length);
-    }, 3000);
+    }, 3500);
 
-    return () => {
-      globe.destroy();
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="bg-white dark:bg-background-8 py-16 md:py-24 lg:py-32 overflow-hidden">
-      <div className="main-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="relative overflow-hidden bg-background-3 py-20 md:py-28 lg:py-32">
+      <div className="absolute inset-0 z-0 bg-[url('/images/noise.png')] opacity-[0.03]" />
+      
+      <div className="main-container relative z-10">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
           
           {/* Left Side: Content */}
-          <div className="space-y-8 relative z-10">
-            <RevealAnimation delay={0.1}>
-              <span className="badge badge-green">Global Reach</span>
-            </RevealAnimation>
-            
-            <div className="space-y-4">
+          <div className="space-y-10">
+            <div>
+              <RevealAnimation delay={0.1}>
+                <div className="mb-6">
+                  <span className="badge badge-green-v2">Global Reach</span>
+                </div>
+              </RevealAnimation>
+              
               <RevealAnimation delay={0.2}>
-                <h2 className="text-secondary dark:text-white">Our Global Presence</h2>
+                <h2 className="mb-6 text-4xl font-medium tracking-tight text-secondary md:text-5xl lg:text-[52px] lg:leading-[1.1]">
+                  Our Global Presence
+                </h2>
               </RevealAnimation>
               <RevealAnimation delay={0.3}>
-                <p className="text-secondary/70 dark:text-white/70 max-w-[500px]">
+                <p className="text-lg leading-relaxed text-secondary/70">
                   We deliver world-class AI consulting and infrastructure solutions across multiple continents. Wherever you are, our distributed enterprise teams are ready to scale your operations.
                 </p>
               </RevealAnimation>
             </div>
 
             <RevealAnimation delay={0.4}>
-              <div className="space-y-4 mt-8">
+              <div className="space-y-4">
                 {locations.map((loc, idx) => (
                   <div 
                     key={loc.id} 
-                    className={`flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 border ${
+                    className={`group relative flex items-center gap-5 overflow-hidden rounded-[24px] border p-5 transition-all duration-500 ${
                       activeLocation === idx 
-                        ? 'bg-[#7E57FD]/10 border-[#7E57FD]/30 scale-[1.02]' 
-                        : 'bg-background-2 dark:bg-background-7 border-transparent'
+                        ? 'border-[#25CA22]/30 bg-white shadow-[0_15px_40px_-10px_rgba(37,202,34,0.15)]' 
+                        : 'border-stroke-3 bg-white/50 hover:bg-white hover:shadow-sm'
                     }`}
                   >
-                    <div className="flex size-12 items-center justify-center rounded-full bg-white dark:bg-background-8 shadow-sm text-2xl">
+                    {/* Background subtle pulse for active */}
+                    {activeLocation === idx && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#25CA22]/5 to-transparent opacity-50" />
+                    )}
+
+                    <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-[16px] bg-[#f4f5f8] text-2xl shadow-inner transition-transform duration-500 group-hover:scale-105">
                       {loc.flag}
                     </div>
-                    <div>
-                      <h4 className="text-secondary dark:text-white text-lg font-medium">{loc.name}</h4>
-                      <p className="text-sm text-secondary/60 dark:text-white/60">
-                        {activeLocation === idx ? 'Active Node' : 'Regional Hub'}
+                    
+                    <div className="relative z-10">
+                      <h4 className="text-xl font-semibold tracking-tight text-secondary">{loc.name}</h4>
+                      <p className="mt-0.5 text-sm font-medium text-secondary/60">
+                        {activeLocation === idx ? (
+                          <span className="text-[#25CA22] font-semibold tracking-wide uppercase text-[11px]">Active Data Node</span>
+                        ) : (
+                          <span className="uppercase tracking-wide text-[11px]">Regional Hub</span>
+                        )}
                       </p>
                     </div>
                     
                     {/* Pulsing dot indicator for active item */}
                     {activeLocation === idx && (
-                      <div className="ml-auto flex size-3">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7E57FD] opacity-75"></span>
-                        <span className="relative inline-flex rounded-full size-3 bg-[#7E57FD]"></span>
+                      <div className="relative z-10 ml-auto flex h-3 w-3">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25CA22] opacity-75" />
+                        <span className="relative inline-flex h-3 w-3 rounded-full bg-[#25CA22]" />
                       </div>
                     )}
                   </div>
@@ -106,23 +93,30 @@ const GlobalPresence = () => {
             </RevealAnimation>
           </div>
 
-          {/* Right Side: Rotating Globe */}
-          <RevealAnimation delay={0.5} direction="left">
-            <div ref={containerRef} className="relative w-full max-w-[600px] mx-auto flex items-center justify-center">
-              <canvas
-                ref={canvasRef}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  aspectRatio: '1 / 1',
-                }}
-                className="opacity-90 dark:opacity-70 dark:invert transition-opacity duration-1000 ease-in"
-              />
-              
-              {/* Decorative Background Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#7E57FD]/10 dark:bg-[#7E57FD]/20 blur-[100px] rounded-full -z-10" />
-            </div>
-          </RevealAnimation>
+          {/* Right Side: Static Globe Image */}
+          <div className="order-first lg:order-last">
+            <RevealAnimation delay={0.5} direction="left" offset={60}>
+              <div className="relative mx-auto w-full max-w-[500px]">
+                <figure className="relative overflow-hidden rounded-[32px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
+                  <div className="absolute inset-0 z-10 rounded-[32px] border border-black/5" />
+                  <Image
+                    src={globeImg}
+                    alt="Global Enterprise Network Architecture"
+                    className="w-full h-auto object-cover transition-transform duration-1000 hover:scale-105"
+                    quality={95}
+                    priority
+                  />
+                  
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background-3/80 via-transparent to-transparent mix-blend-multiply" />
+                </figure>
+                
+                {/* Decorative Background Glows */}
+                <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#25CA22]/15 blur-[100px]" />
+                <div className="pointer-events-none absolute right-0 top-0 -z-10 h-64 w-64 rounded-full bg-[#7E57FD]/15 blur-[80px]" />
+              </div>
+            </RevealAnimation>
+          </div>
 
         </div>
       </div>

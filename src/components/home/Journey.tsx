@@ -13,50 +13,38 @@ const steps = [
   {
     id: '01',
     title: 'Discovery & Audit',
-    description: 'We audit your existing systems, data assets, and business workflows to identify where AI can create the most meaningful impact.',
-    icon: 'ns-shape-8',
-    color: 'text-[#7E57FD]',
-    bgColor: 'bg-[#7E57FD]/10',
+    description: 'We audit your existing systems, data assets, and business workflows to identify where AI can create the most meaningful impact and ROI.',
+    color: '#7E57FD',
   },
   {
     id: '02',
     title: 'Strategy & Roadmap',
-    description: 'We design a tailored AI roadmap — selecting the right models, tools, compliance frameworks, and architecture for your business context.',
-    icon: 'ns-shape-23',
-    color: 'text-ns-green',
-    bgColor: 'bg-ns-green/10',
+    description: 'We design a tailored enterprise AI roadmap — selecting the right models, tools, compliance frameworks, and architecture for your exact business context.',
+    color: '#25CA22',
   },
   {
     id: '03',
     title: 'Data Foundation',
-    description: 'We build the data infrastructure your AI needs: secure pipelines, ELT architectures, data warehouses, and governance frameworks.',
-    icon: 'ns-shape-41',
-    color: 'text-blue-500',
-    bgColor: 'bg-blue-500/10',
+    description: 'We build the robust data infrastructure your AI needs: secure pipelines, ELT architectures, data warehouses, and rigorous governance frameworks.',
+    color: '#7E57FD',
   },
   {
     id: '04',
     title: 'AI Development',
-    description: 'Our engineers build custom LLM applications, copilots, document intelligence, RAG pipelines, and predictive models tailored to your operations.',
-    icon: 'ns-shape-35',
-    color: 'text-orange-500',
-    bgColor: 'bg-orange-500/10',
+    description: 'Our engineers build custom LLM applications, autonomous agents, document intelligence pipelines, and predictive models tailored to your operations.',
+    color: '#25CA22',
   },
   {
     id: '05',
     title: 'Deployment & MLOps',
-    description: 'We deploy your AI systems into secure, cloud-native environments with full MLOps pipelines, monitoring, and rollback safety.',
-    icon: 'ns-shape-19',
-    color: 'text-pink-500',
-    bgColor: 'bg-pink-500/10',
+    description: 'We deploy your intelligent systems into secure, cloud-native environments with full MLOps pipelines, performance monitoring, and rollback safety.',
+    color: '#7E57FD',
   },
   {
     id: '06',
     title: 'Optimization & Scale',
-    description: 'We continuously monitor model performance, data drift, infrastructure costs, and business outcomes to drive ongoing improvement.',
-    icon: 'ns-shape-31',
-    color: 'text-ns-cyan',
-    bgColor: 'bg-ns-cyan/10',
+    description: 'We continuously monitor model performance, data drift, infrastructure costs, and business outcomes to drive ongoing improvement and scale.',
+    color: '#25CA22',
   },
 ];
 
@@ -72,7 +60,7 @@ const Journey = () => {
           ease: 'none',
           scrollTrigger: {
             trigger: containerRef.current,
-            start: 'top 60%',
+            start: 'top 50%',
             end: 'bottom 80%',
             scrub: 1,
           },
@@ -83,68 +71,89 @@ const Journey = () => {
   );
 
   return (
-    <section className="bg-background-3 py-20 md:py-[120px] lg:py-[160px] dark:bg-background-7" aria-label="AI Transformation Journey">
-      <div className="main-container" ref={containerRef}>
-        {/* Heading */}
-        <div className="mx-auto mb-16 max-w-[740px] space-y-5 text-center md:mb-[80px]">
+    <section className="relative overflow-hidden bg-[#f4f5f8] py-24 md:py-32 lg:py-40" aria-label="AI Transformation Journey">
+      
+      {/* ── Background Noise ── */}
+      <div className="absolute inset-0 z-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-multiply" />
+
+      <div className="main-container relative z-10" ref={containerRef}>
+        {/* Header */}
+        <div className="mx-auto mb-20 max-w-[800px] text-center md:mb-28">
           <RevealAnimation delay={0.1}>
-            <span className="badge badge-green">Our Process</span>
+            <div className="mb-6">
+              <span className="badge badge-green-v2">Our Process</span>
+            </div>
           </RevealAnimation>
-          <div className="space-y-3">
+          <div className="space-y-6">
             <RevealAnimation delay={0.2}>
-              <h2>Your AI Transformation Journey</h2>
+              <h2 className="text-4xl font-medium tracking-tight text-secondary md:text-5xl lg:text-[56px] lg:leading-[1.1]">
+                Your AI Transformation Journey
+              </h2>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
-              <p className="mx-auto max-w-[600px] text-secondary/70 dark:text-accent/70">
-                A structured, enterprise-grade process — from discovery to deployment and continuous
-                optimization. We partner with you at every stage.
+              <p className="mx-auto max-w-[650px] text-lg leading-relaxed text-secondary/70">
+                A structured, enterprise-grade engineering process — from initial technical discovery to secure deployment and continuous optimization. We partner with you at every stage.
               </p>
             </RevealAnimation>
           </div>
         </div>
 
         {/* Timeline */}
-        <div className="relative mx-auto max-w-[900px]">
-          {/* Background Line */}
-          <div className="absolute left-[27px] top-[24px] bottom-[24px] hidden w-px bg-stroke-1/30 dark:bg-white/10 md:block" />
+        <div className="relative mx-auto max-w-[850px]">
+          
+          {/* Background Track Line */}
+          <div className="absolute left-[39px] top-[10px] bottom-[20px] hidden w-[2px] bg-secondary/10 md:block" />
           
           {/* Animated Fill Line */}
           <div 
             ref={lineRef}
-            className="absolute left-[27px] top-[24px] bottom-[24px] hidden w-px bg-gradient-to-b from-[#7E57FD] via-ns-green to-blue-500 md:block origin-top scale-y-0" 
+            className="absolute left-[39px] top-[10px] bottom-[20px] hidden w-[2px] bg-gradient-to-b from-[#7E57FD] via-[#25CA22] to-[#7E57FD] md:block origin-top scale-y-0" 
           />
 
-          <div className="space-y-8 md:space-y-12">
-            {steps.map((step, index) => (
-              <RevealAnimation key={step.id} delay={0.2 + (index * 0.1)}>
-                <div className="group relative flex flex-col gap-6 md:flex-row md:items-start md:gap-10">
-                  {/* Node */}
-                  <div className={`relative z-10 hidden md:flex size-14 shrink-0 items-center justify-center rounded-full border-[6px] border-background-3 dark:border-background-7 transition-transform duration-300 group-hover:scale-110 ${step.bgColor}`}>
-                    <span className={`text-sm font-bold ${step.color}`}>{step.id}</span>
-                  </div>
+          <div className="space-y-6 md:space-y-10">
+            {steps.map((step, index) => {
+              const isGreen = step.color === '#25CA22';
+              const textHighlight = isGreen ? 'text-[#25CA22]' : 'text-[#7E57FD]';
+              const borderHighlight = isGreen ? 'group-hover:border-[#25CA22]/30' : 'group-hover:border-[#7E57FD]/30';
+              const shadowHighlight = isGreen ? 'group-hover:shadow-[0_15px_40px_rgba(37,202,34,0.15)]' : 'group-hover:shadow-[0_15px_40px_rgba(126,87,253,0.15)]';
+              const indicatorBg = isGreen ? 'bg-[#25CA22]' : 'bg-[#7E57FD]';
 
-                  {/* Mobile Node */}
-                  <div className={`md:hidden inline-flex w-fit items-center gap-2 rounded-full px-4 py-1.5 ${step.bgColor}`}>
-                     <span className={`text-sm font-bold ${step.color}`}>STEP {step.id}</span>
-                  </div>
-
-                  {/* Content Card */}
-                  <div className="flex-grow rounded-[24px] border border-stroke-1/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-white/5 dark:bg-background-6">
-                    <div className="mb-4 flex items-center gap-4">
-                      <div className={`flex size-12 items-center justify-center rounded-xl ${step.bgColor}`}>
-                        <span className={`${step.icon} text-2xl ${step.color}`} />
+              return (
+                <RevealAnimation key={step.id} delay={0.2 + (index * 0.1)}>
+                  <div className="group relative flex flex-col gap-6 md:flex-row md:items-stretch md:gap-12">
+                    
+                    {/* Desktop Node Indicator */}
+                    <div className="relative z-10 hidden md:flex w-[80px] shrink-0 items-start justify-center pt-2">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl border-4 border-[#f4f5f8] bg-white text-lg font-bold text-secondary shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:shadow-md">
+                        {step.id}
+                        {/* Glow dot behind number on hover */}
+                        <div className={`absolute inset-0 -z-10 rounded-xl opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-40 ${indicatorBg}`} />
                       </div>
-                      <h3 className="text-heading-6 lg:text-heading-5">{step.title}</h3>
                     </div>
-                    <p className="text-secondary/70 dark:text-accent/70 leading-relaxed">
-                      {step.description}
-                    </p>
+
+                    {/* Mobile Node Indicator */}
+                    <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2 shadow-sm md:hidden">
+                       <span className={`text-sm font-bold tracking-widest ${textHighlight}`}>STEP {step.id}</span>
+                    </div>
+
+                    {/* Content Card */}
+                    <div className={`flex-grow rounded-[24px] border border-transparent bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-500 ease-out md:p-10 ${borderHighlight} ${shadowHighlight} hover:-translate-y-1`}>
+                      <div className="mb-4 flex items-center gap-4">
+                        <h3 className="text-2xl font-semibold tracking-tight text-secondary md:text-[26px]">
+                          {step.title}
+                        </h3>
+                      </div>
+                      <p className="text-[17px] leading-relaxed text-secondary/70">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </RevealAnimation>
-            ))}
+                </RevealAnimation>
+              );
+            })}
           </div>
         </div>
+        
       </div>
     </section>
   );

@@ -1,114 +1,108 @@
 'use client';
 
-import { CheckIcon } from '@/icons';
+import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
-
-const benefits = [
-  {
-    id: 1,
-    text: 'Custom AI & LLM Solutions',
-  },
-  {
-    id: 2,
-    text: 'Data Engineering & Analytics',
-  },
-  {
-    id: 3,
-    text: 'Enterprise Data Governance',
-  },
-];
+import heroBg from '@public/images/rockscale-hero-bg.jpg';
 
 const Hero = () => {
   return (
     <section
-      className="relative z-0 overflow-hidden bg-secondary pt-[320px] pb-16 md:pt-[200px] md:pb-20 lg:pt-[200px] lg:pb-[120px] xl:pt-[260px] xl:pb-[150px]"
-      id="scene">
-      {/* Same background recipe as AIStrategyRoadmapHero */}
-      <div className="absolute inset-0 bg-[url('/images/ns-img-495.png')] bg-cover bg-top bg-no-repeat opacity-20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(126,87,253,0.35),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.28),transparent_30%)]" />
-      <div className="pointer-events-none absolute top-20 left-[8%] h-32 w-32 rounded-full bg-white/10 blur-3xl" />
-      <div className="pointer-events-none absolute right-[10%] top-[18%] h-56 w-56 rounded-full bg-primary/30 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-[8%] left-[18%] h-44 w-44 rounded-full bg-sky-400/20 blur-[100px]" />
+      className="relative z-0 overflow-hidden pt-[180px] pb-24 md:pt-[240px] md:pb-32 lg:pt-[280px] lg:pb-[180px]"
+      id="home-hero">
+      
+      {/* ── Background Image & Overlays ── */}
+      <div className="absolute inset-0 -z-20">
+        <Image
+          src={heroBg}
+          alt="Enterprise AI Architecture"
+          fill
+          priority
+          className="object-cover"
+          quality={100}
+        />
+      </div>
+      
+      {/* Dark gradient overlay to ensure text readability */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-secondary/95 via-secondary/70 to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-secondary/30" />
+      
+      {/* Ambient Glow Orbs for brand color integration */}
+      <div className="pointer-events-none absolute top-[30%] left-0 h-[600px] w-[800px] -translate-x-1/4 -translate-y-1/2 rounded-full bg-[#7E57FD]/20 blur-[120px] -z-10" />
 
-      {/*Hero Title Content*/}
-      <div className="main-container relative z-10 flex flex-col items-center space-y-[40px]">
-        {/* Animated Background Elements */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          {/* AI Data Flow Visualization (Moving Circle along SVG path) */}
-          <div className="absolute top-[20%] left-[5%] h-full w-[80%] opacity-40 dark:opacity-60 md:left-[15%]">
-            <svg viewBox="0 0 800 600" className="h-full w-full stroke-secondary/20 dark:stroke-white/10" fill="none">
-              {/* Background Grid/Nodes */}
-              <path id="ai-path-1" d="M 50 150 C 200 150 250 350 450 350 S 650 150 750 150" strokeWidth="2" strokeDasharray="5,5" />
-              <path id="ai-path-2" d="M 100 450 C 300 450 350 200 550 200 S 700 400 750 400" strokeWidth="2" strokeDasharray="5,5" />
-
-              {/* Node Points */}
-              <circle cx="50" cy="150" r="4" className="fill-[#7E57FD]" />
-              <circle cx="450" cy="350" r="6" className="fill-[#7E57FD]" />
-              <circle cx="750" cy="150" r="4" className="fill-[#7E57FD]" />
-
-              <circle cx="100" cy="450" r="4" className="fill-primary-400" />
-              <circle cx="550" cy="200" r="6" className="fill-primary-400" />
-              <circle cx="750" cy="400" r="4" className="fill-primary-400" />
-
-              {/* Moving Data Packets (Circles) */}
-              <circle r="6" className="fill-[#7E57FD] drop-shadow-[0_0_8px_rgba(126,87,253,0.8)]">
-                <animateMotion dur="4s" repeatCount="indefinite">
-                  <mpath href="#ai-path-1" />
-                </animateMotion>
-              </circle>
-
-              <circle r="6" className="fill-primary-400 drop-shadow-[0_0_8px_rgba(100,217,253,0.8)]">
-                <animateMotion dur="5s" repeatCount="indefinite" begin="1s">
-                  <mpath href="#ai-path-2" />
-                </animateMotion>
-              </circle>
-            </svg>
+      {/* ── Main Content (Center Aligned) ── */}
+      <div className="main-container relative z-10 flex flex-col items-center text-center">
+        
+        <RevealAnimation delay={0.1}>
+          <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25CA22] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#25CA22]" />
+            </span>
+            Premium Global AI Consulting
           </div>
+        </RevealAnimation>
 
-          <RevealAnimation delay={0.5}>
-            <div className="absolute top-[10%] left-[10%] size-16 animate-[pulse_4s_ease-in-out_infinite] rounded-full bg-primary-400/20 blur-xl mix-blend-screen md:size-24" />
-          </RevealAnimation>
-          <RevealAnimation delay={0.7}>
-            <div className="absolute top-[40%] right-[15%] size-20 animate-[pulse_6s_ease-in-out_infinite_1s] rounded-full bg-[#7E57FD]/20 blur-2xl mix-blend-screen md:size-32" />
-          </RevealAnimation>
-        </div>
+        <RevealAnimation delay={0.2}>
+          <h1 className="mx-auto mb-8 max-w-[900px] text-5xl font-medium tracking-tight text-white md:text-6xl lg:text-7xl xl:text-[84px] xl:leading-[1.05]">
+            Build, Deploy, and Scale <br className="hidden md:block" />
+            <span className="text-white">Enterprise AI.</span>
+          </h1>
+        </RevealAnimation>
 
-        <div className="relative z-10 text-left max-lg:pt-[100px] max-md:pt-[50px] md:text-center">
-          <RevealAnimation delay={0.2}>
-            <h1 className="mb-4 text-white">
-              Launch and scale faster. <br className="hidden md:block" />
-              With Enterprise AI.
-            </h1>
-          </RevealAnimation>
-          <RevealAnimation delay={0.3}>
-            <p className="mx-auto mb-6 max-w-[650px] text-white/75">
-              &nbsp;RockScale helps startups, SMEs, and mid-size companies accelerate growth by leveraging AI, data, and cloud infrastructure.
-            </p>
-          </RevealAnimation>
-          <ul className="mb-14 flex w-fit list-none flex-col gap-4 md:mx-auto md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-9 lg:flex-nowrap">
-            {benefits.map((item, idx) => (
-              <RevealAnimation key={item.id} delay={0.4 + idx * 0.1}>
-                <li className="flex items-center gap-2.5">
-                  <span className="flex size-[19px] items-center justify-center rounded-full bg-white/20">
-                    <CheckIcon className="h-[12px] w-[12px] fill-white" />
-                  </span>
-                  <span className="text-tagline-2 text-white/80">{item.text}</span>
-                </li>
-              </RevealAnimation>
-            ))}
-          </ul>
-          <RevealAnimation delay={0.7}>
-            <div className="block md:inline-block">
-              <LinkButton
-                href="/contact-us"
-                className="btn btn-md mx-auto w-[90%] bg-white text-secondary hover:bg-primary hover:text-white md:w-auto"
-                aria-label="Book a consultation">
-                Book a consultation
-              </LinkButton>
-            </div>
-          </RevealAnimation>
-        </div>
+        <RevealAnimation delay={0.3}>
+          <p className="mx-auto mb-10 max-w-[700px] text-lg leading-relaxed text-white/80 md:text-xl">
+            We partner with ambitious enterprises globally to engineer intelligent systems that automate operations, unlock data insights, and drive measurable business transformation.
+          </p>
+        </RevealAnimation>
+
+        <RevealAnimation delay={0.4}>
+          <div className="flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
+            <LinkButton
+              href="/contact-us"
+              className="btn btn-md w-full border-none bg-[#25CA22] font-semibold text-secondary transition-colors duration-300 hover:bg-white hover:text-secondary sm:w-auto"
+            >
+              Talk to Our AI Experts
+            </LinkButton>
+            <LinkButton
+              href="/services"
+              className="btn btn-md w-full border border-white/20 bg-white/5 text-white transition-colors duration-300 hover:border-white/30 hover:bg-white/10 sm:w-auto"
+            >
+              Explore Our Services
+            </LinkButton>
+          </div>
+        </RevealAnimation>
+        
+        {/* ── Sub-trust indicators (Center Aligned) ── */}
+        <RevealAnimation delay={0.6}>
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-white/50">
+            <span className="flex items-center gap-2">
+              <svg className="h-4 w-4 text-[#25CA22]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              Custom AI & LLMs
+            </span>
+            <span className="flex items-center gap-2">
+              <svg className="h-4 w-4 text-[#25CA22]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              Data Engineering
+            </span>
+            <span className="flex items-center gap-2">
+              <svg className="h-4 w-4 text-[#25CA22]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              Cloud Infrastructure
+            </span>
+          </div>
+        </RevealAnimation>
+      </div>
+
+      {/* ── Wave Transition ── */}
+      <div className="absolute bottom-0 left-0 w-full translate-y-px">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="h-12 w-full md:h-20" fill="none">
+          <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" className="fill-background-3 dark:fill-background-7" />
+        </svg>
       </div>
     </section>
   );

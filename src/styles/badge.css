@@ -6,15 +6,15 @@ Site Badges Styles
 }
 
 @utility badge-green {
-  @apply bg-ns-green-light dark:text-ns-yellow dark:bg-accent/10;
+  @apply bg-ns-green text-secondary dark:text-ns-green dark:bg-accent/10;
 }
 
 @utility badge-green-v2 {
-  @apply bg-ns-green-light dark:text-ns-green dark:bg-accent/10;
+  @apply bg-ns-green text-secondary dark:text-ns-green dark:bg-accent/10;
 }
 
 @utility badge-ns-green-light {
-  @apply bg-ns-green-light;
+  @apply bg-ns-green;
 }
 
 @utility badge-yellow {

@@ -7,7 +7,7 @@ import instagram from '@public/images/icons/instagram.svg';
 import linkedin from '@public/images/icons/linkedin.svg';
 import youtube from '@public/images/icons/youtube.svg';
 import gradientImg from '@public/images/ns-img-532.png';
-import darkLogo from '@public/images/Rockscale_logo.png';
+import darkLogo from '@public/images/rockscale-logo.jpeg';
 import Image from 'next/image';
 import Link from 'next/link';
 import FooterDivider from './FooterDivider';

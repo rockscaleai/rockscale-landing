@@ -53,7 +53,7 @@ const WhatWeDoMenu = ({
       <div
         id="whatwedo-mega-menu"
         className={cn(
-          'dropdown-menu dark:bg-background-6 border-stroke-1 dark:border-background-7 pointer-events-none absolute top-full left-1/2 z-50 mt-2 flex w-full -translate-x-1/2 rounded-[20px] border bg-white p-10 pb-12 opacity-0 transition-all duration-300 md:w-[1050px]',
+          'dropdown-menu pointer-events-none absolute top-full left-1/2 z-50 mt-2 flex w-full -translate-x-1/2 rounded-[20px] border border-white/10 bg-black/40 backdrop-blur-xl p-10 pb-12 opacity-0 shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-300 md:w-[1050px]',
           menuDropdownId === 'whatwedo-mega-menu'
             ? '!pointer-events-auto translate-y-0 opacity-100'
             : 'pointer-events-none translate-y-2.5 opacity-0',
@@ -62,7 +62,7 @@ const WhatWeDoMenu = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full">
           {menuData.map((column, idx) => (
             <div key={idx} className="flex flex-col">
-              <h4 className="text-[12px] font-bold tracking-widest text-secondary/40 dark:text-accent/40 uppercase mb-8">
+              <h4 className="text-[12px] font-bold tracking-widest text-white/50 uppercase mb-8">
                 {column.title}
               </h4>
               <ul className="flex flex-col space-y-6">
@@ -71,7 +71,7 @@ const WhatWeDoMenu = ({
                     <Link
                       href={link.href}
                       onClick={handleClose}
-                      className="text-secondary/80 dark:text-accent/80 hover:text-[#7E57FD] dark:hover:text-[#7E57FD] transition-colors text-[15px] font-medium leading-relaxed block"
+                      className="text-white/90 hover:text-white transition-colors text-[15px] font-medium leading-relaxed block"
                     >
                       {link.label}
                     </Link>

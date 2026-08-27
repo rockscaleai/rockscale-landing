@@ -40,7 +40,7 @@ All the varaiables are added here
   --color-stroke-8: #303b49;
   --color-stroke-9: var(--color-background-8);
   --color-ns-yellow: #f9eb57;
-  --color-ns-green: #c6f56f;
+  --color-ns-green: #25CA22;
   --color-ns-red: #ffb9a2;
   --color-ns-cyan: #83e7ee;
   --color-ns-green-light: #e8fbc6;
@@ -52,11 +52,11 @@ All the varaiables are added here
   --color-gradient-3: linear-gradient(135deg, #83e7ee 0%, #f9eb57 100%);
   --color-gradient-4: linear-gradient(135deg, #864ffe 0%, #23eed6 100%);
   --color-gradient-5: linear-gradient(165deg, rgba(255, 255, 255, 0.5) 0.51%, rgba(255, 255, 255, 0) 64.43%);
-  --color-gradient-6: linear-gradient(#83e7ee 0%, #c6f56f 100%);
+  --color-gradient-6: linear-gradient(#83e7ee 0%, #25CA22 100%);
   --color-gradient-7: linear-gradient(#ffffff 0%, #83e7ee 100%);
   --color-gradient-8: linear-gradient(156deg, #ffffff 32.92%, #a585ff 91%);
   --color-gradient-9: linear-gradient(156deg, #dfb0ff 32.92%, #fdbedc 91%);
-  --color-gradient-10: linear-gradient(135deg, #83e7ee 0%, #c6f56f 100%);
+  --color-gradient-10: linear-gradient(135deg, #83e7ee 0%, #25CA22 100%);
   --color-gradient-11: linear-gradient(179deg, rgba(255, 255, 255, 0) 0.68%, #fff 79.47%);
   --color-gradient-12: radial-gradient(73.01% 80.77% at 19.23% 47.79%, #83e7ee 0%, rgba(134, 79, 254, 0) 100%);
 
