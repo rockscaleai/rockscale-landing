@@ -3,6 +3,14 @@
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import TestimonialLarge from './TestimonialLarge';
 import TestimonialMobile from './TestimonialMobile';
+import reviews from '@/data/json/testimonials/testimonials.json';
+
+const testimonialsData = reviews.map(review => ({
+  name: review.name,
+  title: review.position,
+  avatar: review.avatar,
+  testimonial: review.quote
+}));
 
 const Testimonial = () => {
   return (
@@ -15,9 +23,9 @@ const Testimonial = () => {
             </h2>
           </RevealAnimation>
           {/* testimonial cards Large Screen */}
-          <TestimonialLarge />
+          <TestimonialLarge testimonialsData={testimonialsData} />
           {/* testimonial cards Small Screen */}
-          <TestimonialMobile />
+          <TestimonialMobile testimonialsData={testimonialsData} />
         </div>
       </div>
     </section>
