@@ -6,11 +6,11 @@ Site Badges Styles
 }
 
 @utility badge-green {
-  @apply bg-ns-green text-secondary dark:text-ns-green dark:bg-accent/10;
+  @apply bg-[#25CA22]/15 text-[#25CA22] border border-[#25CA22]/40 !uppercase font-bold tracking-widest dark:text-[#25CA22] dark:bg-[#25CA22]/10 dark:border-[#25CA22]/20;
 }
 
 @utility badge-green-v2 {
-  @apply bg-ns-green text-secondary dark:text-ns-green dark:bg-accent/10;
+  @apply bg-[#25CA22]/15 text-[#25CA22] border border-[#25CA22]/40 !uppercase font-bold tracking-widest dark:text-[#25CA22] dark:bg-[#25CA22]/10 dark:border-[#25CA22]/20;
 }
 
 @utility badge-ns-green-light {

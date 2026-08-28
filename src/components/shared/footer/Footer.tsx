@@ -35,34 +35,7 @@ const Footer = ({ className }: { className?: string }) => {
                   Enterprise AI consulting, data engineering and cloud infrastructure for
                   ambitious growing companies.
                 </p>
-                {/* Newsletter */}
-                <div className="mb-7">
-                  <p className="text-tagline-2 text-accent/50 mb-3 font-medium uppercase tracking-wider">
-                    Stay informed
-                  </p>
-                  <form
-                    action="#"
-                    method="post"
-                    className="flex gap-2"
-                    aria-label="newsletter-form"
-                    suppressHydrationWarning>
-                    <input
-                      type="email"
-                      name="email"
-                      id="footerEmail"
-                      placeholder="Your email"
-                      className="placeholder:text-accent/40 border-stroke-1/20 text-accent focus:border-primary-400 h-10 flex-1 rounded-full border bg-white/5 px-4 text-sm font-normal placeholder:font-normal focus:outline-none"
-                      aria-label="Email for newsletter"
-                    />
-                    <button
-                      type="submit"
-                      className="btn btn-primary btn-sm h-10 rounded-full px-4 text-sm"
-                      aria-label="Subscribe to newsletter">
-                      Join
-                    </button>
-                  </form>
-                </div>
-                {/* Socials */}
+{/* Socials */}
                 <div className="flex items-center gap-3">
                   <Link target="_blank" href="https://www.linkedin.com">
                     <span className="sr-only">LinkedIn</span>

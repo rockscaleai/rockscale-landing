@@ -2,18 +2,34 @@
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
 
+import Image from 'next/image';
+import aboutHeroBg from '@public/images/rockscale-about-hero-bg.jpg';
+
 const AboutHero = () => {
   return (
     <section
       className="relative z-0 overflow-hidden bg-secondary pt-36 pb-20 md:pt-44 md:pb-24 lg:pt-52 lg:pb-[140px] xl:pt-[200px] xl:pb-[160px]"
       aria-labelledby="about-hero-heading"
     >
-      {/* ── Background & Texture ── */}
-      <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-overlay" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(126,87,253,0.15),transparent_40%),radial-gradient(circle_at_bottom,rgba(37,202,34,0.1),transparent_50%)]" />
+      {/* ── Background Image & Overlays ── */}
+      <div className="absolute inset-0 -z-20">
+        <Image
+          src={aboutHeroBg}
+          alt="Enterprise Global AI Infrastructure"
+          fill
+          priority
+          className="object-cover opacity-80 brightness-110"
+          quality={100}
+        />
+      </div>
+      
+      {/* Dark gradient overlay to ensure text readability */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-secondary/70 via-secondary/50 to-secondary" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(126,87,253,0.15),transparent_40%),radial-gradient(circle_at_bottom,rgba(37,202,34,0.1),transparent_50%)] -z-10" />
+      <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-overlay -z-10" />
 
       {/* ── Abstract Global Data Network SVG ── */}
-      <div className="pointer-events-none absolute left-1/2 top-[40%] -z-10 w-full max-w-[1400px] -translate-x-1/2 -translate-y-1/2 opacity-[0.35]">
+      <div className="pointer-events-none absolute left-1/2 top-[40%] -z-10 w-full max-w-[600px] -translate-x-1/2 -translate-y-1/2 opacity-[0.35]">
         <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto animate-[spin_180s_linear_infinite]">
           {/* Orbital Grid Lines */}
           <circle cx="500" cy="500" r="300" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />

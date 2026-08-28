@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/utils/cn';
-import teamImg from '@public/images/rockscale-ai-team-new.jpg';
+import whyRockScaleImg from '@public/images/rockscale-why-exists-v2.jpg';
 import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 import LinkButton from '../ui/button/LinkButton';
@@ -57,9 +57,9 @@ const WhyChooseUs = () => {
               {/* Header */}
               <div className="space-y-6">
                 <RevealAnimation delay={0.1}>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[#25CA22]/30 bg-[#25CA22]/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-[#25CA22]">
+                  <span className="badge badge-green">
                     Why RockScale
-                  </div>
+                  </span>
                 </RevealAnimation>
                 
                 <RevealAnimation delay={0.2}>
@@ -117,7 +117,7 @@ const WhyChooseUs = () => {
                 {/* Main Premium Image */}
                 <figure className="relative z-0 overflow-hidden rounded-[32px] border border-black/5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
                   <Image
-                    src={teamImg}
+                    src={whyRockScaleImg}
                     alt="Enterprise AI Consulting Team"
                     className="h-auto w-full object-cover transition-transform duration-700 ease-in-out hover:scale-105"
                     quality={95}

@@ -1,5 +1,5 @@
 'use client';
-import whyRockScaleImg from '@public/images/rockscale-why-exists-v2.jpg';
+import teamImg from '@public/images/rockscale-ai-team-new.jpg';
 import Image from 'next/image';
 import RevealAnimation from '../animation/RevealAnimation';
 
@@ -27,7 +27,7 @@ const OurStory = () => {
                   {/* Subtle inner border */}
                   <div className="absolute inset-0 z-10 rounded-[24px] border border-black/5" />
                   <Image
-                    src={whyRockScaleImg}
+                    src={teamImg}
                     alt="Abstract visualization of global AI consulting and enterprise architecture"
                     className="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
                     quality={90}

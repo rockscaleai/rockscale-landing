@@ -9,7 +9,7 @@ const services = [
     title: 'AI Strategy & Roadmap',
     description: 'Identify high-value AI opportunities, assess technical readiness, and build practical deployment roadmaps tailored to your enterprise goals.',
     phase: 'THINK',
-    href: '/services/ai-strategy-roadmap',
+    href: '/services/ai-strategy',
     color: '#25CA22',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -1,4 +1,4 @@
-import AIStrategyRoadmapPageContent from '@/components/services/ai-strategy-roadmap/AIStrategyRoadmapPageContent';
+import AIStrategyRoadmapPageContent from '@/components/services/ai-strategy/AIStrategyRoadmapPageContent';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

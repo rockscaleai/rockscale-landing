@@ -1,8 +1,13 @@
+const fs = require('fs');
+const path = require('path');
 
+const content = `
 'use client';
 
 import React from 'react';
 import Link from 'next/link';
+import Navbar from '@/components/shared/navbar/Navbar';
+import Footer from '@/components/shared/footer/Footer';
 
 // Shared Classes for Premium Layout
 const sectionTitleClass = "text-4xl font-medium tracking-tight text-secondary md:text-5xl lg:text-[52px] lg:leading-[1.1]";
@@ -47,8 +52,8 @@ const TheDifferenceSection = () => (
     <div className="main-container">
       <div className="mb-16 text-center">
         <span className="badge badge-green-v2 mb-6 inline-block">The Paradigm</span>
-        <h2 className={`${sectionTitleClass} mx-auto max-w-3xl`}>A Different Class of Engineer</h2>
-        <p className={`${sectionTextClass} mx-auto mt-6 max-w-2xl`}>
+        <h2 className={\`\${sectionTitleClass} mx-auto max-w-3xl\`}>A Different Class of Engineer</h2>
+        <p className={\`\${sectionTextClass} mx-auto mt-6 max-w-2xl\`}>
           Forward Deployed Engineers don't just write code from tickets. They own outcomes, navigate ambiguity, and drive projects from problem definition to production.
         </p>
       </div>
@@ -115,7 +120,7 @@ const CapabilitiesSection = () => (
             { title: 'Cloud & Infra', desc: 'Implement scalable cloud environments, deployment pipelines and platform architecture.', icon: 'ns-shape-8', color: 'text-blue-500' },
           ].map((item, idx) => (
             <div key={idx} className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.04] hover:border-white/20">
-              <span className={`${item.icon} ${item.color} text-[40px] opacity-80 mb-6 block transition-transform duration-500 group-hover:scale-110`} />
+              <span className={\`\${item.icon} \${item.color} text-[40px] opacity-80 mb-6 block transition-transform duration-500 group-hover:scale-110\`} />
               <h3 className="text-xl font-bold tracking-tight text-white">{item.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-white/70">{item.desc}</p>
             </div>
@@ -131,8 +136,8 @@ const WhenToUseSection = () => (
     <div className="main-container">
       <div className="mb-16 text-center">
         <span className="badge badge-green-v2 mb-6 inline-block">Use Cases</span>
-        <h2 className={`${sectionTitleClass} mx-auto max-w-3xl`}>When to Hire an FDE</h2>
-        <p className={`${sectionTextClass} mx-auto mt-6 max-w-2xl`}>
+        <h2 className={\`\${sectionTitleClass} mx-auto max-w-3xl\`}>When to Hire an FDE</h2>
+        <p className={\`\${sectionTextClass} mx-auto mt-6 max-w-2xl\`}>
           Specific scenarios where embedding elite talent accelerates your timeline.
         </p>
       </div>
@@ -146,7 +151,7 @@ const WhenToUseSection = () => (
         ].map((item, idx) => (
           <div key={idx} className="group relative overflow-hidden rounded-[32px] border border-secondary/5 bg-[#f4f5f8]/50 p-10 transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)]">
             <div className="flex gap-6 items-start">
-               <div className={`shrink-0 h-3 w-3 rounded-full mt-2 ${item.accent}`} />
+               <div className={\`shrink-0 h-3 w-3 rounded-full mt-2 \${item.accent}\`} />
                <div>
                   <h3 className="text-2xl font-bold tracking-tight text-secondary leading-tight mb-4">{item.title}</h3>
                   <p className="text-base leading-relaxed text-secondary/70">{item.desc}</p>
@@ -198,13 +203,19 @@ const FinalCTASection = () => (
 const ForwardDeployedEngineerPageContent = () => {
   return (
     <main>
+      <Navbar />
       <HeroSection />
       <TheDifferenceSection />
       <CapabilitiesSection />
       <WhenToUseSection />
       <FinalCTASection />
+      <Footer />
     </main>
   );
 };
 
 export default ForwardDeployedEngineerPageContent;
+`
+
+fs.writeFileSync(path.join(__dirname, 'src/components/services/forward-deployed-engineer/ForwardDeployedEngineerPageContent.tsx'), content);
+console.log('Successfully rewritten the Forward Deployed Engineer page.');

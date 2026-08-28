@@ -1,8 +1,13 @@
+const fs = require('fs');
+const path = require('path');
 
+const content = `
 'use client';
 
 import React from 'react';
 import Link from 'next/link';
+import Navbar from '@/components/shared/navbar/Navbar';
+import Footer from '@/components/shared/footer/Footer';
 
 // Shared Classes for Premium Layout
 const sectionTitleClass = "text-4xl font-medium tracking-tight text-secondary md:text-5xl lg:text-[52px] lg:leading-[1.1]";
@@ -50,7 +55,7 @@ const TheChallengeSection = () => (
           <span className="badge badge-green-v2 mb-6 inline-block">The Challenge</span>
           <h2 className={sectionTitleClass}>Why AI Initiatives Fail</h2>
         </div>
-        <p className={`${sectionTextClass} max-w-xl pb-2`}>
+        <p className={\`\${sectionTextClass} max-w-xl pb-2\`}>
           Before you can build intelligent systems, you need reliable data. Most organizations struggle with the basics.
         </p>
       </div>
@@ -63,7 +68,7 @@ const TheChallengeSection = () => (
           { title: 'AI Unreadiness', desc: 'AI initiatives stall because the underlying data architecture cannot support them.', icon: 'ns-shape-8', color: 'text-rose-500' },
         ].map((item, idx) => (
           <div key={idx} className="group relative overflow-hidden rounded-[24px] border border-secondary/5 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] hover:border-secondary/20">
-            <span className={`${item.icon} ${item.color} text-[40px] opacity-80 mb-6 block transition-transform duration-500 group-hover:scale-110`} />
+            <span className={\`\${item.icon} \${item.color} text-[40px] opacity-80 mb-6 block transition-transform duration-500 group-hover:scale-110\`} />
             <h3 className="text-xl font-bold tracking-tight text-secondary">{item.title}</h3>
             <p className="mt-4 text-sm leading-relaxed text-secondary/70">{item.desc}</p>
           </div>
@@ -81,8 +86,8 @@ const WhatWeDoSection = () => (
     <div className="main-container relative z-10">
       <div className="mb-20 text-center">
         <span className="badge badge-green-v2 mb-6 inline-block">Core Capabilities</span>
-        <h2 className={`${sectionTitleDarkClass} mx-auto max-w-3xl`}>Engineering the Modern Data Stack</h2>
-        <p className={`${sectionTextDarkClass} mx-auto mt-6 max-w-2xl`}>
+        <h2 className={\`\${sectionTitleDarkClass} mx-auto max-w-3xl\`}>Engineering the Modern Data Stack</h2>
+        <p className={\`\${sectionTextDarkClass} mx-auto mt-6 max-w-2xl\`}>
           We build the infrastructure that powers everything from executive dashboards to autonomous AI agents.
         </p>
       </div>
@@ -98,7 +103,7 @@ const WhatWeDoSection = () => (
         ].map((item, idx) => (
           <div key={idx} className="group flex flex-col justify-between rounded-[32px] border border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.04] hover:border-white/20">
             <div>
-              <span className={`${item.icon} ${item.color} text-[40px] opacity-80 mb-6 block transition-transform duration-500 group-hover:scale-110`} />
+              <span className={\`\${item.icon} \${item.color} text-[40px] opacity-80 mb-6 block transition-transform duration-500 group-hover:scale-110\`} />
               <h3 className="text-2xl font-semibold tracking-tight text-white">{item.title}</h3>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/70">{item.desc}</p>
@@ -112,51 +117,38 @@ const WhatWeDoSection = () => (
 const DataFlowSection = () => (
   <section className="bg-white py-24 md:py-32">
     <div className="main-container">
-      <div className="mb-20 text-center">
+      <div className="mb-16 text-center">
         <span className="badge badge-green-v2 mb-6 inline-block">The Architecture</span>
-        <h2 className={`${sectionTitleClass} mx-auto max-w-3xl`}>The Data Value Chain</h2>
-        <p className={`${sectionTextClass} mx-auto mt-6 max-w-2xl`}>
+        <h2 className={\`\${sectionTitleClass} mx-auto max-w-3xl\`}>The Data Value Chain</h2>
+        <p className={\`\${sectionTextClass} mx-auto mt-6 max-w-2xl\`}>
           How we move raw information into strategic intelligence.
         </p>
       </div>
 
-      <div className="relative mx-auto max-w-[1200px]">
-        {/* Background Connecting Line (Desktop Only) */}
-        <div className="absolute left-[10%] top-[3.25rem] hidden w-[80%] h-[3px] rounded-full bg-gradient-to-r from-[#7E57FD] via-[#25CA22] to-rose-500 lg:block opacity-30" />
-        
-        <div className="grid gap-12 lg:gap-6 lg:grid-cols-5 relative z-10">
+      <div className="relative mx-auto max-w-5xl">
+        <div className="grid gap-6 md:grid-cols-5 relative z-10">
           {[
-            { title: 'Sources', icon: 'ns-shape-42', items: ['CRM & ERP', 'SaaS Apps', 'Databases', 'APIs'], accent: 'text-[#7E57FD]' },
-            { title: 'Integration', icon: 'ns-shape-41', items: ['ETL / ELT', 'Streaming', 'Batch Jobs', 'Pipelines'], accent: 'text-[#5391f5]' },
-            { title: 'Platform', icon: 'ns-shape-23', items: ['Data Warehouse', 'Data Lake', 'Lakehouse', 'Governance'], accent: 'text-[#25CA22]' },
-            { title: 'Analytics', icon: 'ns-shape-33', items: ['BI Dashboards', 'Self-Serve', 'Metrics', 'Reporting'], accent: 'text-orange-500' },
-            { title: 'Intelligence', icon: 'ns-shape-8', items: ['AI Agents', 'RAG Systems', 'Predictions', 'Automation'], accent: 'text-rose-500' },
+            { title: 'Sources', items: ['CRM', 'ERP', 'SaaS', 'APIs', 'Databases'], accent: 'border-[#7E57FD]' },
+            { title: 'Integration', items: ['ETL / ELT', 'Streaming', 'Batch Jobs'], accent: 'border-[#5391f5]' },
+            { title: 'Platform', items: ['Warehouse', 'Data Lake', 'Lakehouse'], accent: 'border-[#25CA22]' },
+            { title: 'Analytics', items: ['BI Tools', 'Dashboards', 'Metrics'], accent: 'border-orange-500' },
+            { title: 'Intelligence', items: ['AI Agents', 'RAG Systems', 'Predictions'], accent: 'border-rose-500' },
           ].map((step, idx) => (
-            <div key={idx} className="group relative flex flex-col items-center">
-              
-              {/* Node Icon */}
-              <div className="relative mb-8 flex h-[104px] w-[104px] shrink-0 items-center justify-center rounded-full border-[6px] border-white bg-[#f4f5f8] shadow-[0_0_0_1px_rgba(0,0,0,0.05)] transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_15px_30px_rgba(0,0,0,0.1)] group-hover:bg-white z-10">
-                 <span className={`${step.icon} ${step.accent} text-[40px] opacity-90`} />
-              </div>
-
-              {/* Connecting line (Mobile/Tablet Only) - Between nodes vertically */}
-              {idx !== 4 && (
-                <div className="absolute top-[104px] bottom-[-48px] left-1/2 w-[2px] -translate-x-1/2 bg-gradient-to-b from-secondary/10 to-transparent lg:hidden" />
-              )}
-              
-              {/* Content Card */}
-              <div className="w-full rounded-[24px] border border-secondary/5 bg-[#f4f5f8]/30 p-6 text-center transition-all duration-500 group-hover:-translate-y-1 group-hover:bg-white group-hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] relative z-10">
-                 <h3 className="text-[17px] font-bold tracking-tight text-secondary mb-4">{step.title}</h3>
-                 <div className="h-px w-full bg-secondary/5 mb-4" />
-                 <ul className="space-y-3">
-                   {step.items.map((item) => (
-                     <li key={item} className="text-[13px] font-semibold text-secondary/70">
-                       {item}
-                     </li>
-                   ))}
-                 </ul>
+            <div key={idx} className={\`relative overflow-hidden rounded-[24px] border border-secondary/5 bg-[#f4f5f8]/50 p-6 transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)]\`}>
+              <div className={\`absolute top-0 left-0 w-full h-1 \${step.accent.replace('border-', 'bg-')}\`} />
+              <div className="flex items-center justify-between mb-6 mt-2">
+                 <h3 className="text-lg font-bold tracking-tight text-secondary">{step.title}</h3>
+                 <span className="text-xs font-bold text-secondary/20">0{idx + 1}</span>
               </div>
               
+              <ul className="space-y-3">
+                {step.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className={\`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full \${step.accent.replace('border-', 'bg-')}\`} />
+                    <span className="text-xs font-semibold text-secondary/70">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -204,13 +196,19 @@ const FinalCTASection = () => (
 const DataEngineeringAnalyticsPageContent = () => {
   return (
     <main>
+      <Navbar />
       <HeroSection />
       <TheChallengeSection />
       <WhatWeDoSection />
       <DataFlowSection />
       <FinalCTASection />
+      <Footer />
     </main>
   );
 };
 
 export default DataEngineeringAnalyticsPageContent;
+`
+
+fs.writeFileSync(path.join(__dirname, 'src/components/services/data-engineering-analytics/DataEngineeringAnalyticsPageContent.tsx'), content);
+console.log('Successfully rewritten the Data Engineering page.');

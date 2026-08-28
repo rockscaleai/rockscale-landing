@@ -1,6 +1,6 @@
 ---
 title: 'Cove – financial risk management & compliance'
-thumbnail: '/images/ns-img-413.jpg'
+thumbnail: '/images/rockscale_finance_ai.jpg'
 description: 'Financial institutions are leveraging AI-powered analytics to proactively identify risks, streamline compliance processes, and strengthen trust with stakeholders—ensuring stability and growth in a dynamic market.'
 result: Reduced compliance costs by 40% and improved risk detection efficiency by 3x
 

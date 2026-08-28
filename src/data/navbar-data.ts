@@ -13,25 +13,18 @@ export const mobileMenuData: MobileMenuGroup[] = [
     id: 'what-we-do',
     title: 'What We Do',
     submenu: [
-      { id: 'wwd-strategy', label: 'AI Strategy & Roadmap', href: '/services/ai-strategy-roadmap' },
+      { id: 'wwd-strategy', label: 'AI Strategy & Roadmap', href: '/services/ai-strategy' },
       { id: 'wwd-dev', label: 'AI-Powered Software Development', href: '/services/ai-powered-software-development' },
       { id: 'wwd-data', label: 'Data Engineering & Analytics', href: '/services/data-engineering-analytics' },
       { id: 'wwd-fde', label: 'Forward Deployed Engineer', href: '/services/forward-deployed-engineer' },
-      { id: 'wwd-gendd', label: 'Generative Driven Development™', href: '/services#gendd' },
-      { id: 'wwd-assessment', label: 'AI Data Readiness & Governance', href: '/services#assessment' },
-      { id: 'wwd-accelerator', label: 'AI Solution Accelerator', href: '/services#accelerator' },
-      { id: 'wwd-training', label: 'AI Training for Teams', href: '/services/ai-training' },
-      { id: 'wwd-executive', label: 'Executive AI Training', href: '/services/executive-ai-training' },
-      { id: 'wwd-roi', label: 'AI Roadmap & ROI Workshop', href: '/services#roi-workshop' },
+      { id: 'wwd-training', label: 'Corporate & Executive AI Training', href: '/services/ai-training' },
     ],
   },
   {
     id: 'products',
     title: 'Products',
     submenu: [
-      { id: 'products-overview', label: 'Products Overview', href: '/products' },
       { id: 'qorebit-ai', label: 'Qorebit AI', href: '/products/qorebit-ai' },
-      { id: 'enterprise-solutions', label: 'Enterprise Solutions', href: '/services' },
     ],
   },
   {

@@ -9,7 +9,6 @@ const getMetricLabel = (result?: string) => {
   if (!result) {
     return 'Real-world impact';
   }
-
   return result.split(' ').slice(0, 5).join(' ');
 };
 
@@ -26,51 +25,55 @@ const ProjectCard = ({
     <RevealAnimation delay={0.28 + index * 0.1}>
       <Link
         href={`/case-study/${project.slug}`}
-        className="group relative block h-full overflow-hidden rounded-[30px] outline-none"
+        className="group relative block h-full overflow-hidden rounded-[24px] outline-none"
       >
         <div
-          className={`relative h-full min-h-[420px] overflow-hidden rounded-[30px] border border-white/10 bg-secondary shadow-[0_30px_80px_-35px_rgba(15,23,42,0.45)] dark:bg-background-7 ${
-            featured ? 'lg:min-h-[620px]' : 'lg:min-h-[300px]'
+          className={`relative h-full min-h-[420px] w-full overflow-hidden rounded-[24px] bg-white transition-all duration-700 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] ${
+            featured ? 'lg:min-h-[640px]' : 'lg:min-h-[310px]'
           }`}
         >
-          <Image
-            src={project.thumbnail}
-            fill
-            priority={index < 2}
-            alt={project.title}
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          />
+          {/* Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={project.thumbnail}
+              fill
+              priority={index < 2}
+              alt={project.title}
+              className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 group-hover:blur-[2px]"
+            />
+            {/* Gradient Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
+            <div className="absolute inset-0 bg-[#25CA22]/10 opacity-0 mix-blend-color transition-opacity duration-700 group-hover:opacity-100" />
+          </div>
 
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,15,35,0.15)_0%,rgba(8,15,35,0.4)_38%,rgba(8,15,35,0.88)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(126,87,253,0.28),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_30%)] opacity-90" />
-
-          <div className="absolute left-5 top-5 right-5 flex items-start justify-between gap-3 md:left-6 md:top-6 md:right-6">
-            <span className="inline-flex max-w-[70%] items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur-md">
-              <span className="size-2 rounded-full bg-ns-green" />
+          {/* Top Badges */}
+          <div className="absolute left-6 top-6 right-6 z-10 flex items-start justify-between gap-3">
+            <span className="inline-flex max-w-[75%] items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur-md transition-colors duration-500 group-hover:border-[#25CA22]/40 group-hover:bg-[#25CA22]/20">
+              <span className="size-2 rounded-full bg-[#25CA22] shadow-[0_0_10px_rgba(37,202,34,0.8)]" />
               {getMetricLabel(project.result)}
             </span>
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-xs font-bold text-white/85 backdrop-blur-md">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 text-xs font-bold text-white backdrop-blur-md transition-colors duration-500 group-hover:border-[#7E57FD]/40 group-hover:bg-[#7E57FD]/20">
               {String(index + 1).padStart(2, '0')}
             </span>
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 lg:p-7">
-            <div className="rounded-[26px] border border-white/12 bg-white/10 p-5 backdrop-blur-md md:p-6">
+          {/* Bottom Content Area */}
+          <div className="absolute inset-x-0 bottom-0 z-10 p-6 lg:p-8">
+            <div className="rounded-[20px] border border-white/10 bg-black/40 p-6 backdrop-blur-xl transition-all duration-500 group-hover:border-white/20 group-hover:bg-black/60">
               <div className="mb-4 flex items-center justify-between gap-4">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/55">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-white/60 transition-colors duration-500 group-hover:text-white/80">
                   Case study
                 </span>
-                <div className="flex size-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all duration-300 group-hover:scale-110 group-hover:border-ns-green group-hover:bg-ns-green">
+                <div className="flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:bg-[#25CA22]">
                   <svg
                     width="18"
                     height="18"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="-rotate-45"
                   >
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
@@ -80,13 +83,13 @@ const ProjectCard = ({
 
               <div className="space-y-3">
                 <h3
-                  className={`font-medium tracking-tight text-white transition-colors duration-300 group-hover:text-ns-green ${
-                    featured ? 'text-2xl md:text-3xl lg:text-[36px]' : 'text-xl md:text-2xl'
+                  className={`font-semibold tracking-tight text-white transition-colors duration-500 group-hover:text-[#25CA22] ${
+                    featured ? 'text-2xl md:text-3xl lg:text-[34px] lg:leading-[1.2]' : 'text-xl md:text-2xl'
                   }`}
                 >
                   {project.title}
                 </h3>
-                <p className={`text-white/65 ${featured ? 'max-w-[560px] text-base leading-7' : 'line-clamp-3 text-sm leading-6'}`}>
+                <p className={`text-white/70 ${featured ? 'max-w-[580px] text-[15px] leading-relaxed' : 'line-clamp-2 text-sm leading-6'}`}>
                   {project.description}
                 </p>
               </div>
@@ -102,35 +105,36 @@ const Projects = ({ featuredProjects }: { featuredProjects: ICaseStudy[] }) => {
   const [featuredProject, secondProject, thirdProject] = featuredProjects;
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 md:py-20 lg:py-[100px] xl:py-[130px] dark:bg-black">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[8%] top-12 h-52 w-52 rounded-full bg-[#7E57FD]/8 blur-[120px]" />
-        <div className="absolute bottom-10 right-[8%] h-64 w-64 rounded-full bg-sky-400/8 blur-[140px]" />
-      </div>
+    <section className="relative overflow-hidden bg-[#f4f5f8] py-24 md:py-32 lg:py-40">
+      
+      {/* ── Background Noise ── */}
+      <div className="absolute inset-0 z-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-multiply" />
 
       <div className="main-container relative z-10">
-        <div className="mb-12 flex flex-col gap-8 md:mb-16 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-[700px] space-y-5">
+        
+        {/* Header Section */}
+        <div className="mb-16 flex flex-col gap-10 md:mb-24 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-[720px] space-y-6">
             <RevealAnimation delay={0.1}>
-              <span className="badge badge-green">Projects</span>
+              <span className="badge badge-green">Our Work</span>
             </RevealAnimation>
             <RevealAnimation delay={0.2}>
-              <h2 className="text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+              <h2 className="text-4xl font-medium tracking-tight text-secondary md:text-5xl lg:text-[56px] lg:leading-[1.1]">
                 AI solutions powering real business transformation.
               </h2>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>
-              <p className="max-w-[620px] text-base leading-7 text-secondary/65 dark:text-accent/65 md:text-lg">
-                Three selected case studies showing how RockScale turns complex AI ideas into production-ready systems with measurable outcomes.
+              <p className="max-w-[650px] text-lg leading-relaxed text-secondary/70">
+                A selection of enterprise case studies showcasing how RockScale engineers turn complex AI architectures into secure, production-ready systems with measurable ROI.
               </p>
             </RevealAnimation>
           </div>
 
-          <RevealAnimation delay={0.35}>
+          <RevealAnimation delay={0.4}>
             <div className="hidden shrink-0 md:block">
               <LinkButton
                 href="/case-study"
-                className="btn btn-secondary btn-md hover:btn-primary dark:btn-transparent"
+                className="btn btn-secondary btn-md transition-colors hover:bg-[#25CA22] hover:text-white"
               >
                 View all projects
               </LinkButton>
@@ -138,22 +142,26 @@ const Projects = ({ featuredProjects }: { featuredProjects: ICaseStudy[] }) => {
           </RevealAnimation>
         </div>
 
-        <div className="overflow-hidden rounded-[36px] border border-stroke-1/10 bg-secondary p-4 shadow-[0_35px_100px_-45px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-background-8 sm:p-5 lg:p-6">
-          <div className="grid grid-cols-1 gap-4 xl:grid-cols-[1.2fr_0.8fr] xl:gap-6">
+        {/* Project Grid */}
+        <div className="relative z-10">
+          <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.3fr_0.7fr]">
+            {/* Featured Left Column */}
             {featuredProject && <ProjectCard project={featuredProject} index={0} featured />}
 
-            <div className="grid grid-cols-1 gap-4 lg:gap-6">
+            {/* Stacked Right Column */}
+            <div className="grid grid-cols-1 gap-6">
               {secondProject && <ProjectCard project={secondProject} index={1} />}
               {thirdProject && <ProjectCard project={thirdProject} index={2} />}
             </div>
           </div>
         </div>
 
+        {/* Mobile CTA */}
         <RevealAnimation delay={0.7}>
-          <div className="mt-10 text-center md:hidden">
+          <div className="mt-12 text-center md:hidden">
             <LinkButton
               href="/case-study"
-              className="btn btn-secondary btn-md mx-auto w-[85%] hover:btn-primary dark:btn-transparent"
+              className="btn btn-secondary btn-md mx-auto w-[85%] transition-colors hover:bg-[#25CA22] hover:text-white"
             >
               View all projects
             </LinkButton>

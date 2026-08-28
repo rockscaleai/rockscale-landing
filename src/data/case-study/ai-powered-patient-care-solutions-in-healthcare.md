@@ -1,6 +1,6 @@
 ---
 title: 'AI-powered patient care solutions in healthcare'
-thumbnail: '/images/ns-img-323.png'
+thumbnail: '/images/rockscale_healthcare_ai.jpg'
 description: 'Empowering healthcare providers with smart, scalable solutions.'
 result: Improved learning outcomes by 40% and reduced administrative workload by 50%
 showHomePage: true

@@ -36,7 +36,7 @@ const ExecOpportunities = () => {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <Link href="/services/ai-strategy-roadmap" className="btn btn-primary">
+                  <Link href="/services/ai-strategy" className="btn btn-primary">
                     Explore AI Strategy & Roadmap
                   </Link>
                 </div>

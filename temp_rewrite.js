@@ -1,9 +1,14 @@
+const fs = require('fs');
+const path = require('path');
 
+const content = `
 'use client';
 
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Navbar from '@/components/shared/navbar/Navbar';
+import Footer from '@/components/shared/footer/Footer';
 
 // Shared Classes for Premium Layout
 const sectionTitleClass = "text-4xl font-medium tracking-tight text-secondary md:text-5xl lg:text-[52px] lg:leading-[1.1]";
@@ -51,7 +56,7 @@ const WhatWeBuildSection = () => (
           <span className="badge badge-green-v2 mb-6 inline-block">Our Focus</span>
           <h2 className={sectionTitleClass}>What We Build</h2>
         </div>
-        <p className={`${sectionTextClass} max-w-xl pb-2`}>
+        <p className={\`\${sectionTextClass} max-w-xl pb-2\`}>
           From workflow automation to autonomous agents, we build tailored software solutions that leverage the latest in AI engineering.
         </p>
       </div>
@@ -67,7 +72,7 @@ const WhatWeBuildSection = () => (
         ].map((item, idx) => (
           <div key={idx} className="group flex flex-col justify-between rounded-[32px] border border-secondary/5 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] hover:border-secondary/20">
             <div>
-              <span className={`${item.icon} ${item.color} text-4xl mb-6 block transition-transform duration-500 group-hover:scale-110`} />
+              <span className={\`\${item.icon} \${item.color} text-4xl mb-6 block transition-transform duration-500 group-hover:scale-110\`} />
               <h3 className="text-2xl font-semibold tracking-tight text-secondary">{item.title}</h3>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-secondary/70">{item.desc}</p>
@@ -86,8 +91,8 @@ const IdeaToProductionSection = () => (
     <div className="main-container relative z-10">
       <div className="mb-20 text-center">
         <span className="badge badge-green-v2 mb-6 inline-block">The Process</span>
-        <h2 className={`${sectionTitleDarkClass} mx-auto max-w-3xl`}>From Idea to Production</h2>
-        <p className={`${sectionTextDarkClass} mx-auto mt-6 max-w-2xl`}>
+        <h2 className={\`\${sectionTitleDarkClass} mx-auto max-w-3xl\`}>From Idea to Production</h2>
+        <p className={\`\${sectionTextDarkClass} mx-auto mt-6 max-w-2xl\`}>
           A rigorous, engineering-first approach to ensure your AI software is secure, scalable, and reliable.
         </p>
       </div>
@@ -104,7 +109,7 @@ const IdeaToProductionSection = () => (
           ].map((item, index) => (
             <div key={item.phase} className="group grid gap-6 md:grid-cols-[60px_1fr] md:gap-12 relative z-10">
               <div className="hidden md:flex justify-center pt-2">
-                <div className={`flex h-12 w-12 items-center justify-center rounded-full text-base font-bold text-white transition-all duration-500 group-hover:scale-110 ${item.accent} ${item.shadow}`}>
+                <div className={\`flex h-12 w-12 items-center justify-center rounded-full text-base font-bold text-white transition-all duration-500 group-hover:scale-110 \${item.accent} \${item.shadow}\`}>
                   {index + 1}
                 </div>
               </div>
@@ -115,7 +120,7 @@ const IdeaToProductionSection = () => (
                 <div className="flex items-center gap-4 mb-4">
                    <h3 className="text-2xl font-bold tracking-tight text-white">Stage 0{index + 1}</h3>
                    <span className="h-px w-8 bg-white/20"></span>
-                   <span className={`text-sm font-bold uppercase tracking-[0.2em] ${item.accent.replace('bg-', 'text-')}`}>{item.phase}</span>
+                   <span className={\`text-sm font-bold uppercase tracking-[0.2em] \${item.accent.replace('bg-', 'text-')}\`}>{item.phase}</span>
                 </div>
                 <p className="text-base leading-relaxed text-white/70">{item.desc}</p>
               </div>
@@ -130,98 +135,55 @@ const IdeaToProductionSection = () => (
 const CapabilitiesSection = () => (
   <section className="bg-white py-24 md:py-32">
     <div className="main-container">
-      <div className="grid gap-16 lg:grid-cols-12">
-        {/* Left: Sticky Header */}
-        <div className="lg:col-span-5 lg:sticky lg:top-32 lg:h-fit">
-          <span className="badge badge-green-v2 mb-6 inline-block">Technical Expertise</span>
-          <h2 className="text-4xl font-medium tracking-tight text-secondary md:text-5xl lg:text-[56px] lg:leading-[1.1]">
-            Enterprise AI <br className="hidden lg:block"/> Engineering
-          </h2>
-          <p className="mt-8 text-lg leading-relaxed text-secondary/70 max-w-md">
-            We blend traditional software engineering rigor with cutting-edge AI capabilities. Our systems are built to scale, adapt, and remain secure in production environments.
-          </p>
-          
-          <div className="mt-10 flex gap-2.5 flex-wrap max-w-md pt-8 border-t border-secondary/5">
-             {['Python', 'TypeScript', 'PyTorch', 'LangChain', 'AWS', 'GCP', 'Vector DBs'].map(tech => (
-               <span key={tech} className="rounded-full border border-secondary/10 bg-secondary/[0.02] px-4 py-2 text-xs font-bold tracking-[0.1em] text-secondary/50 uppercase transition-colors hover:bg-secondary/5 hover:text-secondary/80">
-                  {tech}
-               </span>
-             ))}
-          </div>
-        </div>
+      <div className="mb-16 text-center">
+        <span className="badge badge-green-v2 mb-6 inline-block">Technical Expertise</span>
+        <h2 className={\`\${sectionTitleClass} mx-auto max-w-3xl\`}>Enterprise AI Engineering</h2>
+        <p className={\`\${sectionTextClass} mx-auto mt-6 max-w-2xl\`}>
+          We blend traditional software engineering rigor with cutting-edge AI capabilities.
+        </p>
+      </div>
 
-        {/* Right: Bento Grid of Capabilities */}
-        <div className="lg:col-span-7 grid gap-6 sm:grid-cols-2">
-          {[
-            {
-              title: 'Core AI Models',
-              icon: 'ns-shape-23',
-              items: ['LLM Integration & Routing', 'Advanced Prompt Engineering', 'RAG Architectures', 'Model Fine-Tuning'],
-              color: 'text-[#7E57FD]',
-              bgHover: 'hover:bg-[#7E57FD]/[0.02]',
-              borderHover: 'hover:border-[#7E57FD]/30',
-              shadowHover: 'hover:shadow-[0_20px_40px_rgba(126,87,253,0.06)]',
-              className: "sm:col-span-2 sm:flex sm:items-start sm:gap-10"
-            },
-            {
-              title: 'Advanced Logic',
-              icon: 'ns-shape-41',
-              items: ['Tool & API Calling', 'Autonomous Agents', 'Agentic Workflows'],
-              color: 'text-[#25CA22]',
-              bgHover: 'hover:bg-[#25CA22]/[0.02]',
-              borderHover: 'hover:border-[#25CA22]/30',
-              shadowHover: 'hover:shadow-[0_20px_40px_rgba(37,202,34,0.06)]',
-              className: "h-full"
-            },
-            {
-              title: 'Quality & Ops',
-              icon: 'ns-shape-8',
-              items: ['AI Output Evaluation', 'Security Guardrails', 'AI Observability'],
-              color: 'text-[#5391f5]',
-              bgHover: 'hover:bg-[#5391f5]/[0.02]',
-              borderHover: 'hover:border-[#5391f5]/30',
-              shadowHover: 'hover:shadow-[0_20px_40px_rgba(83,145,245,0.06)]',
-              className: "h-full"
-            },
-            {
-              title: 'Performance Optimization',
-              icon: 'ns-shape-35',
-              items: ['Streaming Responses', 'Context Window Management', 'Semantic Caching'],
-              color: 'text-orange-500',
-              bgHover: 'hover:bg-orange-500/[0.02]',
-              borderHover: 'hover:border-orange-500/30',
-              shadowHover: 'hover:shadow-[0_20px_40px_rgba(249,115,22,0.06)]',
-              className: "sm:col-span-2 sm:flex sm:items-start sm:gap-10"
-            }
-          ].map((category, idx) => (
-            <div key={idx} className={`group relative overflow-hidden rounded-[32px] border border-secondary/5 bg-[#f4f5f8]/50 p-8 transition-all duration-500 hover:-translate-y-1 hover:bg-white ${category.bgHover} ${category.borderHover} ${category.shadowHover} ${category.className}`}>
-              
-              <div className="shrink-0 mb-8 sm:mb-0">
-                 <div className="flex items-center justify-between sm:block">
-                    <span className={`${category.icon} ${category.color} text-[40px] opacity-80 block transition-transform duration-500 group-hover:scale-110 sm:mb-6`} />
-                    <span className="text-[10px] font-bold text-secondary/20 sm:hidden">0{idx + 1}</span>
-                 </div>
-                 <h3 className="text-xl font-bold tracking-tight text-secondary">{category.title}</h3>
-              </div>
-              
-              <div className="mb-6 h-px w-full bg-secondary/5 transition-colors duration-500 group-hover:bg-secondary/10 sm:hidden" />
-              
-              <div className="sm:mt-2">
-                 <ul className="space-y-4">
-                   {category.items.map((item) => (
-                     <li key={item} className="flex items-start gap-3">
-                       <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white shadow-sm border border-secondary/5">
-                          <span className={`h-1.5 w-1.5 rounded-full ${category.color.replace('text-', 'bg-')}`} />
-                       </div>
-                       <span className="text-sm font-semibold text-secondary/70">{item}</span>
-                     </li>
-                   ))}
-                 </ul>
-              </div>
-
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {[
+          {
+            title: 'Core AI',
+            items: ['LLM Integration', 'Prompt Engineering', 'RAG Architecture', 'AI Agents'],
+            color: 'text-[#7E57FD]',
+            border: 'hover:border-[#7E57FD]/30'
+          },
+          {
+            title: 'Advanced Capabilities',
+            items: ['Tool & Function Calling', 'Model Routing', 'Streaming', 'Context Management'],
+            color: 'text-[#25CA22]',
+            border: 'hover:border-[#25CA22]/30'
+          },
+          {
+            title: 'Quality & Ops',
+            items: ['AI Evaluation', 'Structured Outputs', 'Security Guardrails', 'Observability'],
+            color: 'text-blue-500',
+            border: 'hover:border-blue-500/30'
+          }
+        ].map((category, idx) => (
+          <div key={idx} className={\`group relative overflow-hidden rounded-[24px] border border-secondary/5 bg-[#f4f5f8]/50 p-8 transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] \${category.border}\`}>
+            <div className="flex items-center justify-between mb-6">
+               <h3 className="text-xl font-bold tracking-tight text-secondary">{category.title}</h3>
+               <span className="text-xs font-bold text-secondary/20">0{idx + 1}</span>
             </div>
-          ))}
-        </div>
+            
+            <div className="mb-6 h-px w-full bg-secondary/5 transition-colors duration-500 group-hover:bg-secondary/10" />
+
+            <ul className="space-y-4">
+              {category.items.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white shadow-sm border border-secondary/5">
+                     <span className={\`h-1.5 w-1.5 rounded-full \${category.color.replace('text-', 'bg-')}\`} />
+                  </div>
+                  <span className="text-sm font-semibold text-secondary/70">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -230,76 +192,37 @@ const CapabilitiesSection = () => (
 const QorebitSection = () => (
   <section className="relative z-0 overflow-hidden bg-[#061225] py-24 md:py-32">
     <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-overlay -z-20" />
-    <div className="absolute left-1/2 top-1/2 -z-10 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#25CA22]/10 blur-[150px]" />
+    <div className="absolute left-1/2 top-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#25CA22]/10 blur-[150px]" />
 
     <div className="main-container relative z-10">
-      <div className="overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.02] backdrop-blur-xl">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center p-10 md:p-16">
-          
-          <div className="pr-4">
-            <span className="badge badge-green-v2 mb-6 inline-block">Our Proprietary Product</span>
+      <div className="rounded-[40px] border border-white/10 bg-white/[0.02] p-10 backdrop-blur-xl md:p-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <span className="badge badge-green-v2 mb-6 inline-block">Our Product</span>
             <h3 className="text-3xl font-medium tracking-tight text-white md:text-4xl lg:text-5xl lg:leading-[1.1]">
-              Accelerating Enterprise AI with <br className="hidden lg:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#25CA22] to-[#7E57FD]">Qorebit Platform</span>
+              Accelerating Enterprise AI with <span className="text-[#25CA22]">Qorebit</span>
             </h3>
             <p className="mt-6 text-lg leading-relaxed text-white/70">
-              Qorebit AI is our proprietary AI infrastructure platform built to unify and scale your enterprise AI initiatives. From secure data integration and model management to observability and compliance, Qorebit provides the robust foundation needed to deploy AI applications rapidly and reliably.
+              Qorebit AI is our proprietary enterprise-grade AI engineering platform, built to streamline the development, deployment, and management of intelligent applications. It provides the tools and infrastructure for secure, scalable, and observable AI solutions.
             </p>
-            
-            <div className="mt-8 flex flex-wrap gap-3 mb-10">
-               {['Model Routing', 'Vector Search', 'Security Guardrails', 'Observability'].map(feature => (
-                 <span key={feature} className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold tracking-wide text-white/70">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#25CA22]" />
-                    {feature}
-                 </span>
-               ))}
-            </div>
-
-            <div className="flex gap-4">
+            <div className="mt-10 flex gap-4">
                <Link
                  href="/products/qorebit-ai"
-                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-[#25CA22] px-8 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:bg-[#20b21e] hover:shadow-[0_10px_20px_rgba(37,202,34,0.3)]">
-                 <span className="relative z-10">Explore Qorebit AI</span>
-                 <svg className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                 </svg>
+                 className="inline-flex items-center justify-center rounded-full bg-[#25CA22] px-8 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:bg-[#20b21e] hover:shadow-[0_10px_20px_rgba(37,202,34,0.3)]">
+                 Explore Qorebit AI
                </Link>
             </div>
           </div>
-          
           <div className="relative flex justify-center lg:justify-end">
-            {/* Image Wrapper with Hover Effects */}
-            <div className="group relative w-full max-w-[650px] perspective-1000">
-              {/* Animated Glow Behind Image */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#25CA22]/30 via-transparent to-[#7E57FD]/30 blur-3xl opacity-40 transition-opacity duration-700 group-hover:opacity-70" />
-              
-              <div className="relative z-10 overflow-hidden rounded-[24px] border border-white/10 bg-[#0a162b] shadow-2xl transition-all duration-700 group-hover:border-white/30 group-hover:shadow-[0_20px_60px_rgba(37,202,34,0.15)] group-hover:-translate-y-2">
-                <Image
-                  src="/images/qorebit-img.png"
-                  alt="Qorebit AI Infrastructure Platform"
-                  width={700}
-                  height={500}
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03] group-hover:opacity-95"
-                />
-                
-                {/* Glassmorphic Overlay Badge */}
-                <div className="absolute bottom-6 left-6 rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur-md transition-transform duration-500 group-hover:translate-x-2">
-                   <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25CA22] shadow-[0_0_15px_rgba(37,202,34,0.5)]">
-                        <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <div>
-                         <p className="text-xs font-bold uppercase tracking-wider text-white/50">Infrastructure</p>
-                         <p className="text-sm font-semibold text-white">Enterprise Ready</p>
-                      </div>
-                   </div>
-                </div>
-              </div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#25CA22]/20 to-[#7E57FD]/20 blur-3xl opacity-50" />
+            <Image
+              src="/images/ns-img-391.png"
+              alt="Qorebit AI Platform"
+              width={500}
+              height={300}
+              className="relative z-10 rounded-[24px] border border-white/10 shadow-2xl"
+            />
           </div>
-          
         </div>
       </div>
     </div>
@@ -345,14 +268,20 @@ const FinalCTASection = () => (
 const AIPoweredSoftwareDevelopmentPageContent = () => {
   return (
     <main>
+      <Navbar />
       <HeroSection />
       <WhatWeBuildSection />
       <IdeaToProductionSection />
       <CapabilitiesSection />
       <QorebitSection />
       <FinalCTASection />
+      <Footer />
     </main>
   );
 };
 
 export default AIPoweredSoftwareDevelopmentPageContent;
+`
+
+fs.writeFileSync(path.join(__dirname, 'src/components/services/ai-powered-software-development/AIPoweredSoftwareDevelopmentPageContent.tsx'), content);
+console.log('Successfully rewritten the AI Powered Software Development page.');
