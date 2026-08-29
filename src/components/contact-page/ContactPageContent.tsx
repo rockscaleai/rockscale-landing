@@ -11,8 +11,8 @@ const HeroSection = () => (
     <div className="main-container relative z-10 text-center">
       <span className="badge badge-green-v2 mb-6 inline-block">Contact Us</span>
       <h1 className="mx-auto max-w-4xl text-5xl font-medium tracking-tight text-white md:text-6xl lg:text-[72px] lg:leading-[1.05]">
-        Start a <br className="hidden md:block"/>
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#25CA22] to-[#7E57FD]">Conversation</span>
+        Get in <br className="hidden md:block"/>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#25CA22] to-[#7E57FD]">Touch</span>
       </h1>
       <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-white/70">
         Whether you have a specific technical challenge or just want to explore what's possible with AI, our team of enterprise architects is ready to talk.

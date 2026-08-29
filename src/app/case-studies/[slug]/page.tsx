@@ -12,6 +12,7 @@ interface ICaseStudy {
   title: string;
   slug: string;
   description: string;
+  content: string;
 }
 
 export async function generateStaticParams() {

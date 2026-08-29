@@ -1,4 +1,9 @@
-'use client';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/app/NotFoundContent.tsx');
+
+const content = `'use client';
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import Link from 'next/link';
 import React from 'react';
@@ -51,3 +56,7 @@ const NotFoundContent = () => {
 
 NotFoundContent.displayName = 'NotFoundContent';
 export default NotFoundContent;
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('404 NotFoundContent updated.');

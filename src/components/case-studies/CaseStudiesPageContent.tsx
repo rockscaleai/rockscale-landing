@@ -115,7 +115,7 @@ const CaseStudyGrid = () => (
       
       {/* Featured: Qorebit AI */}
       <div className="mb-8">
-        <Link href="/products/qorebit-ai" className="group relative flex flex-col lg:flex-row overflow-hidden rounded-[32px] border border-secondary/5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] hover:border-secondary/10">
+        <Link href="#" className="group relative flex flex-col lg:flex-row overflow-hidden rounded-[32px] border border-secondary/5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] hover:border-secondary/10">
           <div className="lg:w-1/2 p-10 md:p-16 flex flex-col justify-center">
             <span className="badge badge-green bg-[#25CA22]/10 text-[#25CA22] border border-[#25CA22]/20 mb-6 w-fit uppercase tracking-wider text-[10px] font-bold">Featured Platform</span>
             <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-secondary mb-6">Qorebit AI</h3>
@@ -152,7 +152,7 @@ const CaseStudyGrid = () => (
       {/* Grid of remaining case studies */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {caseStudies.slice(1).map((study, idx) => (
-          <Link key={study.id} href={`/case-studies/${study.slug}`} className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] border border-secondary/5 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] hover:border-secondary/10">
+          <Link key={study.id} href="#" className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] border border-secondary/5 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] hover:border-secondary/10">
             <div>
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="rounded-full border border-secondary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-secondary/60">

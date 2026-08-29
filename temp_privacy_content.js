@@ -1,4 +1,9 @@
-'use client';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/components/privacy/PrivacyContent.tsx');
+
+const content = `'use client';
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import React from 'react';
 
@@ -6,37 +11,37 @@ const PrivacyContent = () => {
   const sections = [
     {
       title: "1. Information We Collect",
-      content: `<p class="mb-4">When you visit RockScale, we collect certain information about your device, your interaction with the Site, and information necessary to process your requests. We may also collect additional information if you contact us for customer support.</p>
+      content: \`<p class="mb-4">When you visit RockScale, we collect certain information about your device, your interaction with the Site, and information necessary to process your requests. We may also collect additional information if you contact us for customer support.</p>
       <ul class="list-disc pl-6 space-y-2 text-secondary/70">
         <li><strong>Device Information:</strong> We collect version of web browser, IP address, time zone, cookie information, what sites or products you view, search terms, and how you interact with the Site.</li>
         <li><strong>Order Information:</strong> We collect your name, billing address, shipping address, payment information (including credit card numbers), email address, and phone number when you engage our services.</li>
-      </ul>`
+      </ul>\`
     },
     {
       title: "2. How We Use Your Information",
-      content: `<p class="mb-4">We use the Order Information that we collect generally to fulfill any contracts placed through the Site (including processing your payment information and providing you with invoices and/or order confirmations). Additionally, we use this Order Information to:</p>
+      content: \`<p class="mb-4">We use the Order Information that we collect generally to fulfill any contracts placed through the Site (including processing your payment information and providing you with invoices and/or order confirmations). Additionally, we use this Order Information to:</p>
       <ul class="list-disc pl-6 space-y-2 text-secondary/70">
         <li>Communicate with you.</li>
         <li>Screen our orders for potential risk or fraud.</li>
         <li>When in line with the preferences you have shared with us, provide you with information or advertising relating to our products or services.</li>
-      </ul>`
+      </ul>\`
     },
     {
       title: "3. Sharing Your Personal Information",
-      content: `<p class="mb-4">We share your Personal Information with trusted third parties to help us use your Personal Information, as described above. We use highly secure infrastructure providers and analytics tools to understand how our customers use the Site.</p>
-      <p>Finally, we may also share your Personal Information to comply with applicable laws and regulations, to respond to a subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.</p>`
+      content: \`<p class="mb-4">We share your Personal Information with trusted third parties to help us use your Personal Information, as described above. We use highly secure infrastructure providers and analytics tools to understand how our customers use the Site.</p>
+      <p>Finally, we may also share your Personal Information to comply with applicable laws and regulations, to respond to a subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.</p>\`
     },
     {
       title: "4. Data Security & Retention",
-      content: `<p class="mb-4">When you engage our services through the Site, we will maintain your Information for our records unless and until you ask us to delete this information. We implement robust, enterprise-grade security protocols to prevent unauthorized access to your data.</p>`
+      content: \`<p class="mb-4">When you engage our services through the Site, we will maintain your Information for our records unless and until you ask us to delete this information. We implement robust, enterprise-grade security protocols to prevent unauthorized access to your data.</p>\`
     },
     {
       title: "5. Your Rights",
-      content: `<p class="mb-4">If you are a resident of the EEA or California, you have the right to access the personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. If you would like to exercise this right, please contact us through the contact information below.</p>`
+      content: \`<p class="mb-4">If you are a resident of the EEA or California, you have the right to access the personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. If you would like to exercise this right, please contact us through the contact information below.</p>\`
     },
     {
       title: "6. Changes to this Policy",
-      content: `<p class="mb-4">We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal, or regulatory reasons.</p>`
+      content: \`<p class="mb-4">We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal, or regulatory reasons.</p>\`
     }
   ];
 
@@ -88,3 +93,7 @@ const PrivacyContent = () => {
 };
 
 export default PrivacyContent;
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('PrivacyContent updated.');

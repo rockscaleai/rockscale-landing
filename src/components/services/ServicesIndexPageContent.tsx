@@ -112,14 +112,27 @@ const FinalCTASection = () => (
   </section>
 );
 
+const ValuePropositionSection = () => (
+  <section className="bg-white py-24 md:py-32 border-b border-secondary/5">
+    <div className="main-container text-center">
+      <div className="mx-auto max-w-4xl space-y-8">
+        <h2 className="text-3xl font-medium tracking-tight text-secondary md:text-4xl lg:text-5xl leading-tight">
+          We build AI that works in production, <br className="hidden md:block"/>
+          <span className="text-secondary/60">not just in notebooks.</span>
+        </h2>
+        <p className="mx-auto max-w-3xl text-xl leading-relaxed text-secondary/70">
+          Scaling AI is rarely an algorithm problem—it's an engineering problem. We help enterprises overcome data fragmentation, security constraints, and infrastructure limits to deploy robust AI solutions that generate measurable ROI.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
 const ServicesIndexPageContent = () => {
   return (
     <div className="bg-white">
       <HeroSection />
-      
-      {/* White spacing between Dark Hero and Core Services */}
-      <div className="h-24 md:h-32 w-full bg-white border-b border-secondary/5" />
-      
+      <ValuePropositionSection />
       <CoreServices />
       <MethodologySection />
       <FinalCTASection />

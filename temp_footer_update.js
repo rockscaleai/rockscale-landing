@@ -1,11 +1,16 @@
-import { FooterData } from '@/interface';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/data/footer-data.ts');
+
+const content = `import { FooterData } from '@/interface';
 
 export const footerLinks: FooterData[] = [
   {
     title: 'Company',
     links: [
       { label: 'About Us', href: '/about' },
-      { label: 'Case Studies', href: '/case-studies' },
+      { label: 'Case Studies', href: '/case-study' },
       { label: 'Contact Us', href: '/contact-us' },
     ],
   },
@@ -26,3 +31,7 @@ export const footerLinks: FooterData[] = [
     ],
   },
 ];
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('Footer links updated.');

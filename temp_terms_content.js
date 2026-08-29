@@ -1,4 +1,9 @@
-'use client';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/components/terms-conditions/TermsConditionContent.tsx');
+
+const content = `'use client';
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import React from 'react';
 
@@ -6,27 +11,27 @@ const TermsConditionContent = () => {
   const sections = [
     {
       title: "1. Acceptance of Terms",
-      content: `<p class="mb-4">By accessing or using the services provided by <strong>RockScale</strong>, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our services or website.</p>`
+      content: \`<p class="mb-4">By accessing or using the services provided by <strong>RockScale</strong>, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our services or website.</p>\`
     },
     {
       title: "2. Enterprise Services & Deliverables",
-      content: `<p class="mb-4">RockScale provides AI strategy consulting, data engineering, cloud infrastructure, and custom software development services. Specific deliverables, timelines, and payment structures will be defined in a mutually agreed upon Statement of Work (SOW) or Master Services Agreement (MSA) separate from these general website terms.</p>`
+      content: \`<p class="mb-4">RockScale provides AI strategy consulting, data engineering, cloud infrastructure, and custom software development services. Specific deliverables, timelines, and payment structures will be defined in a mutually agreed upon Statement of Work (SOW) or Master Services Agreement (MSA) separate from these general website terms.</p>\`
     },
     {
       title: "3. Intellectual Property Rights",
-      content: `<p class="mb-4">Unless otherwise stated in a specific Master Services Agreement, all underlying methodologies, frameworks, and pre-existing code libraries used by RockScale remain the exclusive property of RockScale. Client-specific data, proprietary models, and custom deliverables generated during an engagement become the property of the client upon full payment.</p>`
+      content: \`<p class="mb-4">Unless otherwise stated in a specific Master Services Agreement, all underlying methodologies, frameworks, and pre-existing code libraries used by RockScale remain the exclusive property of RockScale. Client-specific data, proprietary models, and custom deliverables generated during an engagement become the property of the client upon full payment.</p>\`
     },
     {
       title: "4. Confidentiality & Data Security",
-      content: `<p class="mb-4">We are committed to protecting your enterprise data. Both parties agree to maintain the confidentiality of any proprietary information shared during the course of business. Our infrastructure adheres to strict security protocols to prevent unauthorized access, but clients are responsible for securing their own API keys and credentials.</p>`
+      content: \`<p class="mb-4">We are committed to protecting your enterprise data. Both parties agree to maintain the confidentiality of any proprietary information shared during the course of business. Our infrastructure adheres to strict security protocols to prevent unauthorized access, but clients are responsible for securing their own API keys and credentials.</p>\`
     },
     {
       title: "5. Limitation of Liability",
-      content: `<p class="mb-4">RockScale shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from your access to or use of our services.</p>`
+      content: \`<p class="mb-4">RockScale shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from your access to or use of our services.</p>\`
     },
     {
       title: "6. Modifications to Terms",
-      content: `<p class="mb-4">We reserve the right to modify these terms at any time. We will notify clients of significant changes via email or through prominent notice on our website. Continued use of our services following any changes indicates your acceptance of the new terms.</p>`
+      content: \`<p class="mb-4">We reserve the right to modify these terms at any time. We will notify clients of significant changes via email or through prominent notice on our website. Continued use of our services following any changes indicates your acceptance of the new terms.</p>\`
     }
   ];
 
@@ -78,3 +83,7 @@ const TermsConditionContent = () => {
 };
 
 export default TermsConditionContent;
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('TermsConditionContent updated.');

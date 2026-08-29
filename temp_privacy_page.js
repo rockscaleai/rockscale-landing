@@ -1,4 +1,9 @@
-import PrivacyContent from '@/components/privacy/PrivacyContent';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/app/privacy-policy/page.tsx');
+
+const content = `import PrivacyContent from '@/components/privacy/PrivacyContent';
 import CTA from '@/components/shared/cta/CTA';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
@@ -26,3 +31,7 @@ const page = () => {
 };
 
 export default page;
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('Privacy Policy page wrapper updated.');

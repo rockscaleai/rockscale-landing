@@ -1,17 +1,22 @@
-import PrivacyContent from '@/components/privacy/PrivacyContent';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/app/terms-conditions/page.tsx');
+
+const content = `import TermsConditionContent from '@/components/terms-conditions/TermsConditionContent';
 import CTA from '@/components/shared/cta/CTA';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Privacy Policy | RockScale',
+  title: 'Terms & Conditions | RockScale',
 };
 
 const page = () => {
   return (
     <main className="bg-white">
-      <PrivacyContent />
+      <TermsConditionContent />
       <CTA
         className="bg-white border-t border-secondary/5"
         badgeClass="!badge-green-v2"
@@ -26,3 +31,7 @@ const page = () => {
 };
 
 export default page;
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('Terms page wrapper updated.');
