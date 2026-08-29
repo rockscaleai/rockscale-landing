@@ -1,4 +1,9 @@
-'use client';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/components/about/MissionVision.tsx');
+
+const content = `'use client';
 import RevealAnimation from '../animation/RevealAnimation';
 
 const MissionVision = () => {
@@ -80,3 +85,7 @@ const MissionVision = () => {
 };
 
 export default MissionVision;
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('MissionVision updated.');

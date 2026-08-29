@@ -1,4 +1,9 @@
-[
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/data/json/testimonials/testimonials.json');
+
+const content = `[
   {
     "id": 1,
     "quote": "RockScale built us a document intelligence pipeline that reduced our contract review time by 70%. Their understanding of LLMs in a compliance context was unlike any vendor we had worked with before.",
@@ -23,4 +28,7 @@
     "position": "Chief Data Officer, NovaTrade Logistics",
     "rating": "4.9"
   }
-]
+]`;
+
+fs.writeFileSync(targetFile, content);
+console.log('Testimonials truncated to 3.');
