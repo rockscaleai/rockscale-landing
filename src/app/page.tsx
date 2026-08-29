@@ -20,11 +20,14 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
-  const featuredProjects = getMarkDownData<ICaseStudy & { [key: string]: unknown }>(
-    'src/data/case-study',
-  )
-    .filter((project) => project.slug !== 'eduFlow-digital-learning-transformation')
-    .slice(0, 3);
+  const allProjects = getMarkDownData<ICaseStudy & { [key: string]: unknown }>('src/data/case-study');
+  
+  const qorebitProject = allProjects.find(p => p.slug === 'qorebit-ai-application-platform');
+  const otherProjects = allProjects
+    .filter(p => p.slug !== 'qorebit-ai-application-platform' && p.slug !== 'eduFlow-digital-learning-transformation')
+    .slice(0, 2);
+
+  const featuredProjects = qorebitProject ? [qorebitProject, ...otherProjects] : otherProjects.slice(0, 3);
 
   return (
     <main className="bg-background-2 dark:bg-background-5">

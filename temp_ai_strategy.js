@@ -1,4 +1,9 @@
+const fs = require('fs');
+const path = require('path');
 
+const targetFile = path.join(__dirname, 'src/components/services/ai-strategy/AIStrategyRoadmapPageContent.tsx');
+
+const content = `
 'use client';
 
 import RevealAnimation from '@/components/animation/RevealAnimation';
@@ -153,15 +158,17 @@ const AIStrategyRoadmapPageContent = () => {
                   { title: 'Data Readiness Report', desc: 'An honest assessment of your current data quality and the engineering required to support AI.' },
                   { title: 'Phased Implementation Plan', desc: 'A step-by-step roadmap from PoC to MVP to full-scale production deployment.' }
                ].map((item, index) => (
-                     <div key={index} className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 bg-white/5 border border-white/10 p-6 rounded-[20px] opacity-100">
+                  <RevealAnimation key={index} delay={0.3 + (index * 0.1)} direction="up">
+                     <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 bg-white/5 border border-white/10 p-6 rounded-[20px]">
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25CA22]/20 text-[#25CA22]">
                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                         </div>
                         <div>
-                           <h4 className="text-xl font-bold mb-1 text-white">{item.title}</h4>
-                           <p className="text-white/80">{item.desc}</p>
+                           <h4 className="text-xl font-bold mb-1">{item.title}</h4>
+                           <p className="text-white/60">{item.desc}</p>
                         </div>
                      </div>
+                  </RevealAnimation>
                ))}
             </div>
          </div>
@@ -182,3 +189,7 @@ const AIStrategyRoadmapPageContent = () => {
 };
 
 export default AIStrategyRoadmapPageContent;
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('Rebuilt AIStrategyRoadmapPageContent.tsx');

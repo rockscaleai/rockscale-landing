@@ -1,4 +1,7 @@
+const fs = require('fs');
+const path = require('path');
 
+const content = `
 'use client';
 import { cn } from '@/utils/cn';
 import Link from 'next/link';
@@ -72,7 +75,7 @@ const WhatWeDoMenu = ({
                 <Link key={idx} href={service.href} onClick={handleClose} className="group block">
                    <div className="flex items-start gap-4">
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 group-hover:bg-white/10" style={{ color: service.color }}>
-                         <span className={`${service.icon} text-[22px]`} />
+                         <span className={\`\${service.icon} text-[22px]\`} />
                       </div>
                       <div>
                          <p className="text-[14px] font-bold text-white group-hover:text-white/90 transition-colors mb-1">{service.label}</p>
@@ -123,3 +126,7 @@ const WhatWeDoMenu = ({
 
 WhatWeDoMenu.displayName = 'WhatWeDoMenu';
 export default WhatWeDoMenu;
+`
+
+fs.writeFileSync(path.join(__dirname, 'src/components/shared/navbar/WhatWeDoMenu.tsx'), content);
+console.log('Redesigned WhatWeDoMenu.');

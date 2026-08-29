@@ -1,15 +1,53 @@
 import { Metadata } from 'next';
-import { defaultMetadata } from '@/utils/generateMetaData';
+import getMarkDownData from '@/utils/getMarkDownData';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import QorebitCaseStudyContent from '@/components/case-studies/QorebitCaseStudyContent';
 import RevealAnimation from '@/components/animation/RevealAnimation';
-
 import CTA from '@/components/shared/cta/CTA';
 
-export const metadata: Metadata = {
-  ...defaultMetadata,
-  title: 'Case Study | RockScale',
-};
+export const dynamicParams = true;
 
-const CaseStudyDetail = () => {
+interface ICaseStudy {
+  title: string;
+  slug: string;
+  description: string;
+}
+
+export async function generateStaticParams() {
+  const caseStudies = getMarkDownData('src/data/case-study');
+  return caseStudies.map((caseStudy) => ({
+    slug: caseStudy.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const caseStudies = getMarkDownData('src/data/case-study');
+  const caseStudy = caseStudies.find((c) => c.slug === slug);
+
+  if (!caseStudy) {
+    return { title: 'Case Study Not Found' };
+  }
+  return {
+    title: `${caseStudy.title} | RockScale Case Studies`,
+    description: caseStudy.description,
+  };
+}
+
+const CaseStudyDetail = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
+  if (slug === 'qorebit-ai-application-platform') {
+    return <QorebitCaseStudyContent />;
+  }
+
+  const caseStudies = getMarkDownData<ICaseStudy & { [key: string]: unknown }>('src/data/case-study');
+  const caseStudy = caseStudies.find((c) => c.slug === slug);
+
+  if (!caseStudy) {
+    notFound();
+  }
+
   return (
     <main className="bg-background-2 dark:bg-background-5">
       {/* 1. Hero */}
@@ -21,7 +59,7 @@ const CaseStudyDetail = () => {
             </RevealAnimation>
             <RevealAnimation delay={0.2}>
               <h1 id="case-study-hero" className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl text-primary">
-                Qorebit AI: Unifying Enterprise AI Access
+                {caseStudy.title}
               </h1>
             </RevealAnimation>
             <RevealAnimation delay={0.3}>

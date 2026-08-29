@@ -163,17 +163,7 @@ const IndustrySolutions = () => {
           })}
         </div>
 
-        {/* CTA */}
-        <RevealAnimation delay={0.6}>
-          <div className="mt-20 flex justify-center">
-            <LinkButton
-              href="/contact-us"
-              className="btn btn-md border-none bg-white font-semibold text-secondary transition-colors hover:bg-[#25CA22] hover:text-white"
-            >
-              Discuss your industry challenge
-            </LinkButton>
-          </div>
-        </RevealAnimation>
+        
         
       </div>
     </section>

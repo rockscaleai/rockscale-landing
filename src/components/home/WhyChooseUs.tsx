@@ -30,7 +30,6 @@ const differentiators = [
 ];
 
 const stats = [
-  { value: '90', unit: 'Days', label: 'Strategy to Production' },
   { value: '3×', unit: '', label: 'Faster AI Delivery' },
   { value: '100%', unit: '', label: 'Outcome Focused' },
 ];
@@ -78,17 +77,23 @@ const WhyChooseUs = () => {
               </div>
 
               {/* Differentiators List */}
-              <div className="space-y-6 pt-4">
+              <div className="space-y-5 pt-4">
                 {differentiators.map((item, index) => (
                   <RevealAnimation key={item.id} delay={0.4 + index * 0.1}>
-                    <div className="group flex items-start gap-5 rounded-[20px] border border-transparent p-4 transition-all duration-300 hover:border-stroke-3 hover:bg-white/50">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-lg font-bold text-[#25CA22] shadow-sm transition-colors duration-300 group-hover:bg-[#25CA22] group-hover:text-white">
+                    <div className="group relative overflow-hidden rounded-[24px] border border-secondary/5 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(6,18,37,0.06)] hover:border-secondary/10 flex items-start gap-6">
+                      
+                      {/* Ambient Hover Glow */}
+                      <div className="absolute -right-8 -top-8 z-0 h-32 w-32 rounded-full bg-[#25CA22] opacity-0 blur-[40px] transition-opacity duration-500 group-hover:opacity-[0.08]" />
+                      
+                      <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#25CA22]/10 text-xl font-black text-[#25CA22] border border-[#25CA22]/20 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3">
                         {item.id}
                       </div>
-                      <div className="pt-1">
-                        <h3 className="mb-1 text-lg font-semibold tracking-tight text-secondary">{item.title}</h3>
-                        <p className="text-[15px] leading-relaxed text-secondary/60">{item.text}</p>
+                      
+                      <div className="relative z-10 pt-1">
+                        <h3 className="mb-2 text-[19px] font-bold tracking-tight text-secondary">{item.title}</h3>
+                        <p className="text-[15px] leading-relaxed text-secondary/70">{item.text}</p>
                       </div>
+                      
                     </div>
                   </RevealAnimation>
                 ))}
@@ -98,10 +103,10 @@ const WhyChooseUs = () => {
               <RevealAnimation delay={0.9}>
                 <div className="pt-6">
                   <LinkButton
-                    href="/why-choose-us"
+                    href="/about"
                     className="btn btn-md border-none bg-secondary font-semibold text-white transition-colors hover:bg-[#25CA22] hover:text-white"
                   >
-                    See our approach
+                    About Us
                   </LinkButton>
                 </div>
               </RevealAnimation>
@@ -125,43 +130,7 @@ const WhyChooseUs = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent opacity-80" />
                 </figure>
 
-                {/* Floating Metric Card */}
-                <RevealAnimation delay={0.6} direction="up" offset={40}>
-                  <div className="absolute -bottom-8 -left-4 z-10 rounded-[24px] border border-black/5 bg-white/90 p-6 shadow-xl backdrop-blur-xl md:-left-8 md:p-8">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-[#25CA22]">Avg. Project ROI</p>
-                    <p className="mt-1 text-5xl font-bold tracking-tight text-secondary">+300<span className="text-[#25CA22]">%</span></p>
-                    <div className="mt-4 flex items-end gap-1.5 h-12">
-                      {[40, 60, 50, 80, 70, 90, 100].map((h, i) => (
-                        <div
-                          key={i}
-                          className="w-2.5 rounded-sm bg-black/5"
-                          style={{ height: '100%' }}
-                        >
-                          <div
-                            className="w-full rounded-sm bg-[#25CA22] transition-all duration-1000"
-                            style={{ height: `${h}%`, marginTop: `${100 - h}%` }}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </RevealAnimation>
-
-                {/* Floating Stats Glass Panel */}
-                <RevealAnimation delay={0.8} direction="right" offset={40}>
-                  <div className="absolute -right-4 top-12 z-10 space-y-3 rounded-[20px] border border-black/5 bg-white/80 p-5 shadow-xl backdrop-blur-md md:-right-8">
-                    {stats.slice(0, 2).map((s) => (
-                      <div key={s.label} className="border-b border-stroke-3 pb-3 last:border-0 last:pb-0">
-                        <p className="text-3xl font-bold tracking-tight text-secondary">
-                          {s.value}<span className="text-lg text-[#7E57FD]">{s.unit}</span>
-                        </p>
-                        <p className="text-[11px] font-medium uppercase tracking-wider text-secondary/50">{s.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </RevealAnimation>
-
-              </div>
+                </div>
             </RevealAnimation>
           </div>
 

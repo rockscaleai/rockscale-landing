@@ -1,4 +1,9 @@
-import RevealAnimation from '@/components/animation/RevealAnimation';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/components/shared/cta/CTA.tsx');
+
+const content = `import RevealAnimation from '@/components/animation/RevealAnimation';
 import { cn } from '@/utils/cn';
 import Link from 'next/link';
 
@@ -74,3 +79,7 @@ const CTA = ({
 };
 CTA.displayName = 'CTA';
 export default CTA;
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('CTA component fixed.');

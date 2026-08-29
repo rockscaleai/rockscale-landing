@@ -24,7 +24,7 @@ const ProjectCard = ({
   return (
     <RevealAnimation delay={0.28 + index * 0.1}>
       <Link
-        href={`/case-study/${project.slug}`}
+        href={`/case-studies/${project.slug}`}
         className="group relative block h-full overflow-hidden rounded-[24px] outline-none"
       >
         <div
@@ -39,10 +39,10 @@ const ProjectCard = ({
               fill
               priority={index < 2}
               alt={project.title}
-              className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 group-hover:blur-[2px]"
+              className="object-cover object-left-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 group-hover:blur-[2px]"
             />
             {/* Gradient Overlay for Text Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#061225]/80 via-[#061225]/10 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
             <div className="absolute inset-0 bg-[#25CA22]/10 opacity-0 mix-blend-color transition-opacity duration-700 group-hover:opacity-100" />
           </div>
 
@@ -130,16 +130,7 @@ const Projects = ({ featuredProjects }: { featuredProjects: ICaseStudy[] }) => {
             </RevealAnimation>
           </div>
 
-          <RevealAnimation delay={0.4}>
-            <div className="hidden shrink-0 md:block">
-              <LinkButton
-                href="/case-study"
-                className="btn btn-secondary btn-md transition-colors hover:bg-[#25CA22] hover:text-white"
-              >
-                View all projects
-              </LinkButton>
-            </div>
-          </RevealAnimation>
+          
         </div>
 
         {/* Project Grid */}
@@ -156,17 +147,7 @@ const Projects = ({ featuredProjects }: { featuredProjects: ICaseStudy[] }) => {
           </div>
         </div>
 
-        {/* Mobile CTA */}
-        <RevealAnimation delay={0.7}>
-          <div className="mt-12 text-center md:hidden">
-            <LinkButton
-              href="/case-study"
-              className="btn btn-secondary btn-md mx-auto w-[85%] transition-colors hover:bg-[#25CA22] hover:text-white"
-            >
-              View all projects
-            </LinkButton>
-          </div>
-        </RevealAnimation>
+        
       </div>
     </section>
   );

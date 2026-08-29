@@ -1,4 +1,10 @@
-/* =========================
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/styles/button.css');
+let content = fs.readFileSync(targetFile, 'utf8');
+
+const newButtonStyles = `/* =========================
 NextSaaS Buttons Styles
 =========================== */
 @utility btn {
@@ -157,3 +163,7 @@ NextSaaS Buttons Styles
     @apply fill-secondary;
   }
 }
+`;
+
+fs.writeFileSync(targetFile, newButtonStyles);
+console.log('Button styles updated.');
