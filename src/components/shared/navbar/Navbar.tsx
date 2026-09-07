@@ -5,7 +5,7 @@ import { MobileMenuProvider } from '@/context/MobileMenuContext';
 import { mobileMenuData } from '@/data/navbar-data';
 import { useNavbarScroll } from '@/hooks/useScrollHeader';
 import { cn } from '@/utils/cn';
-import rockscaleLogo from '@public/images/rockscale-logo.jpeg';
+import rockscaleLogo from '@public/images/rockscale-logo-no-bg.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
