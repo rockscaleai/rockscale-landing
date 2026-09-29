@@ -12,3 +12,10 @@
 @import '../styles/lenis.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Force Qorebit widget to the bottom left to avoid being covered */
+div[id^="qrb_widget_"], 
+iframe[src*="qorebit"] {
+  left: 20px !important;
+  right: auto !important;
+}
