@@ -1,4 +1,9 @@
-import SmoothScrollProvider from '@/components/shared/SmoothScroll';
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, 'src/app/layout.tsx');
+
+const content = `import SmoothScrollProvider from '@/components/shared/SmoothScroll';
 import { ThemeProvider } from '@/components/shared/ThemeProvider';
 import Footer from '@/components/shared/footer/Footer';
 import Navbar from '@/components/shared/navbar/Navbar';
@@ -22,15 +27,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Script id="qorebit-config" strategy="afterInteractive">
-          {`
+          {\`
             window.QorebitConfig = {
               widgetId: "qrb_widget_a47296a1161067098a0fc8eb8cfd578f"
             };
-          `}
+          \`}
         </Script>
         <Script src="https://qorebit-widget-livid.vercel.app/widget.js" strategy="lazyOnload" />
       </head>
-      <body className={`${interTight.variable} antialiased`}>
+      <body className={\`\${interTight.variable} antialiased\`}>
         <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" disableTransitionOnChange>
           <Suspense>
             <SmoothScrollProvider>
@@ -44,3 +49,7 @@ export default function RootLayout({
     </html>
   );
 }
+`;
+
+fs.writeFileSync(targetFile, content);
+console.log('Layout updated.');
