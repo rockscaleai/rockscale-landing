@@ -24,7 +24,7 @@ export default function RootLayout({
         <Script id="qorebit-config" strategy="beforeInteractive">
           {`
             window.QorebitConfig = {
-              widgetId: "qrb_widget_3ad8bf508e70383f4ab97dec0e0203f8"
+              widgetId: "qrb_widget_658f91568eb9d715cd81bb322cf6e72d"
             };
           `}
         </Script>
